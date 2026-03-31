@@ -51,25 +51,25 @@
   .gc-search { display: flex; align-items: center; gap: 4px; }
   .gc-search-select { font-size: 13px; border: 1px solid var(--border); border-radius: var(--r-sm) 0 0 var(--r-sm); padding: 3px 8px; height: 30px; background: var(--surface-light); color: var(--text-secondary); appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; padding-right: 20px; }
   .gc-search-input { border: 1px solid var(--border); border-left: none; height: 30px; padding: 0 10px; font-size: 13px; width: 240px; outline: none; }
-  .gc-search-btn { background: var(--surface-light); border: 1px solid var(--border); border-left: none; height: 30px; width: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 0 var(--r-sm) var(--r-sm) 0; font-size: 14px; color: #315E7B; }
+  .gc-search-btn { background: var(--surface-light); border: 1px solid var(--border); border-left: none; height: 30px; width: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 0 var(--r-sm) var(--r-sm) 0; font-size: 14px; color: var(--teal-dark); }
   .gc-advsearch { font-size: 13px; border: 1px solid var(--border); border-radius: var(--r-sm); padding: 4px 10px; height: 30px; background: var(--surface-light); cursor: pointer; color: var(--text-secondary); margin-left: 6px; }
   .gc-nav-user { margin-left: auto; font-size: 13px; color: var(--text-secondary); text-align: right; line-height: 1.4; }
   .gc-nav-user a { color: var(--link); text-decoration: none; }
   .gc-nav-icons { display: flex; gap: 8px; align-items: center; margin-left: 12px; }
-  .gc-nav-icon-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: #315E7B; font-size: 17px; cursor: pointer; border-radius: var(--r-sm); position: relative; }
-  .gc-nav-icon-btn .material-icons { font-size: 22px; color: #315E7B; }
+  .gc-nav-icon-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: var(--teal-dark); font-size: 17px; cursor: pointer; border-radius: var(--r-sm); position: relative; }
+  .gc-nav-icon-btn .material-icons { font-size: 22px; color: var(--teal-dark); }
   .gc-nav-icon-btn:hover { background: var(--surface-light); }
   .gc-nav-badge { position: absolute; top: 1px; right: 1px; width: 16px; height: 16px; background: #E53935; color: white; border-radius: 50%; font-size: 9px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
 
   .gc-nav-bottom { background: var(--surface-header); display: flex; align-items: center; gap: 0; padding: 0; height: 44px; border-bottom: 1px solid var(--border); overflow-x: auto; }
   .gc-nav-bottom-left { display: flex; align-items: center; height: 100%; border-right: 1px solid var(--border-light); padding: 0 8px; gap: 2px; }
-  .gc-shortcut { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 10px; height: 100%; font-size: 10px; color: #315E7B; cursor: pointer; border-right: 1px solid var(--border-light); white-space: nowrap; }
-  .gc-shortcut .material-icons { color: #315E7B; }
+  .gc-shortcut { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 10px; height: 100%; font-size: 10px; color: var(--teal-dark); cursor: pointer; border-right: 1px solid var(--border-light); white-space: nowrap; }
+  .gc-shortcut .material-icons { color: var(--teal-dark); }
   .gc-shortcut:hover { background: var(--teal-light); color: var(--teal-dark); }
   .gc-shortcut-icon { font-size: 16px; line-height: 1; }
   .gc-toolbar { display: flex; align-items: center; height: 100%; margin-left: auto; }
-  .gc-tool { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0 9px; height: 100%; font-size: 10px; color: #315E7B; cursor: pointer; white-space: nowrap; border-left: 1px solid var(--border-light); }
-  .gc-tool .material-icons { color: #315E7B; }
+  .gc-tool { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0 9px; height: 100%; font-size: 10px; color: var(--teal-dark); cursor: pointer; white-space: nowrap; border-left: 1px solid var(--border-light); }
+  .gc-tool .material-icons { color: var(--teal-dark); }
   .gc-tool:hover { background: var(--teal-light); color: var(--teal-dark); }
   .gc-tool-dropdown { position: relative; }
   .gc-tool-menu { display: none; position: fixed; top: auto; right: auto; background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); box-shadow: 0 4px 16px rgba(0,0,0,0.15); z-index: 9999; min-width: 440px; padding: 0; }
@@ -92,30 +92,30 @@
   /* Modal */
   .gc-modal-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:200; justify-content:center; align-items:flex-start; padding-top:30px; }
   .gc-modal-overlay.open { display:flex; }
-  .gc-modal { background:#fff; border-radius:4px; width:100%; max-width:620px; box-shadow:0 4px 24px rgba(0,0,0,0.2); overflow:hidden; max-height:calc(100vh - 60px); display:flex; flex-direction:column; }
+  .gc-modal { background:var(--white); border-radius:4px; width:100%; max-width:620px; box-shadow:0 4px 24px rgba(0,0,0,0.2); overflow:hidden; max-height:calc(100vh - 60px); display:flex; flex-direction:column; }
   .gc-modal-title { padding:16px 20px 0; display:flex; align-items:center; justify-content:space-between; }
-  .gc-modal-title span { font-size:18px; font-weight:700; color:#222; }
-  .gc-modal-title button { background:none; border:none; cursor:pointer; color:#555; font-size:20px; line-height:1; }
+  .gc-modal-title span { font-size:18px; font-weight:700; color:var(--text-primary); }
+  .gc-modal-title button { background:none; border:none; cursor:pointer; color:var(--text-secondary); font-size:20px; line-height:1; }
   .gc-modal-accent { height:3px; background:#D94F2C; margin:10px 20px 0; }
   .gc-modal-body { padding:16px 20px; background:#EBF4F8; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:14px; }
-  .gc-modal-footer { padding:14px 20px; background:#fff; border-top:1px solid #DDD; display:flex; justify-content:center; gap:20px; }
+  .gc-modal-footer { padding:14px 20px; background:var(--white); border-top:1px solid var(--border); display:flex; justify-content:center; gap:20px; }
   .gc-modal-field { display:flex; flex-direction:column; gap:4px; }
-  .gc-modal-field label { font-size:12px; font-weight:700; color:#333; }
+  .gc-modal-field label { font-size:12px; font-weight:700; color:var(--text-primary); }
   .gc-modal-field .req { color:#C62828; }
-  .gc-modal-input { height:32px; border:1px solid #BBB; border-radius:3px; padding:0 8px; font-size:13px; font-family:var(--font); background:#fff; outline:none; width:100%; }
-  .gc-modal-select { height:32px; border:1px solid #BBB; border-radius:3px; padding:0 8px; font-size:13px; font-family:var(--font); background:#fff; outline:none; width:100%; }
-  .gc-modal-fieldset { border:1px solid #CCC; border-radius:3px; padding:10px 16px; background:#fff; }
-  .gc-modal-fieldset legend { font-size:12px; color:#555; padding:0 4px; }
+  .gc-modal-input { height:32px; border:1px solid #BBB; border-radius:3px; padding:0 8px; font-size:13px; font-family:var(--font); background:var(--white); outline:none; width:100%; }
+  .gc-modal-select { height:32px; border:1px solid #BBB; border-radius:3px; padding:0 8px; font-size:13px; font-family:var(--font); background:var(--white); outline:none; width:100%; }
+  .gc-modal-fieldset { border:1px solid #CCC; border-radius:3px; padding:10px 16px; background:var(--white); }
+  .gc-modal-fieldset legend { font-size:12px; color:var(--text-secondary); padding:0 4px; }
   .gc-tool-icon { font-size: 14px; }
 
   /* ── Member banner ── */
-  .gc-member-banner { background: #F4FAFD; border: 2px solid #141D41; padding: 10px 16px; display: inline-flex; align-items: center; gap: 12px; font-size: 13px; color: #333; border-radius: 8px; margin: 10px 0 10px 10px; }
+  .gc-member-banner { background: #F4FAFD; border: 2px solid #141D41; padding: 10px 16px; display: inline-flex; align-items: center; gap: 12px; font-size: 13px; color: var(--text-primary); border-radius: 8px; margin: 10px 0 10px 10px; }
   .gc-banner-alert { display: flex; align-items: center; gap: 4px; }
   .gc-banner-name { font-weight: 700; font-size: 14px; color: #1a1a1a; }
   .gc-banner-check { color: var(--teal); font-size: 14px; }
   .gc-banner-edit { color: var(--link); font-size: 12px; cursor: pointer; margin-left: 4px; text-decoration: none; }
-  .gc-banner-dob { color: #555; font-size: 13px; }
-  .gc-banner-expand { margin-left: auto; cursor: pointer; color: #315E7B; }
+  .gc-banner-dob { color: var(--text-secondary); font-size: 13px; }
+  .gc-banner-expand { margin-left: auto; cursor: pointer; color: var(--teal-dark); }
 
   /* ── Left sidebar nav (collapsed, icon-only, per-item hover tooltip) ── */
   .gc-left-nav { width: 44px; min-width: 44px; background: var(--white); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 4px 0; overflow: visible; position: relative; z-index: 50; }
@@ -123,7 +123,7 @@
   .gc-left-item:hover { background: var(--surface-light); color: var(--teal); }
   .gc-left-item.active { background: var(--teal-light); color: var(--teal-dark); border-left-color: var(--teal); font-weight: 700; }
   .gc-left-icon { font-size: 22px; line-height: 1; }
-  .gc-left-icon .material-icons { color: #315E7B; font-size: 22px; }
+  .gc-left-icon .material-icons { color: var(--teal-dark); font-size: 22px; }
   .gc-left-item.active .gc-left-icon .material-icons { color: var(--teal-dark); }
   .gc-left-label { position: absolute; left: 100%; top: 50%; transform: translateY(-50%); background: var(--white); border: 1px solid var(--border); border-left: none; border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 6px 14px 6px 10px; font-size: 12px; font-weight: 600; color: var(--teal); white-space: nowrap; box-shadow: 2px 1px 6px rgba(0,0,0,0.1); opacity: 0; pointer-events: none; transition: opacity 0.12s ease; z-index: 60; }
   .gc-left-item:hover .gc-left-label { opacity: 1; pointer-events: auto; }
@@ -163,8 +163,8 @@
   .gc-btn { display: inline-flex; align-items: center; gap: 5px; border-radius: var(--r-sm); font-family: var(--font); font-size: 12px; font-weight: 600; cursor: pointer; padding: 0 12px; height: 28px; border: none; transition: opacity 0.15s; white-space: nowrap; }
   .gc-btn:hover { opacity: 0.85; }
   .gc-btn-primary { background: var(--teal); color: white; }
-  .gc-btn-secondary { background: white; color: var(--teal); border: 1px solid var(--teal); }
-  .gc-btn-tertiary { background: white; color: var(--text-secondary); border: 1px solid var(--border); }
+  .gc-btn-secondary { background: var(--white); color: var(--teal); border: 1px solid var(--teal); }
+  .gc-btn-tertiary { background: var(--white); color: var(--text-secondary); border: 1px solid var(--border); }
   .gc-btn-danger { background: #C62828; color: white; }
   .gc-btn-text { background: none; border: none; color: var(--link); font-size: 12px; padding: 0 4px; height: auto; cursor: pointer; }
   .gc-btn-sm { height: 22px; font-size: 11px; padding: 0 8px; }
@@ -211,7 +211,7 @@
   .dash-panel-tab, .dash-toggle-btn, .gc-pager-btn, .gc-btn,
   button, select, input, a, [tabindex] { outline: none; }
   *:focus { outline: none; }
-  *:focus-visible { outline: none; }
+  *:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 
   .material-icons { font-size: inherit; vertical-align: middle; line-height: 1; }
   .gc-shortcut-icon .material-icons { font-size: 18px; }
@@ -289,7 +289,7 @@
   /* Member Script Response modal */
   .msri-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:3000;display:none;align-items:flex-start;justify-content:center;padding:30px 20px;overflow-y:auto; }
   .msri-overlay.open { display:flex; }
-  .msri-modal { background:#fff;border-radius:3px;width:100%;max-width:1060px;position:relative;box-shadow:0 10px 40px rgba(0,0,0,0.4);margin:auto; }
+  .msri-modal { background:var(--white);border-radius:3px;width:100%;max-width:1060px;position:relative;box-shadow:0 10px 40px rgba(0,0,0,0.4);margin:auto; }
   .msri-header { padding:18px 22px 10px; }
   .msri-title { font-size:19px;font-weight:700;color:#111;margin-bottom:8px; }
   .msri-divider { height:3px;background:#e07b2a;margin-bottom:0; }
@@ -306,10 +306,10 @@
   .msri-table thead th { background:#ebebeb;padding:6px 9px;text-align:left;border:1px solid #ccc;font-weight:700;font-size:11px;white-space:nowrap; }
   .msri-table tbody td { padding:5px 9px;border:1px solid #e0e0e0;vertical-align:top; }
   .msri-table tbody tr:hover { background:#E8F4FB; }
-  .msri-footer { padding:8px 20px;display:flex;align-items:center;gap:6px;border-top:1px solid #e8e8e8;font-size:11px;color:#555; }
+  .msri-footer { padding:8px 20px;display:flex;align-items:center;gap:6px;border-top:1px solid #e8e8e8;font-size:11px;color:var(--text-secondary); }
   .msri-pager { display:flex;align-items:center;gap:2px; }
-  .msri-pager-btn { min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:#fff;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center; }
-  .msri-pager-btn.active { background:var(--teal);color:#fff;border-color:var(--teal); }
+  .msri-pager-btn { min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:var(--white);font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center; }
+  .msri-pager-btn.active { background:var(--teal);color:var(--white);border-color:var(--teal); }
   .cal-action-popover { position:fixed; background:var(--white); border:1px solid var(--border); border-radius:var(--r-sm); box-shadow:0 4px 16px rgba(0,0,0,0.18); z-index:2000; padding:4px; min-width:190px; }
   .cal-action-popover .cap-option { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:var(--r-sm); cursor:pointer; font-size:12px; font-family:var(--font); color:var(--text-primary); }
   .cal-action-popover .cap-option:hover { background:var(--bg-muted); }
@@ -331,7 +331,7 @@
   .hra-sidebar-body { padding:10px 14px; font-size:11px; }
   .hra-q { border:1px solid var(--border); border-radius:0; margin-bottom:10px; overflow:hidden; }
   .hra-q-header { display:flex; align-items:flex-start; gap:8px; padding:10px 14px; cursor:pointer; background:#c5deb8; border-left:4px solid #6a9e3a; }
-  .hra-q-icon { width:24px; height:24px; border-radius:50%; background:#F0C040; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; font-weight:700; color:#fff; }
+  .hra-q-icon { width:24px; height:24px; border-radius:50%; background:#F0C040; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; font-weight:700; color:var(--white); }
   .hra-q-icon.answered { background:#F0A050; }
   .hra-q-num { font-size:12px; font-weight:700; color:var(--text-primary); min-width:16px; }
   .hra-q-text { font-size:12px; color:var(--text-primary); line-height:1.5; }
@@ -340,8 +340,8 @@
   .hra-q-options { border:1px solid var(--border); border-top:3px solid #4a90c4; border-radius:0; margin-bottom:6px; }
   .hra-q-option { display:flex; align-items:center; gap:10px; padding:10px 14px; font-size:13px; border-bottom:1px solid var(--border); }
   .hra-q-option:last-child { border-bottom:none; }
-  .hra-q-option input[type="radio"] { accent-color:#315E7B; width:17px; height:17px; flex-shrink:0; }
-  .hra-q-ogi { display:inline-flex; align-items:center; justify-content:center; width:28px; height:18px; border-radius:9px; background:#F0A050; color:#fff; font-size:9px; font-weight:700; flex-shrink:0; }
+  .hra-q-option input[type="radio"] { accent-color:var(--teal-dark); width:17px; height:17px; flex-shrink:0; }
+  .hra-q-ogi { display:inline-flex; align-items:center; justify-content:center; width:28px; height:18px; border-radius:9px; background:#F0A050; color:var(--white); font-size:9px; font-weight:700; flex-shrink:0; }
   .hra-care-notes { color:#0000EE; font-size:13px; font-weight:700; cursor:pointer; margin-top:8px; }
   .hra-actions { display:flex; justify-content:center; gap:4px; padding:16px; }
   .hra-actions button { padding:0 18px; height:32px; font-size:12px; font-weight:600; font-family:var(--font); cursor:pointer; border-radius:var(--r-sm); }
@@ -367,9 +367,9 @@
       <a href="#">Go to Population Health</a>
     </div>
     <div class="gc-search">
-      <select class="gc-search-select"><option>DATE OF BIRTH</option><option>MEMBER ID</option><option>NAME</option></select>
-      <input class="gc-search-input" type="text" placeholder="MM/DD/YYYY">
-      <button class="gc-search-btn"><span class="material-icons" style="font-size:14px;">search</span></button>
+      <select class="gc-search-select" aria-label="Search category"><option>DATE OF BIRTH</option><option>MEMBER ID</option><option>NAME</option></select>
+      <input class="gc-search-input" type="text" placeholder="MM/DD/YYYY" aria-label="Search query">
+      <button class="gc-search-btn" aria-label="Search"><span class="material-icons" aria-hidden="true" style="font-size:14px;">search</span></button>
       <button class="gc-advsearch">Advanced Search &#9662;</button>
     </div>
     <div class="gc-nav-user">
@@ -385,9 +385,9 @@
   </div>
   <div class="gc-nav-bottom">
     <div class="gc-nav-bottom-left">
-      <div class="gc-shortcut" id="home-shortcut"><div class="gc-shortcut-icon"><span class="material-icons">home</span></div>Home</div>
+      <div class="gc-shortcut" id="home-shortcut" role="button" tabindex="0"><div class="gc-shortcut-icon"><span class="material-icons" aria-hidden="true">home</span></div>Home</div>
       <div class="gc-shortcut" style="min-width:40px;"><div class="gc-shortcut-icon"><span class="material-icons">menu</span></div></div>
-      <div class="gc-shortcut member-switcher" id="memberSwitcher" onclick="var m=this.querySelector('.member-switcher-menu');var r=this.getBoundingClientRect();m.style.top=r.bottom+'px';m.style.left=r.left+'px';m.classList.toggle('open');event.stopPropagation();" style="min-width:110px;font-size:10px;">
+      <div class="gc-shortcut member-switcher" id="memberSwitcher" role="button" tabindex="0" onclick="var m=this.querySelector('.member-switcher-menu');var r=this.getBoundingClientRect();m.style.top=r.bottom+'px';m.style.left=r.left+'px';m.classList.toggle('open');event.stopPropagation();" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="min-width:110px;font-size:10px;">
         <span id="currentMemberName">Jackson Thomas</span> &#9662;
         <div class="member-switcher-menu">
           <div class="member-switcher-menu-title">Switch Member</div>
@@ -417,13 +417,13 @@
     <div class="gc-shortcut"><div class="gc-shortcut-icon"><span class="material-icons">assignment_late</span></div>Complaint</div>
     <div class="gc-toolbar">
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">link</span></div>Quick Links&#9662;</div>
-      <div class="gc-tool"><div class="gc-tool-icon" style="display:flex;align-items:center;justify-content:center;"><img src="assets/Group 1657.png" style="width:16px;height:16px;object-fit:contain;" /></div>Wellframe</div>
+      <div class="gc-tool"><div class="gc-tool-icon" style="display:flex;align-items:center;justify-content:center;"><img src="assets/Group 1657.png" alt="Wellframe" style="width:16px;height:16px;object-fit:contain;" /></div>Wellframe</div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">calendar_month</span></div>Calendar</div>
-      <div class="gc-tool gc-tool-dropdown" id="actionsDropdown" onclick="var m=this.querySelector('.gc-tool-menu');var r=this.getBoundingClientRect();m.style.top=r.bottom+'px';m.style.right=(window.innerWidth-r.right)+'px';m.classList.toggle('open');event.stopPropagation();"><div class="gc-tool-icon"><span class="material-icons">bolt</span></div>Actions&#9662;
+      <div class="gc-tool gc-tool-dropdown" id="actionsDropdown" role="button" tabindex="0" onclick="var m=this.querySelector('.gc-tool-menu');var r=this.getBoundingClientRect();m.style.top=r.bottom+'px';m.style.right=(window.innerWidth-r.right)+'px';m.classList.toggle('open');event.stopPropagation();" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="gc-tool-icon"><span class="material-icons">bolt</span></div>Actions&#9662;
         <div class="gc-tool-menu">
           <div class="gc-tool-menu-title">Actions</div>
           <div class="gc-tool-menu-body">
-            <div class="gc-tool-menu-item" onclick="openAddActivity()">Add Activity</div>
+            <div class="gc-tool-menu-item" role="button" tabindex="0" onclick="openAddActivity()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">Add Activity</div>
             <div class="gc-tool-menu-item">Letter</div>
             <div class="gc-tool-menu-item">Run Script</div>
             <div class="gc-tool-menu-item">Add Appointment</div>
@@ -796,9 +796,9 @@
 <div id="member-view" style="display:none;">
 
 <!-- ══════════════ MEMBER BANNER ══════════════ -->
-<div style="background:#fff;width:100%;">
+<div style="background:var(--white);width:100%;">
 <div class="gc-member-banner">
-  <div style="position:relative;display:inline-flex;flex-shrink:0;"><span class="material-icons" style="font-size:26px;color:#315E7B;">notifications</span><span style="position:absolute;top:-4px;right:-6px;min-width:18px;height:18px;background:#C62828;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">2</span></div>
+  <div style="position:relative;display:inline-flex;flex-shrink:0;"><span class="material-icons" style="font-size:26px;color:var(--teal-dark);">notifications</span><span style="position:absolute;top:-4px;right:-6px;min-width:18px;height:18px;background:#C62828;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">2</span></div>
   <span class="gc-banner-check" style="flex-shrink:0;"><span class="material-icons" style="font-size:22px;color:#2E7D32;">check_circle</span></span>
   <img src="assets/Group 1657.png" alt="Wellframe" style="width:24px;height:24px;flex-shrink:0;display:inline-block;" title="Wellframe">
   <span class="gc-banner-name">John Everhart-AH00000121</span>
@@ -812,7 +812,7 @@
 
   <!-- Left Sidebar Nav (icon-only, expand on hover) -->
   <nav class="gc-left-nav" id="leftNav">
-    <div class="gc-left-item" style="padding:10px 11px;border-left-color:transparent;" onclick="document.getElementById('home-shortcut').click();">
+    <div class="gc-left-item" role="button" tabindex="0" style="padding:10px 11px;border-left-color:transparent;" onclick="document.getElementById('home-shortcut').click();" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
       <span class="gc-left-icon"><span class="material-icons">arrow_forward</span></span>
     </div>
     <div class="gc-left-item active" data-left="member-info">
@@ -1004,43 +1004,43 @@
           </div>
 
           <!-- Collapsible accordion sections -->
-          <div class="gc-accordion" onclick="this.classList.toggle('open')">
+          <div class="gc-accordion" role="button" tabindex="0" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open');}">
             <div class="gc-accordion-header"><span class="material-icons">arrow_right</span> Phone Numbers</div>
             <div class="gc-accordion-body">
               <div class="gc-kv-row"><span class="gc-kv-label">No additional phone numbers on file.</span></div>
             </div>
           </div>
-          <div class="gc-accordion" onclick="this.classList.toggle('open')">
+          <div class="gc-accordion" role="button" tabindex="0" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open');}">
             <div class="gc-accordion-header"><span class="material-icons">arrow_right</span> Addresses</div>
             <div class="gc-accordion-body">
               <div class="gc-kv-row"><span class="gc-kv-label">Address:</span> <span class="gc-kv-value">123 Main Street</span></div>
             </div>
           </div>
-          <div class="gc-accordion" onclick="this.classList.toggle('open')">
+          <div class="gc-accordion" role="button" tabindex="0" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open');}">
             <div class="gc-accordion-header"><span class="material-icons">arrow_right</span> Privacy Group Control Contact</div>
             <div class="gc-accordion-body">
               <div class="gc-kv-row"><span class="gc-kv-label">No privacy group contacts on file.</span></div>
             </div>
           </div>
-          <div class="gc-accordion" onclick="this.classList.toggle('open')">
+          <div class="gc-accordion" role="button" tabindex="0" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open');}">
             <div class="gc-accordion-header"><span class="material-icons">arrow_right</span> Family Details</div>
             <div class="gc-accordion-body">
               <div class="gc-kv-row"><span class="gc-kv-label">No family details on file.</span></div>
             </div>
           </div>
-          <div class="gc-accordion" onclick="this.classList.toggle('open')">
+          <div class="gc-accordion" role="button" tabindex="0" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open');}">
             <div class="gc-accordion-header"><span class="material-icons">arrow_right</span> Member Identifiers</div>
             <div class="gc-accordion-body">
               <div class="gc-kv-row"><span class="gc-kv-label">No additional identifiers on file.</span></div>
             </div>
           </div>
-          <div class="gc-accordion" onclick="this.classList.toggle('open')">
+          <div class="gc-accordion" role="button" tabindex="0" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open');}">
             <div class="gc-accordion-header"><span class="material-icons">arrow_right</span> Additional Information</div>
             <div class="gc-accordion-body">
               <div class="gc-kv-row"><span class="gc-kv-label">No additional information on file.</span></div>
             </div>
           </div>
-          <div class="gc-accordion" onclick="this.classList.toggle('open')">
+          <div class="gc-accordion" role="button" tabindex="0" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open');}">
             <div class="gc-accordion-header"><span class="material-icons">arrow_right</span> Risk Additional Information</div>
             <div class="gc-accordion-body">
               <div class="gc-kv-row"><span class="gc-kv-label">No risk additional information on file.</span></div>
@@ -1786,12 +1786,12 @@
 
         <!-- Tier 1: Top-level tabs -->
         <div style="background:var(--white);border-bottom:1px solid var(--border);padding:0 16px;display:flex;gap:0;">
-          <div class="cp-t1tab" data-tab="team" onclick="cpTier1Tab('team')" style="padding:9px 16px 9px 0;font-size:13px;font-weight:700;color:#222;border-bottom:3px solid #E07820;cursor:pointer;margin-bottom:-1px;white-space:nowrap;">Team Care Plan</div>
-          <div class="cp-t1tab" data-tab="guiding" onclick="cpTier1Tab('guiding')" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Guiding Opportunities</div>
-          <div class="cp-t1tab" data-tab="member-plan" onclick="cpTier1Tab('member-plan')" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Member Plan</div>
-          <div class="cp-t1tab" data-tab="service-plan" onclick="cpTier1Tab('service-plan')" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Service Plan</div>
-          <div class="cp-t1tab" data-tab="advance-directives" onclick="cpTier1Tab('advance-directives')" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Advance Directives</div>
-          <div class="cp-t1tab" data-tab="community-referral" onclick="cpTier1Tab('community-referral')" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Community Referral</div>
+          <div class="cp-t1tab" role="tab" tabindex="0" data-tab="team" onclick="cpTier1Tab('team')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:9px 16px 9px 0;font-size:13px;font-weight:700;color:#222;border-bottom:3px solid #E07820;cursor:pointer;margin-bottom:-1px;white-space:nowrap;">Team Care Plan</div>
+          <div class="cp-t1tab" role="tab" tabindex="0" data-tab="guiding" onclick="cpTier1Tab('guiding')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Guiding Opportunities</div>
+          <div class="cp-t1tab" role="tab" tabindex="0" data-tab="member-plan" onclick="cpTier1Tab('member-plan')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Member Plan</div>
+          <div class="cp-t1tab" role="tab" tabindex="0" data-tab="service-plan" onclick="cpTier1Tab('service-plan')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Service Plan</div>
+          <div class="cp-t1tab" role="tab" tabindex="0" data-tab="advance-directives" onclick="cpTier1Tab('advance-directives')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Advance Directives</div>
+          <div class="cp-t1tab" role="tab" tabindex="0" data-tab="community-referral" onclick="cpTier1Tab('community-referral')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:9px 14px;font-size:13px;color:var(--link);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;">Community Referral</div>
         </div>
 
         <!-- Team Care Plan content wrapper -->
@@ -1799,10 +1799,10 @@
         <!-- Tier 2: Sub-tabs -->
         <div style="background:var(--white);border-bottom:2px solid var(--border);padding:0 16px;display:flex;align-items:center;">
           <div style="display:flex;gap:0;flex:1;align-items:flex-end;">
-            <div class="cp-subtab" data-tab="overview" onclick="cpSubTab('overview')" style="padding:10px 28px 10px 0;font-size:15px;font-weight:400;color:var(--link);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-2px;white-space:nowrap;">Care Plan Overview</div>
-            <div class="cp-subtab" data-tab="barriers" onclick="cpSubTab('barriers')" style="padding:10px 28px;font-size:15px;font-weight:400;color:var(--link);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-2px;white-space:nowrap;">Care Plan Barriers</div>
-            <div class="cp-subtab" data-tab="strengths" onclick="cpSubTab('strengths')" style="padding:10px 28px;font-size:15px;font-weight:400;color:var(--link);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-2px;white-space:nowrap;">Care Plan Strengths</div>
-            <div class="cp-subtab" data-tab="review" onclick="cpSubTab('review')" style="padding:10px 28px;font-size:15px;font-weight:400;color:var(--link);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-2px;white-space:nowrap;">Care Plan Review</div>
+            <div class="cp-subtab" role="tab" tabindex="0" data-tab="overview" onclick="cpSubTab('overview')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:10px 28px 10px 0;font-size:15px;font-weight:400;color:var(--link);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-2px;white-space:nowrap;">Care Plan Overview</div>
+            <div class="cp-subtab" role="tab" tabindex="0" data-tab="barriers" onclick="cpSubTab('barriers')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:10px 28px;font-size:15px;font-weight:400;color:var(--link);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-2px;white-space:nowrap;">Care Plan Barriers</div>
+            <div class="cp-subtab" role="tab" tabindex="0" data-tab="strengths" onclick="cpSubTab('strengths')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:10px 28px;font-size:15px;font-weight:400;color:var(--link);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-2px;white-space:nowrap;">Care Plan Strengths</div>
+            <div class="cp-subtab" role="tab" tabindex="0" data-tab="review" onclick="cpSubTab('review')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" style="padding:10px 28px;font-size:15px;font-weight:400;color:var(--link);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-2px;white-space:nowrap;">Care Plan Review</div>
           </div>
           <span class="material-icons" style="font-size:22px;color:var(--teal);cursor:pointer;margin-left:auto;padding-bottom:6px;">info</span>
         </div>
@@ -1838,14 +1838,14 @@
                 </div>
                 <div style="display:flex;flex-direction:column;gap:3px;">
                   <span style="font-size:11px;color:var(--text-label);">From Date <span style="color:var(--text-muted);font-weight:400;">MM/DD/YYYY</span></span>
-                  <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:30px;background:white;">
+                  <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:30px;background:var(--white);">
                     <input type="text" placeholder="MM/DD/YYYY" style="border:none;height:28px;padding:0 6px;font-size:12px;font-family:var(--font);outline:none;width:88px;background:transparent;" />
                     <span class="material-icons" style="font-size:16px;color:var(--teal);cursor:pointer;padding-right:4px;">calendar_month</span>
                   </div>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:3px;">
                   <span style="font-size:11px;color:var(--text-label);">To Date <span style="color:var(--text-muted);font-weight:400;">MM/DD/YYYY</span></span>
-                  <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:30px;background:white;">
+                  <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:30px;background:var(--white);">
                     <input type="text" placeholder="MM/DD/YYYY" style="border:none;height:28px;padding:0 6px;font-size:12px;font-family:var(--font);outline:none;width:88px;background:transparent;" />
                     <span class="material-icons" style="font-size:16px;color:var(--teal);cursor:pointer;padding-right:4px;">calendar_month</span>
                   </div>
@@ -1861,7 +1861,7 @@
                   <input type="text" style="height:30px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 8px;font-size:12px;font-family:var(--font);outline:none;width:150px;" />
                 </div>
               </div>
-              <button style="background:#2C4A5E;color:#fff;border:none;height:34px;padding:0 18px;font-size:13px;font-weight:600;border-radius:var(--r-sm);display:flex;align-items:center;gap:6px;cursor:pointer;font-family:var(--font);white-space:nowrap;">
+              <button style="background:#2C4A5E;color:var(--white);border:none;height:34px;padding:0 18px;font-size:13px;font-weight:600;border-radius:var(--r-sm);display:flex;align-items:center;gap:6px;cursor:pointer;font-family:var(--font);white-space:nowrap;">
                 <span class="material-icons" style="font-size:16px;">search</span> Search
               </button>
             </div>
@@ -1910,7 +1910,7 @@
           <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);background:var(--white);position:sticky;bottom:0;">
             <span style="cursor:pointer;color:var(--teal);" title="First">&#8676;</span>
             <span style="cursor:pointer;color:var(--teal);" title="Previous">&#8249;</span>
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:#fff;border-radius:50%;font-size:11px;font-weight:700;">0</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:var(--white);border-radius:50%;font-size:11px;font-weight:700;">0</span>
             <span style="cursor:pointer;color:var(--teal);" title="Next">&#8250;</span>
             <span style="cursor:pointer;color:var(--teal);" title="Last">&#8677;</span>
             <select style="height:24px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 16px 0 6px;font-size:12px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 3px center;width:52px;">
@@ -1946,7 +1946,7 @@
           <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);background:var(--white);position:sticky;bottom:0;">
             <span style="cursor:pointer;color:var(--teal);">&#8676;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8249;</span>
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:#fff;border-radius:50%;font-size:11px;font-weight:700;">0</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:var(--white);border-radius:50%;font-size:11px;font-weight:700;">0</span>
             <span style="cursor:pointer;color:var(--teal);">&#8250;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8677;</span>
             <select style="height:24px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 16px 0 6px;font-size:12px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 3px center;width:52px;">
@@ -1969,26 +1969,26 @@
             </div>
             <div style="display:flex;flex-direction:column;gap:4px;">
               <span style="font-size:12px;font-weight:600;color:var(--text-primary);">From Date <span style="font-weight:400;color:var(--text-muted);">MM/DD/YYYY</span></span>
-              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:32px;background:white;width:160px;">
+              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:32px;background:var(--white);width:160px;">
                 <input type="text" placeholder="MM/DD/YYYY" style="border:none;height:30px;padding:0 8px;font-size:12px;font-family:var(--font);outline:none;flex:1;background:transparent;" />
                 <span class="material-icons" style="font-size:18px;color:var(--teal);cursor:pointer;padding-right:6px;">calendar_month</span>
               </div>
             </div>
             <div style="display:flex;flex-direction:column;gap:4px;">
               <span style="font-size:12px;font-weight:600;color:var(--text-primary);">To Date <span style="font-weight:400;color:var(--text-muted);">MM/DD/YYYY</span></span>
-              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:32px;background:white;width:160px;">
+              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:32px;background:var(--white);width:160px;">
                 <input type="text" placeholder="MM/DD/YYYY" style="border:none;height:30px;padding:0 8px;font-size:12px;font-family:var(--font);outline:none;flex:1;background:transparent;" />
                 <span class="material-icons" style="font-size:18px;color:var(--teal);cursor:pointer;padding-right:6px;">calendar_month</span>
               </div>
             </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 14px;background:white;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 14px;background:var(--white);">
               <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="radio" name="cpReviewStatus" style="accent-color:var(--teal);" /> Pending</label>
               <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="radio" name="cpReviewStatus" style="accent-color:var(--teal);" /> Closed</label>
               <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="radio" name="cpReviewStatus" style="accent-color:var(--teal);" /> Acknowledged</label>
               <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="radio" name="cpReviewStatus" checked style="accent-color:var(--teal);" /> All Status</label>
             </div>
             <div style="display:flex;align-items:center;gap:8px;">
-              <button style="background:#2C4A5E;color:#fff;border:none;height:36px;padding:0 22px;font-size:13px;font-weight:600;border-radius:var(--r-sm);cursor:pointer;font-family:var(--font);">Search</button>
+              <button style="background:#2C4A5E;color:var(--white);border:none;height:36px;padding:0 22px;font-size:13px;font-weight:600;border-radius:var(--r-sm);cursor:pointer;font-family:var(--font);">Search</button>
               <span class="material-icons" style="font-size:20px;color:var(--teal);cursor:pointer;">refresh</span>
             </div>
           </div>
@@ -2010,7 +2010,7 @@
           <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);background:var(--white);position:sticky;bottom:0;">
             <span style="cursor:pointer;color:var(--teal);">&#8676;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8249;</span>
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:#fff;border-radius:50%;font-size:11px;font-weight:700;">0</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:var(--white);border-radius:50%;font-size:11px;font-weight:700;">0</span>
             <span style="cursor:pointer;color:var(--teal);">&#8250;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8677;</span>
             <select style="height:24px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 16px 0 6px;font-size:12px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 3px center;width:52px;">
@@ -2035,13 +2035,13 @@
               <input type="text" style="height:28px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 8px;font-size:12px;font-family:var(--font);outline:none;width:160px;" />
             </label>
             <label style="font-size:12px;color:var(--text-primary);display:flex;align-items:center;gap:6px;white-space:nowrap;">Start Date:
-              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:28px;background:white;">
+              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:28px;background:var(--white);">
                 <input type="text" placeholder="MM/DD/YYYY" style="border:none;height:26px;padding:0 6px;font-size:12px;font-family:var(--font);outline:none;width:90px;background:transparent;" />
                 <span class="material-icons" style="font-size:16px;color:var(--teal);cursor:pointer;padding-right:4px;">calendar_month</span>
               </div>
             </label>
             <label style="font-size:12px;color:var(--text-primary);display:flex;align-items:center;gap:6px;white-space:nowrap;">End Date:
-              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:28px;background:white;">
+              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:28px;background:var(--white);">
                 <input type="text" placeholder="MM/DD/YYYY" style="border:none;height:26px;padding:0 6px;font-size:12px;font-family:var(--font);outline:none;width:90px;background:transparent;" />
                 <span class="material-icons" style="font-size:16px;color:var(--teal);cursor:pointer;padding-right:4px;">calendar_month</span>
               </div>
@@ -2106,7 +2106,7 @@
           <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);background:var(--white);">
             <span style="cursor:pointer;color:var(--teal);">&#8676;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8249;</span>
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:#fff;border-radius:50%;font-size:11px;font-weight:700;">1</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:var(--white);border-radius:50%;font-size:11px;font-weight:700;">1</span>
             <span style="cursor:pointer;color:var(--teal);">&#8250;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8677;</span>
             <select style="height:24px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 16px 0 6px;font-size:12px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 3px center;width:52px;"><option>10</option><option>20</option><option>50</option></select>
@@ -2127,13 +2127,13 @@
               <select style="height:26px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 20px 0 6px;font-size:12px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 4px center;width:130px;cursor:pointer;"><option>English</option><option>Spanish</option><option>French</option></select>
             </label>
             <label style="font-size:12px;color:var(--text-primary);display:flex;align-items:center;gap:6px;white-space:nowrap;">Start Date:
-              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:26px;background:white;">
+              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:26px;background:var(--white);">
                 <input type="text" placeholder="MM/DD/YYYY" style="border:none;height:24px;padding:0 6px;font-size:12px;font-family:var(--font);outline:none;width:90px;background:transparent;" />
                 <span class="material-icons" style="font-size:15px;color:var(--teal);cursor:pointer;padding-right:3px;">calendar_month</span>
               </div>
             </label>
             <label style="font-size:12px;color:var(--text-primary);display:flex;align-items:center;gap:6px;white-space:nowrap;">Target Date:
-              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:26px;background:white;">
+              <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:26px;background:var(--white);">
                 <input type="text" placeholder="MM/DD/YYYY" style="border:none;height:24px;padding:0 6px;font-size:12px;font-family:var(--font);outline:none;width:90px;background:transparent;" />
                 <span class="material-icons" style="font-size:15px;color:var(--teal);cursor:pointer;padding-right:3px;">calendar_month</span>
               </div>
@@ -2208,7 +2208,7 @@
           <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);background:var(--white);">
             <span style="cursor:pointer;color:var(--teal);">&#8676;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8249;</span>
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:#fff;border-radius:50%;font-size:11px;font-weight:700;">1</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:var(--white);border-radius:50%;font-size:11px;font-weight:700;">1</span>
             <span style="cursor:pointer;color:var(--teal);">&#8250;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8677;</span>
             <select style="height:24px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 16px 0 6px;font-size:12px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 3px center;width:52px;"><option>10</option><option>20</option><option>50</option></select>
@@ -2237,7 +2237,7 @@
               </div>
               <div style="display:flex;flex-direction:column;gap:4px;">
                 <span style="font-size:12px;font-weight:600;color:var(--text-primary);">From Date <span style="font-weight:400;color:var(--text-muted);">MM/DD/YYYY</span></span>
-                <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:32px;background:white;">
+                <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:32px;background:var(--white);">
                   <input type="text" value="03/26/2025" style="border:none;height:30px;padding:0 8px;font-size:12px;font-family:var(--font);outline:none;width:88px;background:transparent;" />
                   <span class="material-icons" style="font-size:16px;color:var(--teal);cursor:pointer;padding-right:4px;">calendar_month</span>
                 </div>
@@ -2245,14 +2245,14 @@
               <div style="display:flex;flex-direction:column;gap:4px;">
                 <span style="font-size:12px;font-weight:600;color:var(--text-primary);"><span style="color:#C62828;">*</span>To Date <span style="font-weight:400;color:var(--text-muted);">MM/DD/YYYY</span></span>
                 <div style="display:flex;align-items:center;gap:6px;">
-                  <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:32px;background:white;">
+                  <div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r-sm);height:32px;background:var(--white);">
                     <input type="text" value="03/25/2027" style="border:none;height:30px;padding:0 8px;font-size:12px;font-family:var(--font);outline:none;width:88px;background:transparent;" />
                     <span class="material-icons" style="font-size:16px;color:var(--teal);cursor:pointer;padding-right:4px;">calendar_month</span>
                   </div>
                   <span class="material-icons" style="font-size:18px;color:var(--teal);cursor:pointer;">info</span>
                 </div>
               </div>
-              <button style="height:36px;padding:0 20px;font-size:13px;font-weight:600;border:2px solid #2C4A5E;border-radius:var(--r-sm);background:white;color:#2C4A5E;cursor:pointer;font-family:var(--font);white-space:nowrap;">View Summary</button>
+              <button style="height:36px;padding:0 20px;font-size:13px;font-weight:600;border:2px solid #2C4A5E;border-radius:var(--r-sm);background:var(--white);color:#2C4A5E;cursor:pointer;font-family:var(--font);white-space:nowrap;">View Summary</button>
               <a href="#" style="color:var(--link);display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;"><span class="material-icons" style="font-size:15px;">close</span> Clear</a>
             </div>
           </div>
@@ -2333,7 +2333,7 @@
           <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);background:var(--white);">
             <span style="cursor:pointer;color:var(--teal);">&#8676;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8249;</span>
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:#fff;border-radius:50%;font-size:11px;font-weight:700;">1</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:var(--white);border-radius:50%;font-size:11px;font-weight:700;">1</span>
             <span style="cursor:pointer;color:var(--teal);">&#8250;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8677;</span>
             <select style="height:24px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 16px 0 6px;font-size:12px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 3px center;width:52px;"><option>10</option><option>20</option><option>50</option></select>
@@ -2387,7 +2387,7 @@
                 <td style="border:1px solid var(--border);padding:7px 12px;color:var(--text-secondary);">05/14/2024</td>
                 <td style="border:1px solid var(--border);padding:7px 12px;color:var(--text-secondary);">Sridevi Palepu</td>
                 <td style="border:1px solid var(--border);padding:7px 12px;color:var(--text-secondary);">05/14/2024</td>
-                <td style="border:1px solid var(--border);padding:7px 12px;"><button style="height:26px;padding:0 10px;font-size:11px;font-weight:600;border:1px solid var(--border);border-radius:var(--r-sm);background:white;color:var(--text-primary);cursor:pointer;font-family:var(--font);">View Files</button></td>
+                <td style="border:1px solid var(--border);padding:7px 12px;"><button style="height:26px;padding:0 10px;font-size:11px;font-weight:600;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--white);color:var(--text-primary);cursor:pointer;font-family:var(--font);">View Files</button></td>
               </tr>
               <tr>
                 <td style="border:1px solid var(--border);padding:7px 8px;"><input type="checkbox" style="accent-color:var(--teal);" /></td>
@@ -2406,7 +2406,7 @@
           <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);background:var(--white);">
             <span style="cursor:pointer;color:var(--teal);">&#8676;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8249;</span>
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:#fff;border-radius:50%;font-size:11px;font-weight:700;">1</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#2C4A5E;color:var(--white);border-radius:50%;font-size:11px;font-weight:700;">1</span>
             <span style="cursor:pointer;color:var(--teal);">&#8250;</span>
             <span style="cursor:pointer;color:var(--teal);">&#8677;</span>
             <select style="height:24px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 16px 0 6px;font-size:12px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 3px center;width:52px;"><option>10</option><option>20</option><option>50</option></select>
@@ -2420,11 +2420,11 @@
         <div id="cp-t1-community-referral" style="display:none;">
           <!-- Sub-tab buttons -->
           <div style="padding:0 16px;display:flex;align-items:stretch;gap:0;border-bottom:2px solid var(--border);">
-            <button id="cr-btn-find" onclick="crSubTab('find')" style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px 10px 0;border:none;border-bottom:3px solid transparent;background:white;color:#aaa;font-size:13px;font-weight:400;cursor:pointer;font-family:var(--font);margin-bottom:-2px;">
+            <button id="cr-btn-find" onclick="crSubTab('find')" style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px 10px 0;border:none;border-bottom:3px solid transparent;background:var(--white);color:#aaa;font-size:13px;font-weight:400;cursor:pointer;font-family:var(--font);margin-bottom:-2px;">
               <span style="display:inline-flex;align-items:center;"><span class="material-icons" style="font-size:17px;color:#bbb;">support_agent</span><span class="material-icons" style="font-size:12px;color:#bbb;margin-left:-3px;">search</span></span>
               Find Community Provider
             </button>
-            <button id="cr-btn-summary" onclick="crSubTab('summary')" style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:none;border-bottom:3px solid #E07820;background:white;color:var(--teal);font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font);margin-bottom:-2px;">
+            <button id="cr-btn-summary" onclick="crSubTab('summary')" style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:none;border-bottom:3px solid #E07820;background:var(--white);color:var(--teal);font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font);margin-bottom:-2px;">
               <span class="material-icons" style="font-size:17px;color:var(--teal);">support_agent</span>
               Community Referral Summary
             </button>
@@ -2443,12 +2443,12 @@
                   <label style="position:relative;display:inline-block;width:36px;height:18px;cursor:pointer;">
                     <input type="checkbox" checked style="opacity:0;width:0;height:0;" />
                     <span style="position:absolute;inset:0;background:var(--teal);border-radius:9px;"></span>
-                    <span style="position:absolute;top:2px;left:20px;width:14px;height:14px;background:white;border-radius:50%;"></span>
+                    <span style="position:absolute;top:2px;left:20px;width:14px;height:14px;background:var(--white);border-radius:50%;"></span>
                   </label>
                   <span style="font-size:12px;color:var(--text-muted);">Inactive</span>
                   <a href="#" style="color:var(--teal);font-size:12px;font-weight:600;text-decoration:none;margin-left:4px;">View Full Eligibility</a>
                 </div>
-                <div style="border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 12px;min-height:100px;background:white;width:320px;">
+                <div style="border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 12px;min-height:100px;background:var(--white);width:320px;">
                   <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;">
                     <input type="radio" checked style="accent-color:var(--teal);width:14px;height:14px;" />
                     <span>Payor <a href="#" style="color:var(--teal);font-weight:700;text-decoration:none;">Altruists Health Assurance</a>&nbsp;&nbsp;&nbsp;Code <strong style="color:var(--teal);">AHA</strong></span>
@@ -2459,7 +2459,7 @@
                 <span style="font-size:13px;font-weight:700;color:var(--text-primary);"><span style="color:#C62828;">*</span> Community Provider Organization</span>
                 <div style="display:flex;align-items:center;gap:10px;">
                   <select style="height:36px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 24px 0 10px;font-size:13px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 6px center;width:300px;cursor:pointer;"><option>WellSky SCC</option><option>211 Helpline</option><option>United Way</option></select>
-                  <button style="background:#2C4A5E;color:#fff;border:none;height:36px;padding:0 22px;font-size:13px;font-weight:600;border-radius:var(--r-sm);cursor:pointer;font-family:var(--font);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;"><span class="material-icons" style="font-size:16px;">search</span> Search</button>
+                  <button style="background:#2C4A5E;color:var(--white);border:none;height:36px;padding:0 22px;font-size:13px;font-weight:600;border-radius:var(--r-sm);cursor:pointer;font-family:var(--font);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;"><span class="material-icons" style="font-size:16px;">search</span> Search</button>
                   <a href="#" style="color:var(--teal);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;">Clear</a>
                 </div>
               </div>
@@ -2478,7 +2478,7 @@
                   <span style="font-size:13px;font-weight:700;color:var(--text-primary);"><span style="color:#C62828;">*</span>Community Provider Organization</span>
                   <select style="height:36px;border:1px solid var(--border);border-radius:var(--r-sm);padding:0 24px 0 10px;font-size:13px;font-family:var(--font);outline:none;appearance:none;background:white url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E&quot;) no-repeat right 6px center;width:220px;cursor:pointer;"><option>Select</option><option>WellSky SCC</option><option>211 Helpline</option><option>United Way</option></select>
                 </div>
-                <button style="background:#2C4A5E;color:#fff;border:none;height:36px;padding:0 22px;font-size:13px;font-weight:600;border-radius:var(--r-sm);cursor:pointer;font-family:var(--font);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;"><span class="material-icons" style="font-size:16px;">search</span> Search</button>
+                <button style="background:#2C4A5E;color:var(--white);border:none;height:36px;padding:0 22px;font-size:13px;font-weight:600;border-radius:var(--r-sm);cursor:pointer;font-family:var(--font);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;"><span class="material-icons" style="font-size:16px;">search</span> Search</button>
                 <a href="#" style="color:var(--teal);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;">Clear</a>
               </div>
             </div>
@@ -2907,8 +2907,8 @@
                   <th style="width:80px;">Actions</th>
                 </tr></thead>
                 <tbody id="outstandingTbody">
-                  <tr><td><input type="checkbox" /></td><td>Follow Up.</td><td></td><td>High</td><td>03/27/2026</td><td>N/A</td><td>07:59</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/27/2026 08:00:00</td><td></td><td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
-                  <tr><td><input type="checkbox" /></td><td>Assessments - Initial Outreach</td><td></td><td>Medium</td><td>03/20/2026</td><td>N/A</td><td>08:30</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/20/2026 07:04:07</td><td></td><td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td>Follow Up.</td><td></td><td>High</td><td>03/27/2026</td><td>N/A</td><td>07:59</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/27/2026 08:00:00</td><td></td><td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td>Assessments - Initial Outreach</td><td></td><td>Medium</td><td>03/20/2026</td><td>N/A</td><td>08:30</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/20/2026 07:04:07</td><td></td><td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
                 </tbody>
               </table>
             </div>
@@ -3492,7 +3492,7 @@ function openScriptResponseModal() {
   var rowsHtml = '';
   qa.forEach(function(r){
     rowsHtml +=
-      '<tr style="background:#fff;">' +
+      '<tr style="background:var(--white);">' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;width:24px;"></td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(window._gcSelectedActivity||'Health Risk Assessment')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(r.q||'')+'</td>' +
@@ -3513,7 +3513,7 @@ function openScriptResponseModal() {
   overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.62);z-index:99999;display:flex;align-items:flex-start;justify-content:center;padding:30px 20px;overflow-y:auto;box-sizing:border-box;';
 
   overlay.innerHTML =
-    '<div style="background:#fff;border-radius:3px;width:100%;max-width:1080px;position:relative;box-shadow:0 10px 40px rgba(0,0,0,0.45);margin:auto;font-family:Open Sans,Arial,sans-serif;flex-shrink:0;">' +
+    '<div style="background:var(--white);border-radius:3px;width:100%;max-width:1080px;position:relative;box-shadow:0 10px 40px rgba(0,0,0,0.45);margin:auto;font-family:Open Sans,Arial,sans-serif;flex-shrink:0;">' +
       '<button onclick="document.getElementById(\'msriDyn\').remove();" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:23px;cursor:pointer;color:#666;line-height:1;z-index:2;">&#x2715;</button>' +
       /* header */
       '<div style="padding:18px 22px 10px;">' +
@@ -3565,12 +3565,12 @@ function openScriptResponseModal() {
         '</table>' +
       '</div>' +
       /* footer */
-      '<div style="padding:8px 20px;display:flex;align-items:center;gap:6px;border-top:1px solid #e8e8e8;font-size:11px;color:#555;">' +
-        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:#fff;font-size:11px;cursor:pointer;">&#x276E;&#x276E;</button>' +
-        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:#fff;font-size:11px;cursor:pointer;">&#x276E;</button>' +
-        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:#1378A3;color:#fff;border-color:#1378A3;font-size:11px;cursor:pointer;">1</button>' +
-        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:#fff;font-size:11px;cursor:pointer;">&#x276F;</button>' +
-        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:#fff;font-size:11px;cursor:pointer;">&#x276F;&#x276F;</button>' +
+      '<div style="padding:8px 20px;display:flex;align-items:center;gap:6px;border-top:1px solid #e8e8e8;font-size:11px;color:var(--text-secondary);">' +
+        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:var(--white);font-size:11px;cursor:pointer;">&#x276E;&#x276E;</button>' +
+        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:var(--white);font-size:11px;cursor:pointer;">&#x276E;</button>' +
+        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:#1378A3;color:var(--white);border-color:#1378A3;font-size:11px;cursor:pointer;">1</button>' +
+        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:var(--white);font-size:11px;cursor:pointer;">&#x276F;</button>' +
+        '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:var(--white);font-size:11px;cursor:pointer;">&#x276F;&#x276F;</button>' +
         '<select style="font-size:11px;border:1px solid #ccc;border-radius:2px;padding:1px 4px;margin-left:4px;"><option>25</option></select>' +
         '<span>items per page</span>' +
         '<span style="margin-left:auto;">1 - 25 of 25 items</span>' +
@@ -3617,7 +3617,7 @@ function openScriptResponseModal() {
         '<td>' + item.notesVal + '</td>' +
         '<td style="font-size:10px;">' + item.createdStr + '</td>' +
         '<td>' + (item.isAssessment ? '<span class="material-icons" style="font-size:16px;color:#388e3c;">check</span>' : '') + '</td>' +
-        '<td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td>';
+        '<td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td>';
       tbody.insertBefore(tr, tbody.firstChild);
       setTimeout(function() { tr.style.transition = 'background 1.5s'; tr.style.background = ''; }, 100);
     });
@@ -3648,6 +3648,9 @@ function openScriptResponseModal() {
     } else {
       showMemberView();
     }
+  });
+  homeBtn.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); homeBtn.click(); }
   });
 
   // Clicking a member name in My Members table or calendar opens member profile
@@ -3681,15 +3684,18 @@ function openScriptResponseModal() {
   const leftPanels = document.querySelectorAll('.left-panel');
 
   leftItems.forEach(function(item) {
-    item.addEventListener('click', function() {
+    if (!item.getAttribute('role')) item.setAttribute('role', 'button');
+    if (!item.getAttribute('tabindex')) item.setAttribute('tabindex', '0');
+    function activateLeftItem() {
       leftItems.forEach(function(i) { i.classList.remove('active'); });
       item.classList.add('active');
-
       const target = item.getAttribute('data-left');
       leftPanels.forEach(function(p) { p.classList.remove('active'); });
       var panel = document.getElementById('panel-' + target);
       if (panel) panel.classList.add('active');
-    });
+    }
+    item.addEventListener('click', activateLeftItem);
+    item.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateLeftItem(); } });
   });
 
   // Member Info tabs switching
@@ -3697,22 +3703,27 @@ function openScriptResponseModal() {
   var tabPanels = document.querySelectorAll('.tab-panel');
 
   tabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('tabindex', '0');
+    function activateMemberTab() {
       tabs.forEach(function(t) { t.classList.remove('active'); });
       tab.classList.add('active');
-
       var target = tab.getAttribute('data-tab');
       tabPanels.forEach(function(p) { p.classList.remove('active'); });
       var panel = document.getElementById('tab-' + target);
       if (panel) panel.classList.add('active');
-    });
+    }
+    tab.addEventListener('click', activateMemberTab);
+    tab.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateMemberTab(); } });
   });
 
   // Activity Record tab switching
   var arTabs = document.querySelectorAll('#activityTabs .gc-tab');
   var arPanels = document.querySelectorAll('.ar-tab-panel');
   arTabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('tabindex', '0');
+    function activateArTab() {
       arTabs.forEach(function(t) { t.classList.remove('active'); t.style.color = ''; t.style.borderBottomColor = ''; });
       tab.classList.add('active');
       tab.style.color = 'var(--teal)';
@@ -3721,7 +3732,9 @@ function openScriptResponseModal() {
       var target = tab.getAttribute('data-artab');
       var panel = document.getElementById('artab-' + target);
       if (panel) { panel.style.display = ''; panel.classList.add('active'); }
-    });
+    }
+    tab.addEventListener('click', activateArTab);
+    tab.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateArTab(); } });
   });
 
   // Required Activities sub-tab switching
@@ -3750,7 +3763,9 @@ function openScriptResponseModal() {
   var healthTabs = document.querySelectorAll('#healthTabs .gc-tab');
   var healthPanels = document.querySelectorAll('.health-tab-panel');
   healthTabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('tabindex', '0');
+    function activateHealthTab() {
       healthTabs.forEach(function(t) { t.classList.remove('active'); t.style.color = ''; t.style.borderBottomColor = ''; });
       tab.classList.add('active');
       tab.style.color = 'var(--teal)';
@@ -3759,7 +3774,9 @@ function openScriptResponseModal() {
       var target = tab.getAttribute('data-htab');
       var panel = document.getElementById('htab-' + target);
       if (panel) { panel.style.display = ''; panel.classList.add('active'); }
-    });
+    }
+    tab.addEventListener('click', activateHealthTab);
+    tab.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateHealthTab(); } });
   });
 
   // Start with dashboard visible (default)
@@ -3849,7 +3866,7 @@ function openScriptResponseModal() {
         '<td style="font-size:10px;">' + createdStr + '</td>' +
         '<td>' + (activityTypeVal.toLowerCase().indexOf('assessment') > -1 ? '<span class="material-icons" style="font-size:16px;color:#388e3c;">check</span>' : '') + '</td>' +
         '<td><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> ' +
-        '<span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> ' +
+        '<span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> ' +
         '<span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td>';
       outTbody.insertBefore(otr, outTbody.firstChild);
       setTimeout(function() { otr.style.transition = 'background 1.5s'; otr.style.background = ''; }, 100);
@@ -3970,7 +3987,7 @@ function openScriptResponseModal() {
           '<span class="material-icons">edit</span>' +
           '<span class="material-icons cal-perform-btn" title="Perform Activity" style="cursor:pointer;">thumb_up</span>' +
           '<span class="material-icons">delete</span>' +
-          '<span class="material-icons" style="color:#315E7B;border-color:#315E7B;">location_on</span>' +
+          '<span class="material-icons" style="color:var(--teal-dark);border-color:var(--teal-dark);">location_on</span>' +
           '</div>';
         calSlot.appendChild(calCard);
         // Attach perform activity handler to thumbs up
@@ -3999,7 +4016,7 @@ function openScriptResponseModal() {
   };
 
   // ── Per-member tab data ──
-  var _ACT = '<span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span>';
+  var _ACT = '<span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span>';
   var _VIS = '<span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">visibility</span>';
   var _DEL = '<span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span>';
   var _SDOC = '<span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br>' + _DEL;
@@ -4323,6 +4340,9 @@ function openScriptResponseModal() {
 
   // Member switcher click
   document.querySelectorAll('.member-switcher-item').forEach(function(item) {
+    item.setAttribute('role', 'menuitem');
+    item.setAttribute('tabindex', '0');
+    item.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); } });
     item.addEventListener('click', function(e) {
       e.stopPropagation();
       var key = this.getAttribute('data-member');
@@ -4810,11 +4830,11 @@ function openScriptResponseModal() {
 </script>
 
 <!-- ══════════════ ADD ACTIVITY MODAL ══════════════ -->
-<div class="gc-modal-overlay" id="addActivityModal">
+<div class="gc-modal-overlay" id="addActivityModal" role="dialog" aria-modal="true" aria-labelledby="addActivityModalTitle">
   <div class="gc-modal">
     <div class="gc-modal-title">
-      <span>Add Activity</span>
-      <button onclick="document.getElementById('addActivityModal').classList.remove('open');"><span class="material-icons">close</span></button>
+      <span id="addActivityModalTitle">Add Activity</span>
+      <button aria-label="Close" onclick="document.getElementById('addActivityModal').classList.remove('open');"><span class="material-icons" aria-hidden="true">close</span></button>
     </div>
     <div class="gc-modal-accent"></div>
     <div id="modalSuccessBanner" style="display:none;padding:4px 20px 10px;">
@@ -4826,7 +4846,7 @@ function openScriptResponseModal() {
     </div>
     <div class="gc-modal-body">
 
-      <div style="font-size:11px;color:#555;"><span style="color:#C62828;font-weight:700;">*</span> Indicates required field</div>
+      <div style="font-size:11px;color:var(--text-secondary);"><span style="color:#C62828;font-weight:700;">*</span> Indicates required field</div>
 
       <fieldset class="gc-modal-fieldset">
         <legend>Add Activity For</legend>
@@ -4849,7 +4869,7 @@ function openScriptResponseModal() {
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div class="gc-modal-field">
           <label>Member Name</label>
-          <div id="modalMemberName" style="font-size:13px;color:#555;padding:2px 0;">Jackson Thomas</div>
+          <div id="modalMemberName" style="font-size:13px;color:var(--text-secondary);padding:2px 0;">Jackson Thomas</div>
         </div>
         <div class="gc-modal-field">
           <label><span class="req">*</span>Care Staff</label>
@@ -4941,13 +4961,13 @@ function openScriptResponseModal() {
           <label><span class="req">*</span>Scheduled Duration</label>
           <div style="display:flex;align-items:center;gap:6px;">
             <input class="gc-modal-input" type="text" value="00" style="width:44px;text-align:center;padding:0;" />
-            <span style="font-size:12px;color:#555;">Hrs</span>
+            <span style="font-size:12px;color:var(--text-secondary);">Hrs</span>
             <input class="gc-modal-input" type="text" value="30" style="width:44px;text-align:center;padding:0;" />
-            <span style="font-size:12px;color:#555;">Mins</span>
+            <span style="font-size:12px;color:var(--text-secondary);">Mins</span>
           </div>
         </div>
         <div class="gc-modal-field">
-          <label><span class="req">*</span>Scheduled Date <span style="font-size:11px;color:#888;font-weight:400;">MM/DD/YYYY HH:MM</span></label>
+          <label><span class="req">*</span>Scheduled Date <span style="font-size:11px;color:var(--text-muted);font-weight:400;">MM/DD/YYYY HH:MM</span></label>
           <div style="display:flex;align-items:center;gap:6px;">
             <div style="position:relative;display:inline-flex;align-items:center;">
               <input class="gc-modal-input" type="text" value="03/25/2026 08:10" style="width:170px;padding-right:50px;" />
@@ -4956,7 +4976,7 @@ function openScriptResponseModal() {
                 <span class="material-icons" style="font-size:15px;">schedule</span>
               </span>
             </div>
-            <span style="display:flex;gap:2px;color:var(--teal);border:1px solid #BBB;border-radius:3px;padding:4px 6px;background:#fff;cursor:pointer;">
+            <span style="display:flex;gap:2px;color:var(--teal);border:1px solid #BBB;border-radius:3px;padding:4px 6px;background:var(--white);cursor:pointer;">
               <span class="material-icons" style="font-size:15px;">calendar_month</span>
               <span class="material-icons" style="font-size:15px;">schedule</span>
             </span>
@@ -4965,7 +4985,7 @@ function openScriptResponseModal() {
       </div>
 
       <div class="gc-modal-field" style="max-width:240px;">
-        <label>Due Date <span style="font-size:11px;color:#888;font-weight:400;">MM/DD/YYYY HH:MM</span></label>
+        <label>Due Date <span style="font-size:11px;color:var(--text-muted);font-weight:400;">MM/DD/YYYY HH:MM</span></label>
         <div style="position:relative;display:inline-flex;align-items:center;">
           <input class="gc-modal-input" type="text" style="width:200px;padding-right:50px;" />
           <span style="position:absolute;right:8px;display:flex;gap:4px;color:var(--teal);">
@@ -4986,13 +5006,13 @@ function openScriptResponseModal() {
 
       <div class="gc-modal-field">
         <label>Enter Comments / Reasons</label>
-        <textarea style="border:1px solid #BBB;border-radius:3px;padding:6px 8px;font-size:13px;font-family:var(--font);background:#fff;outline:none;min-height:60px;resize:vertical;width:100%;"></textarea>
+        <textarea style="border:1px solid #BBB;border-radius:3px;padding:6px 8px;font-size:13px;font-family:var(--font);background:var(--white);outline:none;min-height:60px;resize:vertical;width:100%;"></textarea>
       </div>
 
     </div>
     <div class="gc-modal-footer">
-      <button onclick="showActivitySuccess(false);" style="background:var(--teal);color:#fff;border:none;border-radius:3px;padding:0 36px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Add</button>
-      <button onclick="showActivitySuccess(true);" style="background:#fff;color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;">Add and Close</button>
+      <button onclick="showActivitySuccess(false);" style="background:var(--teal);color:var(--white);border:none;border-radius:3px;padding:0 36px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Add</button>
+      <button onclick="showActivitySuccess(true);" style="background:var(--white);color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;">Add and Close</button>
     </div>
   </div>
 </div>
@@ -5002,7 +5022,7 @@ function openScriptResponseModal() {
 
   <!-- Member banner (same as profile) -->
   <div class="gc-member-banner">
-    <div style="position:relative;display:inline-flex;"><span class="material-icons" style="font-size:24px;color:#315E7B;">notifications</span><span style="position:absolute;top:-4px;right:-6px;min-width:17px;height:17px;background:#C62828;color:white;border-radius:50%;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">0</span></div>
+    <div style="position:relative;display:inline-flex;"><span class="material-icons" style="font-size:24px;color:var(--teal-dark);">notifications</span><span style="position:absolute;top:-4px;right:-6px;min-width:17px;height:17px;background:#C62828;color:white;border-radius:50%;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">0</span></div>
     <span class="gc-banner-check"><span class="material-icons" style="font-size:20px;color:#2E7D32;">check_circle</span></span>
     <span class="gc-banner-name" id="hraBannerName">AM2 Test-ALT9713</span>
     <span class="gc-banner-dob" id="hraBannerDOB">DOB 01/01/2001</span>
@@ -5013,13 +5033,13 @@ function openScriptResponseModal() {
   <div id="hraViewOnlyBanner" style="display:none;background:#FFF8E1;border-bottom:2px solid #F9A825;padding:8px 18px;font-size:12px;font-weight:600;color:#795548;align-items:center;gap:8px;">
     <span class="material-icons" style="font-size:16px;color:#F9A825;">visibility</span>
     View Only — Answers cannot be modified
-    <button onclick="window.closeHRAViewOnly();" style="margin-left:auto;background:var(--teal);color:#fff;border:none;border-radius:3px;padding:4px 16px;font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);">Close</button>
+    <button onclick="window.closeHRAViewOnly();" style="margin-left:auto;background:var(--teal);color:var(--white);border:none;border-radius:3px;padding:4px 16px;font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);">Close</button>
   </div>
 
   <div class="hra-body">
     <!-- Main content -->
     <div style="flex:1;display:flex;flex-direction:column;">
-      <div class="hra-header" style="background:#444;color:#fff;display:flex;gap:30px;"><span>Single Screen Script</span><span>Member Name: <span id="hraHeaderMemberName">AM2 Test</span></span></div>
+      <div class="hra-header" style="background:#444;color:var(--white);display:flex;gap:30px;"><span>Single Screen Script</span><span>Member Name: <span id="hraHeaderMemberName">AM2 Test</span></span></div>
       <div class="hra-script-bar">
         <span>Script Name : <strong>Health Risk Assessment</strong></span>
         <span>Script Score : <strong>21.721000</strong></span>
@@ -5038,88 +5058,88 @@ function openScriptResponseModal() {
 
         <!-- Q1 - expanded with answer -->
         <div class="hra-q open">
-          <div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">1</span><span class="hra-q-text">Do you give permission to discuss your personal health information with the healthcare team?</span></div>
+          <div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">1</span><span class="hra-q-text">Do you give permission to discuss your personal health information with the healthcare team?</span></div>
           <div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q1" checked /> <span>Yes, I give permission</span></div><div class="hra-q-option"><input type="radio" name="q1" /> <span>No, I do not give permission</span></div></div><div class="hra-care-notes">Care Notes</div></div>
         </div>
 
         <!-- Q2 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">2</span><span class="hra-q-text">Do you give permission to share the results of this assessment with your doctor?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q2" checked /> <span>Yes, please share with my doctor</span></div><div class="hra-q-option"><input type="radio" name="q2" /> <span>No, do not share</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">2</span><span class="hra-q-text">Do you give permission to share the results of this assessment with your doctor?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q2" checked /> <span>Yes, please share with my doctor</span></div><div class="hra-q-option"><input type="radio" name="q2" /> <span>No, do not share</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q3 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered" style="background:#E65100;"><span style="font-size:9px;font-weight:700;">OOI</span></div><span class="hra-q-num">3</span><span class="hra-q-text">Who is filling out this questionnaire?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><span class="hra-q-ogi">OGI</span> <input type="radio" name="q3" checked /> <span>I am filling this out myself</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My caregiver is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My parent is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My legal guardian is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My grandparent is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>Someone else is helping me</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered" style="background:#E65100;"><span style="font-size:9px;font-weight:700;">OOI</span></div><span class="hra-q-num">3</span><span class="hra-q-text">Who is filling out this questionnaire?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><span class="hra-q-ogi">OGI</span> <input type="radio" name="q3" checked /> <span>I am filling this out myself</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My caregiver is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My parent is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My legal guardian is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My grandparent is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>Someone else is helping me</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q4 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">4</span><span class="hra-q-text">Is the race listed on your profile correct?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q4" checked /> <span>Yes, it is correct</span></div><div class="hra-q-option"><input type="radio" name="q4" /> <span>No, it needs to be updated</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">4</span><span class="hra-q-text">Is the race listed on your profile correct?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q4" checked /> <span>Yes, it is correct</span></div><div class="hra-q-option"><input type="radio" name="q4" /> <span>No, it needs to be updated</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q5 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">5</span><span class="hra-q-text">Is the ethnicity listed on your profile correct?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q5" checked /> <span>Yes, it is correct</span></div><div class="hra-q-option"><input type="radio" name="q5" /> <span>No, it needs to be updated</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">5</span><span class="hra-q-text">Is the ethnicity listed on your profile correct?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q5" checked /> <span>Yes, it is correct</span></div><div class="hra-q-option"><input type="radio" name="q5" /> <span>No, it needs to be updated</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q6 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">6</span><span class="hra-q-text">In general, how would you rate your overall health?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q6" /> <span>Excellent</span></div><div class="hra-q-option"><input type="radio" name="q6" /> <span>Very Good</span></div><div class="hra-q-option"><input type="radio" name="q6" checked /> <span>Good</span></div><div class="hra-q-option"><input type="radio" name="q6" /> <span>Fair</span></div><div class="hra-q-option"><input type="radio" name="q6" /> <span>Poor</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">6</span><span class="hra-q-text">In general, how would you rate your overall health?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q6" /> <span>Excellent</span></div><div class="hra-q-option"><input type="radio" name="q6" /> <span>Very Good</span></div><div class="hra-q-option"><input type="radio" name="q6" checked /> <span>Good</span></div><div class="hra-q-option"><input type="radio" name="q6" /> <span>Fair</span></div><div class="hra-q-option"><input type="radio" name="q6" /> <span>Poor</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q7 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">7</span><span class="hra-q-text">Have you visited the Emergency Room in the last 6 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q7" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q7" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">7</span><span class="hra-q-text">Have you visited the Emergency Room in the last 6 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q7" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q7" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q8 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">8</span><span class="hra-q-text">Have you been admitted to the hospital in the last 6 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q8" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q8" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">8</span><span class="hra-q-text">Have you been admitted to the hospital in the last 6 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q8" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q8" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q9 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">9</span><span class="hra-q-text">Are you currently taking any prescription medications?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q9" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q9" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">9</span><span class="hra-q-text">Are you currently taking any prescription medications?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q9" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q9" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q10 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">10</span><span class="hra-q-text">Do you have trouble paying for your medications?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q10" checked /> <span>Yes, it is sometimes difficult</span></div><div class="hra-q-option"><input type="radio" name="q10" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">10</span><span class="hra-q-text">Do you have trouble paying for your medications?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q10" checked /> <span>Yes, it is sometimes difficult</span></div><div class="hra-q-option"><input type="radio" name="q10" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q11 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">11</span><span class="hra-q-text">Do you have a doctor that you see regularly (a Primary Care Provider)?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q11" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q11" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">11</span><span class="hra-q-text">Do you have a doctor that you see regularly (a Primary Care Provider)?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q11" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q11" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q12 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">12</span><span class="hra-q-text">Have you seen your regular doctor in the last 12 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q12" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q12" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">12</span><span class="hra-q-text">Have you seen your regular doctor in the last 12 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q12" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q12" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q13 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">13</span><span class="hra-q-text">Do you have any concerns about your eyesight or hearing?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q13" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q13" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">13</span><span class="hra-q-text">Do you have any concerns about your eyesight or hearing?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q13" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q13" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q14 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">14</span><span class="hra-q-text">Have you fallen in the past 12 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q14" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q14" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">14</span><span class="hra-q-text">Have you fallen in the past 12 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q14" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q14" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q15 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">15</span><span class="hra-q-text">Do you feel safe where you live?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q15" checked /> <span>Yes, I feel safe</span></div><div class="hra-q-option"><input type="radio" name="q15" /> <span>No, I have some concerns</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">15</span><span class="hra-q-text">Do you feel safe where you live?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q15" checked /> <span>Yes, I feel safe</span></div><div class="hra-q-option"><input type="radio" name="q15" /> <span>No, I have some concerns</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q16 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">16</span><span class="hra-q-text">Over the last 2 weeks, how often have you felt down, depressed, or hopeless?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q16" /> <span>Not at all</span></div><div class="hra-q-option"><input type="radio" name="q16" checked /> <span>Several days</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>More than half the days</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>Nearly every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">16</span><span class="hra-q-text">Over the last 2 weeks, how often have you felt down, depressed, or hopeless?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q16" /> <span>Not at all</span></div><div class="hra-q-option"><input type="radio" name="q16" checked /> <span>Several days</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>More than half the days</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>Nearly every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q17 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">17</span><span class="hra-q-text">Over the last 2 weeks, how often have you had little interest or pleasure in doing things?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q17" checked /> <span>Not at all</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>Several days</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>More than half the days</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>Nearly every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">17</span><span class="hra-q-text">Over the last 2 weeks, how often have you had little interest or pleasure in doing things?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q17" checked /> <span>Not at all</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>Several days</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>More than half the days</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>Nearly every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q18 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">18</span><span class="hra-q-text">Do you use any tobacco products (cigarettes, vaping, chewing tobacco)?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q18" /> <span>Yes, I currently use tobacco</span></div><div class="hra-q-option"><input type="radio" name="q18" checked /> <span>No, I do not use tobacco</span></div><div class="hra-q-option"><input type="radio" name="q18" /> <span>I used to, but I quit</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">18</span><span class="hra-q-text">Do you use any tobacco products (cigarettes, vaping, chewing tobacco)?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q18" /> <span>Yes, I currently use tobacco</span></div><div class="hra-q-option"><input type="radio" name="q18" checked /> <span>No, I do not use tobacco</span></div><div class="hra-q-option"><input type="radio" name="q18" /> <span>I used to, but I quit</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q19 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">19</span><span class="hra-q-text">How often do you drink alcohol?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q19" /> <span>Never</span></div><div class="hra-q-option"><input type="radio" name="q19" checked /> <span>Once or twice a month</span></div><div class="hra-q-option"><input type="radio" name="q19" /> <span>About once a week</span></div><div class="hra-q-option"><input type="radio" name="q19" /> <span>Every day or almost every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">19</span><span class="hra-q-text">How often do you drink alcohol?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q19" /> <span>Never</span></div><div class="hra-q-option"><input type="radio" name="q19" checked /> <span>Once or twice a month</span></div><div class="hra-q-option"><input type="radio" name="q19" /> <span>About once a week</span></div><div class="hra-q-option"><input type="radio" name="q19" /> <span>Every day or almost every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q20 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">20</span><span class="hra-q-text">Do you need help with everyday activities like bathing, getting dressed, eating, or getting around?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q20" /> <span>Yes, I need some help</span></div><div class="hra-q-option"><input type="radio" name="q20" checked /> <span>No, I can manage on my own</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">20</span><span class="hra-q-text">Do you need help with everyday activities like bathing, getting dressed, eating, or getting around?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q20" /> <span>Yes, I need some help</span></div><div class="hra-q-option"><input type="radio" name="q20" checked /> <span>No, I can manage on my own</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q21 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">21</span><span class="hra-q-text">Can you get to your doctor appointments without difficulty?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q21" checked /> <span>Yes, I have reliable transportation</span></div><div class="hra-q-option"><input type="radio" name="q21" /> <span>No, getting there can be hard</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">21</span><span class="hra-q-text">Can you get to your doctor appointments without difficulty?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q21" checked /> <span>Yes, I have reliable transportation</span></div><div class="hra-q-option"><input type="radio" name="q21" /> <span>No, getting there can be hard</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q22 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">22</span><span class="hra-q-text">In the past year, have you worried about having enough food to eat?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q22" checked /> <span>Yes, this has been a concern</span></div><div class="hra-q-option"><input type="radio" name="q22" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">22</span><span class="hra-q-text">In the past year, have you worried about having enough food to eat?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q22" checked /> <span>Yes, this has been a concern</span></div><div class="hra-q-option"><input type="radio" name="q22" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q23 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">23</span><span class="hra-q-text">Do you have a living will or advance directive that explains your wishes for medical care?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q23" /> <span>Yes, I have one</span></div><div class="hra-q-option"><input type="radio" name="q23" checked /> <span>No, I do not have one</span></div><div class="hra-q-option"><input type="radio" name="q23" /> <span>I am not sure</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">23</span><span class="hra-q-text">Do you have a living will or advance directive that explains your wishes for medical care?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q23" /> <span>Yes, I have one</span></div><div class="hra-q-option"><input type="radio" name="q23" checked /> <span>No, I do not have one</span></div><div class="hra-q-option"><input type="radio" name="q23" /> <span>I am not sure</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q24 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">24</span><span class="hra-q-text">Would you like to learn about programs in your community that could help you, like meal delivery, senior centers, or support groups?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q24" checked /> <span>Yes, I would like more information</span></div><div class="hra-q-option"><input type="radio" name="q24" /> <span>No thank you</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">24</span><span class="hra-q-text">Would you like to learn about programs in your community that could help you, like meal delivery, senior centers, or support groups?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q24" checked /> <span>Yes, I would like more information</span></div><div class="hra-q-option"><input type="radio" name="q24" /> <span>No thank you</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q25 -->
-        <div class="hra-q"><div class="hra-q-header" onclick="this.parentElement.classList.toggle('open')"><div class="hra-q-icon answered"></div><span class="hra-q-num">25</span><span class="hra-q-text">Is there anything else you would like to talk about with your care team?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q25" checked /> <span>Yes, I would like someone to call me about my medication costs</span></div><div class="hra-q-option"><input type="radio" name="q25" /> <span>No, I am all set for now</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">25</span><span class="hra-q-text">Is there anything else you would like to talk about with your care team?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q25" checked /> <span>Yes, I would like someone to call me about my medication costs</span></div><div class="hra-q-option"><input type="radio" name="q25" /> <span>No, I am all set for now</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Action buttons -->
         <div class="hra-actions">
-          <button style="background:var(--teal);color:#fff;border:1px solid var(--teal);">Save &amp; Continue</button>
-          <button onclick="document.getElementById('captureOutcomeModal').classList.add('open');" style="background:var(--teal);color:#fff;border:1px solid var(--teal);">Save For Later</button>
-          <button onclick="document.getElementById('endScriptConfirm').classList.add('open');" style="background:var(--teal);color:#fff;border:1px solid var(--teal);">Save &amp; End Script</button>
-          <button onclick="document.getElementById('cancelScriptConfirm').classList.add('open');" style="background:var(--teal);color:#fff;border:1px solid var(--teal);">Cancel</button>
+          <button style="background:var(--teal);color:var(--white);border:1px solid var(--teal);">Save &amp; Continue</button>
+          <button onclick="document.getElementById('captureOutcomeModal').classList.add('open');" style="background:var(--teal);color:var(--white);border:1px solid var(--teal);">Save For Later</button>
+          <button onclick="document.getElementById('endScriptConfirm').classList.add('open');" style="background:var(--teal);color:var(--white);border:1px solid var(--teal);">Save &amp; End Script</button>
+          <button onclick="document.getElementById('cancelScriptConfirm').classList.add('open');" style="background:var(--teal);color:var(--white);border:1px solid var(--teal);">Cancel</button>
         </div>
 
       </div>
@@ -5154,52 +5174,52 @@ function openScriptResponseModal() {
 </div>
 
 <!-- ══════════════ CANCEL SCRIPT CONFIRMATION MODAL ══════════════ -->
-<div class="gc-modal-overlay" id="cancelScriptConfirm">
+<div class="gc-modal-overlay" id="cancelScriptConfirm" role="dialog" aria-modal="true" aria-labelledby="cancelScriptConfirmTitle">
   <div class="gc-modal" style="max-width:440px;">
-    <div style="background:#e8e8e8;padding:12px 16px;font-size:16px;font-weight:700;color:#555;border-bottom:1px solid #ccc;">Confirmation</div>
+    <div id="cancelScriptConfirmTitle" style="background:#e8e8e8;padding:12px 16px;font-size:16px;font-weight:700;color:var(--text-secondary);border-bottom:1px solid #ccc;">Confirmation</div>
     <div style="padding:24px 20px 8px;text-align:center;font-size:14px;color:var(--text-primary);">Are you sure you want to cancel the script?</div>
     <div style="padding:4px 20px 20px;text-align:center;font-size:13px;color:var(--text-secondary);line-height:1.6;">Note : - Responses will be saved to the member record in cancelled status.<br>- Canceling the assessment will also cancel any opportunities, goals<br>or interventions associated with this assessment</div>
     <div style="display:flex;justify-content:center;gap:12px;padding:8px 20px 24px;">
-      <button onclick="document.getElementById('cancelScriptConfirm').classList.remove('open');closeHRAReview();" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Ok</button>
-      <button onclick="document.getElementById('cancelScriptConfirm').classList.remove('open');" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Cancel</button>
+      <button onclick="document.getElementById('cancelScriptConfirm').classList.remove('open');closeHRAReview();" style="background:var(--teal-dark);color:var(--white);border:none;border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Ok</button>
+      <button onclick="document.getElementById('cancelScriptConfirm').classList.remove('open');" style="background:var(--teal-dark);color:var(--white);border:none;border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Cancel</button>
     </div>
   </div>
 </div>
 
 <!-- ══════════════ END SCRIPT CONFIRMATION MODAL ══════════════ -->
-<div class="gc-modal-overlay" id="endScriptConfirm">
+<div class="gc-modal-overlay" id="endScriptConfirm" role="dialog" aria-modal="true" aria-labelledby="endScriptConfirmTitle">
   <div class="gc-modal" style="max-width:400px;">
-    <div style="background:#e8e8e8;padding:12px 16px;font-size:16px;font-weight:700;color:#555;border-bottom:1px solid #ccc;">Confirmation</div>
+    <div id="endScriptConfirmTitle" style="background:#e8e8e8;padding:12px 16px;font-size:16px;font-weight:700;color:var(--text-secondary);border-bottom:1px solid #ccc;">Confirmation</div>
     <div style="padding:24px 20px 16px;text-align:center;font-size:14px;color:var(--text-primary);">Are you sure you want to end the script?</div>
     <div style="display:flex;justify-content:center;gap:12px;padding:8px 20px 24px;">
-      <button onclick="document.getElementById('endScriptConfirm').classList.remove('open');document.getElementById('captureOutcomeModal').classList.add('open');" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Ok</button>
-      <button onclick="document.getElementById('endScriptConfirm').classList.remove('open');" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Cancel</button>
+      <button onclick="document.getElementById('endScriptConfirm').classList.remove('open');document.getElementById('captureOutcomeModal').classList.add('open');" style="background:var(--teal-dark);color:var(--white);border:none;border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Ok</button>
+      <button onclick="document.getElementById('endScriptConfirm').classList.remove('open');" style="background:var(--teal-dark);color:var(--white);border:none;border-radius:3px;padding:0 28px;height:38px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;">Cancel</button>
     </div>
   </div>
 </div>
 
 <!-- ══════════════ CAPTURE ACTIVITY OUTCOME MODAL ══════════════ -->
-<div class="gc-modal-overlay" id="captureOutcomeModal">
+<div class="gc-modal-overlay" id="captureOutcomeModal" role="dialog" aria-modal="true" aria-labelledby="captureOutcomeModalTitle">
   <div class="gc-modal" style="max-width:780px;">
     <div class="gc-modal-title">
-      <span style="font-size:18px;">Capture Activity Outcome</span>
-      <button onclick="document.getElementById('captureOutcomeModal').classList.remove('open');"><span class="material-icons" style="font-size:20px;color:#315E7B;">close</span></button>
+      <span id="captureOutcomeModalTitle" style="font-size:18px;">Capture Activity Outcome</span>
+      <button aria-label="Close" onclick="document.getElementById('captureOutcomeModal').classList.remove('open');"><span class="material-icons" aria-hidden="true" style="font-size:20px;color:var(--teal-dark);">close</span></button>
     </div>
     <div class="gc-modal-accent"></div>
-    <div class="gc-modal-body" style="gap:0;background:#fff;">
+    <div class="gc-modal-body" style="gap:0;background:var(--white);">
 
       <!-- Member info row -->
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px;font-size:13px;">
         <div>
-          <div style="color:#888;font-weight:600;">Member Name</div>
+          <div style="color:var(--text-muted);font-weight:600;">Member Name</div>
           <a href="#" class="gc-kv-link" style="font-size:14px;" id="captureOutcomeMemberName">AM2 Test</a>
         </div>
         <div>
-          <div style="color:#888;font-weight:600;">Activity Type</div>
+          <div style="color:var(--text-muted);font-weight:600;">Activity Type</div>
           <div style="font-weight:700;font-size:14px;">Health Risk Assessment</div>
         </div>
         <div>
-          <div style="color:#888;font-weight:600;">Script</div>
+          <div style="color:var(--text-muted);font-weight:600;">Script</div>
           <div style="font-weight:700;font-size:14px;">Health Risk Assessment</div>
         </div>
       </div>
@@ -5269,14 +5289,14 @@ function openScriptResponseModal() {
         </div>
         <div>
           <label style="font-size:13px;font-weight:700;color:var(--text-primary);display:block;margin-bottom:8px;"><span style="color:#C62828;">*</span> Rationale</label>
-          <textarea style="border:1px solid #ccc;border-radius:3px;padding:8px;font-size:13px;font-family:var(--font);background:#fff;outline:none;min-height:90px;resize:vertical;width:100%;"></textarea>
+          <textarea style="border:1px solid #ccc;border-radius:3px;padding:8px;font-size:13px;font-family:var(--font);background:var(--white);outline:none;min-height:90px;resize:vertical;width:100%;"></textarea>
         </div>
       </div>
 
       <!-- Outcome Notes -->
       <div style="margin-bottom:16px;">
         <label style="font-size:13px;color:var(--text-primary);font-weight:600;display:block;margin-bottom:4px;">Outcome Notes</label>
-        <textarea style="border:1px solid #ccc;border-radius:3px;padding:10px;font-size:13px;font-family:var(--font);background:#fff;outline:none;min-height:120px;resize:vertical;width:100%;"></textarea>
+        <textarea style="border:1px solid #ccc;border-radius:3px;padding:10px;font-size:13px;font-family:var(--font);background:var(--white);outline:none;min-height:120px;resize:vertical;width:100%;"></textarea>
       </div>
 
       <!-- Review Care Plan checkbox -->
@@ -5290,30 +5310,30 @@ function openScriptResponseModal() {
       <!-- Send to Member for review checkbox -->
       <div style="margin-bottom:8px;">
         <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
-          <input type="checkbox" checked style="accent-color:#888;width:18px;height:18px;" />
+          <input type="checkbox" checked style="accent-color:var(--text-muted);width:18px;height:18px;" />
           <span style="font-weight:400;">Send to Member for review</span>
         </label>
       </div>
 
     </div>
-    <div class="gc-modal-footer" style="gap:12px;background:#fff;border-top:1px solid #ddd;">
-      <button onclick="captureAndProceed();" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 24px;height:42px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:6px;"><span class="material-icons" style="font-size:16px;">save</span> Save and Proceed</button>
-      <button onclick="captureAndAddActivity();" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 24px;height:42px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:6px;"><span class="material-icons" style="font-size:16px;">save</span> Save and Add Activity</button>
+    <div class="gc-modal-footer" style="gap:12px;background:var(--white);border-top:1px solid #ddd;">
+      <button onclick="captureAndProceed();" style="background:var(--teal-dark);color:var(--white);border:none;border-radius:3px;padding:0 24px;height:42px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:6px;"><span class="material-icons" style="font-size:16px;">save</span> Save and Proceed</button>
+      <button onclick="captureAndAddActivity();" style="background:var(--teal-dark);color:var(--white);border:none;border-radius:3px;padding:0 24px;height:42px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:6px;"><span class="material-icons" style="font-size:16px;">save</span> Save and Add Activity</button>
     </div>
   </div>
 </div>
 
 <!-- ══════════════ GENERAL ACTIVITY OUTCOME MODAL ══════════════ -->
-<div class="gc-modal-overlay" id="outcomeModal">
+<div class="gc-modal-overlay" id="outcomeModal" role="dialog" aria-modal="true" aria-labelledby="outcomeModalTitle">
   <div class="gc-modal" style="max-width:720px;">
     <div class="gc-modal-title">
-      <span style="font-size:18px;">General Activity Outcome</span>
-      <button onclick="document.getElementById('outcomeModal').classList.remove('open');"><span class="material-icons">close</span></button>
+      <span id="outcomeModalTitle" style="font-size:18px;">General Activity Outcome</span>
+      <button aria-label="Close" onclick="document.getElementById('outcomeModal').classList.remove('open');"><span class="material-icons" aria-hidden="true">close</span></button>
     </div>
     <div class="gc-modal-accent"></div>
     <div class="gc-modal-body" style="gap:0;">
 
-      <div style="font-size:11px;color:#555;margin-bottom:10px;"><span style="color:#C62828;font-weight:700;">*</span> Indicates required field</div>
+      <div style="font-size:11px;color:var(--text-secondary);margin-bottom:10px;"><span style="color:#C62828;font-weight:700;">*</span> Indicates required field</div>
 
       <!-- Summary link -->
       <div style="text-align:right;margin-bottom:8px;">
@@ -5322,25 +5342,25 @@ function openScriptResponseModal() {
 
       <!-- Member info grid -->
       <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:4px 16px;font-size:11px;margin-bottom:12px;line-height:1.6;">
-        <div><span style="color:#888;">Member Name:</span><br><a href="#" class="gc-kv-link" id="outcomeMemName">AM2 Test</a></div>
-        <div><span style="color:#888;">DOB:</span><br><strong id="outcomeMemDOB">01/01/2001</strong></div>
-        <div><span style="color:#888;">Address:</span><br><span id="outcomeMemAddr">123 Main Street</span></div>
-        <div><span style="color:#888;">City:</span><br><span>N/A</span></div>
-        <div><span style="color:#888;">State:</span><br><span>N/A</span></div>
-        <div><span style="color:#888;">Zip:</span><br><span>N/A</span></div>
+        <div><span style="color:var(--text-muted);">Member Name:</span><br><a href="#" class="gc-kv-link" id="outcomeMemName">AM2 Test</a></div>
+        <div><span style="color:var(--text-muted);">DOB:</span><br><strong id="outcomeMemDOB">01/01/2001</strong></div>
+        <div><span style="color:var(--text-muted);">Address:</span><br><span id="outcomeMemAddr">123 Main Street</span></div>
+        <div><span style="color:var(--text-muted);">City:</span><br><span>N/A</span></div>
+        <div><span style="color:var(--text-muted);">State:</span><br><span>N/A</span></div>
+        <div><span style="color:var(--text-muted);">Zip:</span><br><span>N/A</span></div>
 
-        <div><span style="color:#888;">Primary Phone:</span><br><span>N/A</span></div>
-        <div><span style="color:#888;">Alternate Phone:</span><br><span>N/A</span></div>
-        <div><span style="color:#888;">Cell Phone:</span><br><span>N/A</span></div>
-        <div><span style="color:#888;">Language:</span><br><span>N/A</span></div>
+        <div><span style="color:var(--text-muted);">Primary Phone:</span><br><span>N/A</span></div>
+        <div><span style="color:var(--text-muted);">Alternate Phone:</span><br><span>N/A</span></div>
+        <div><span style="color:var(--text-muted);">Cell Phone:</span><br><span>N/A</span></div>
+        <div><span style="color:var(--text-muted);">Language:</span><br><span>N/A</span></div>
         <div></div><div></div>
 
-        <div><span style="color:#888;">Payor:</span><br><a href="#" class="gc-kv-link">Active</a></div>
-        <div><span style="color:#888;">Care Staff:</span><br><span>Beatrice Kanya</span></div>
-        <div><span style="color:#888;">Priority:</span><br><span>N/A</span></div>
-        <div><span style="color:#888;">Activity Type:</span><br><strong id="outcomeActType">Assessment- HRA</strong></div>
-        <div><span style="color:#888;">Scheduled Date:</span><br><strong id="outcomeSchedDate">3/25/2026 08:10:00</strong></div>
-        <div><span style="color:#888;">Scheduled Duration:</span><br><strong>00 Hrs: 30 Mins</strong></div>
+        <div><span style="color:var(--text-muted);">Payor:</span><br><a href="#" class="gc-kv-link">Active</a></div>
+        <div><span style="color:var(--text-muted);">Care Staff:</span><br><span>Beatrice Kanya</span></div>
+        <div><span style="color:var(--text-muted);">Priority:</span><br><span>N/A</span></div>
+        <div><span style="color:var(--text-muted);">Activity Type:</span><br><strong id="outcomeActType">Assessment- HRA</strong></div>
+        <div><span style="color:var(--text-muted);">Scheduled Date:</span><br><strong id="outcomeSchedDate">3/25/2026 08:10:00</strong></div>
+        <div><span style="color:var(--text-muted);">Scheduled Duration:</span><br><strong>00 Hrs: 30 Mins</strong></div>
       </div>
 
       <!-- Custom fields -->
@@ -5411,7 +5431,7 @@ function openScriptResponseModal() {
       <!-- Outcome Notes -->
       <div class="gc-modal-field" style="margin-bottom:6px;">
         <label style="font-size:13px;font-weight:700;">Outcome Notes</label>
-        <textarea style="border:1px solid #BBB;border-radius:3px;padding:8px;font-size:13px;font-family:var(--font);background:#fff;outline:none;min-height:70px;resize:vertical;width:100%;"></textarea>
+        <textarea style="border:1px solid #BBB;border-radius:3px;padding:8px;font-size:13px;font-family:var(--font);background:var(--white);outline:none;min-height:70px;resize:vertical;width:100%;"></textarea>
       </div>
       <div style="font-size:11px;margin-bottom:16px;">
         <span style="font-weight:700;">Notes viewable by</span>
@@ -5445,8 +5465,8 @@ function openScriptResponseModal() {
 
     </div>
     <div class="gc-modal-footer" style="gap:24px;">
-      <button onclick="document.getElementById('outcomeModal').classList.remove('open');" style="background:var(--teal);color:#fff;border:none;border-radius:3px;padding:0 40px;height:42px;font-size:15px;font-weight:700;font-family:var(--font);cursor:pointer;">Complete</button>
-      <button onclick="document.getElementById('outcomeModal').classList.remove('open');" style="background:#fff;color:var(--teal);border:2px solid var(--teal);border-radius:3px;padding:0 28px;height:42px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;">Complete and Add Activity</button>
+      <button onclick="document.getElementById('outcomeModal').classList.remove('open');" style="background:var(--teal);color:var(--white);border:none;border-radius:3px;padding:0 40px;height:42px;font-size:15px;font-weight:700;font-family:var(--font);cursor:pointer;">Complete</button>
+      <button onclick="document.getElementById('outcomeModal').classList.remove('open');" style="background:var(--white);color:var(--teal);border:2px solid var(--teal);border-radius:3px;padding:0 28px;height:42px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;">Complete and Add Activity</button>
     </div>
   </div>
 </div>
@@ -5464,11 +5484,11 @@ function openScriptResponseModal() {
 </div>
 
 <!-- ══════════════ MEMBER SCRIPT RESPONSE MODAL ══════════════ -->
-<div class="msri-overlay" id="msriModal">
+<div class="msri-overlay" id="msriModal" role="dialog" aria-modal="true" aria-labelledby="msriModalTitle">
   <div class="msri-modal">
-    <button class="msri-close" onclick="var o=document.getElementById('msriModal');o.classList.remove('open');o.style.display='';">&#x2715;</button>
+    <button class="msri-close" aria-label="Close" onclick="var o=document.getElementById('msriModal');o.classList.remove('open');o.style.display='';">&#x2715;</button>
     <div class="msri-header">
-      <div class="msri-title">Member Script Response Information</div>
+      <div id="msriModalTitle" class="msri-title">Member Script Response Information</div>
       <div class="msri-divider"></div>
     </div>
     <div class="msri-toolbar">
