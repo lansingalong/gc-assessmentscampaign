@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "guidingcare-cwf",
-    "slug": "guidingcare-cwf",
+    "name": "guidingcare-assessmentscampaign",
+    "slug": "guidingcare-assessmentscampaign",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
