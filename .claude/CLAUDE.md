@@ -1,17 +1,17 @@
 # Reference
 
-Always read `design_system.md` before building or modifying any component.
+Always read `guidingcare-design-system.html` before building or modifying any component.
 
 # Design system rules
 
 Always reference existing design system components before building anything new.
 
-- Check `src/components/` for existing components before creating a new one
-- Use design tokens from `src/styles/tokens/` for all color, spacing, and typography values
-- Follow the component patterns established in the Quill Web UI Kit
-- Never hardcode color values — always use tokens
-- If a component doesn't exist in the design system, flag it before building and suggest the closest existing component
-- Match existing component naming conventions
+- Check `guidingcare-design-system.html` for existing patterns, components, and CSS classes before creating anything new
+- Use CSS custom properties defined in `index.html` `:root` for all color, spacing, and typography values
+- Follow the component patterns established in the GuidingCare UI — gc-* class naming convention
+- Never hardcode color values — always use the CSS variables (e.g. `var(--teal)`, `var(--border)`)
+- If a pattern doesn't exist in the design system, flag it before building and suggest the closest existing component
+- Match existing class naming conventions (gc-nav, gc-btn, gc-modal, etc.)
 
 # Accessibility rules
 
