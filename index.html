@@ -5429,7 +5429,7 @@ function openScriptResponseModal() {
 
   function calcAge(dob) {
     var p = dob.split('/');
-    if (p.length < 3) return '—';
+    if (p.length < 3) return '\u2014';
     var bd = new Date(p[2], p[0]-1, p[1]), t = new Date();
     var a = t.getFullYear() - bd.getFullYear();
     if (t.getMonth() < bd.getMonth() || (t.getMonth() === bd.getMonth() && t.getDate() < bd.getDate())) a--;
@@ -5442,7 +5442,51 @@ function openScriptResponseModal() {
     return MONTHS[parseInt(p[0])-1] + ' ' + parseInt(p[1]) + ', ' + p[2];
   }
 
-  function registerMember(first, last, dob, id) {
+  function makeAssessmentActivity() {
+    var now = new Date();
+    var fu = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+    var fuStr = String(fu.getMonth()+1).padStart(2,'0') + '/' + String(fu.getDate()).padStart(2,'0') + '/' + fu.getFullYear();
+    var h = String(now.getHours()).padStart(2,'0'), m = String(now.getMinutes()).padStart(2,'0'), s = String(now.getSeconds()).padStart(2,'0');
+    var created = todayStr() + ' ' + h + ':' + m + ':' + s;
+    var act = '<span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> '
+            + '<span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;" title="Perform Activity">thumb_up</span> '
+            + '<span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span>';
+    return '<tr style="background:#FFFDE7;">'
+      + '<td><input type="checkbox"/></td>'
+      + '<td>Comprehensive Assessment Review</td>'
+      + '<td>Member completed Comprehensive Assessment \u2014 review results and schedule follow-up</td>'
+      + '<td>High</td>'
+      + '<td>' + fuStr + '</td>'
+      + '<td>N/A</td>'
+      + '<td>08:00</td>'
+      + '<td>N/A</td><td>N/A</td><td>N/A</td>'
+      + '<td>Beatrice Kanya : All Access Admin</td>'
+      + '<td>N/A</td><td>Accepted</td>'
+      + '<td>Beatrice Kanya : All Access Admin</td>'
+      + '<td>N/A</td>'
+      + '<td style="font-size:10px;">' + created + '</td>'
+      + '<td></td>'
+      + '<td style="white-space:nowrap;">' + act + '</td>'
+      + '</tr>';
+  }
+
+  function applyCompletedActivity(key) {
+    if (!window._gcMemberTabData) return;
+    var tabs = window._gcMemberTabData[key];
+    if (!tabs) return;
+    var already = tabs.outstandingActivities.some(function(a) {
+      return a.indexOf('Comprehensive Assessment Review') >= 0;
+    });
+    if (already) return;
+    tabs.outstandingActivities.unshift(makeAssessmentActivity());
+    // If this member's profile is currently open, refresh the table live
+    if (window._gcGetKey && window._gcGetKey() === key) {
+      var tbody = document.getElementById('outstandingTbody');
+      if (tbody) tbody.innerHTML = tabs.outstandingActivities.join('');
+    }
+  }
+
+  function registerMember(first, last, dob, id, completed) {
     var key = mKey(first, last);
     var fullName = first + ' ' + last;
 
@@ -5450,7 +5494,7 @@ function openScriptResponseModal() {
       window._gcMemberData[key] = {
         name: fullName, preferred: first, dob: dob, dobLong: dobLong(dob),
         age: calcAge(dob), id: id, careManager: 'Beatrice Kanya',
-        program: 'Comprehensive Assessment', risk: '—',
+        program: 'Comprehensive Assessment', risk: '\u2014',
         caregiver: null, careTeam: []
       };
     }
@@ -5458,6 +5502,8 @@ function openScriptResponseModal() {
     if (window._gcMemberTabData && !window._gcMemberTabData[key]) {
       window._gcMemberTabData[key] = { notes: [], scriptActivity: [], generalActivity: [], outstandingActivities: [], memberAlerts: [] };
     }
+
+    if (completed) applyCompletedActivity(key);
 
     var menu = document.querySelector('.member-switcher-menu');
     if (menu && !menu.querySelector('[data-member="' + key + '"]')) {
@@ -5493,13 +5539,17 @@ function openScriptResponseModal() {
     }
   }
 
-  function insertRow(first, last, dob, id) {
+  function insertRow(first, last, dob, id, completed) {
     var tbody = document.getElementById('my-members-tbody');
     if (!tbody) return;
     var key = mKey(first, last);
-    if (tbody.querySelector('[data-demo-key="' + key + '"]')) return;
+    if (tbody.querySelector('[data-demo-key="' + key + '"]')) {
+      // Row already exists — still apply completed activity if newly completed
+      if (completed) applyCompletedActivity(key);
+      return;
+    }
 
-    registerMember(first, last, dob, id);
+    registerMember(first, last, dob, id, completed);
 
     var tr = document.createElement('tr');
     tr.setAttribute('data-demo-key', key);
@@ -5536,9 +5586,9 @@ function openScriptResponseModal() {
     [
       { v: first },
       { v: id },
-      { v: dob || '—' },
-      { v: '—' },
-      { v: '—' },
+      { v: dob || '\u2014' },
+      { v: '\u2014' },
+      { v: '\u2014' },
       { v: todayStr() },
       { v: 'Comprehensive Assessment' }
     ].forEach(function(f) {
@@ -5552,31 +5602,40 @@ function openScriptResponseModal() {
   function loadSaved() {
     try {
       var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      saved.forEach(function (m) { insertRow(m.first, m.last, m.dob, m.id); });
+      saved.forEach(function (m) { insertRow(m.first, m.last, m.dob, m.id, m.assessmentCompleted); });
     } catch (e) {}
   }
 
-  function addNewMember(first, last, dob) {
+  function addNewMember(first, last, dob, completed) {
     try {
       var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
       var key = mKey(first, last);
       var existing = saved.find(function (m) { return mKey(m.first, m.last) === key; });
-      if (existing) { insertRow(first, last, dob, existing.id); return; }
+      if (existing) {
+        if (completed && !existing.assessmentCompleted) {
+          existing.assessmentCompleted = true;
+          existing.completedDate = todayStr();
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+        }
+        insertRow(first, last, dob, existing.id, existing.assessmentCompleted);
+        return;
+      }
       var id = genId();
-      saved.push({ first: first, last: last, dob: dob, id: id });
+      saved.push({ first: first, last: last, dob: dob, id: id, assessmentCompleted: !!completed, completedDate: completed ? todayStr() : null });
       localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
-      insertRow(first, last, dob, id);
+      insertRow(first, last, dob, id, completed);
     } catch (e) {}
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     loadSaved();
     var params = new URLSearchParams(window.location.search);
-    var first = params.get('first');
-    var last  = params.get('last');
-    var dob   = params.get('dob');
+    var first     = params.get('first');
+    var last      = params.get('last');
+    var dob       = params.get('dob');
+    var completed = params.get('completed') === '1';
     if (first && last) {
-      addNewMember(first, last, dob || '—');
+      addNewMember(first, last, dob || '\u2014', completed);
       history.replaceState({}, '', window.location.pathname);
     }
   });
