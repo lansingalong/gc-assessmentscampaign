@@ -1,7 +1,11 @@
 # Reference
 
 Always read `guidingcare-design-system.html` before building or modifying any component.
-Always automatically make updates and save changes when there are any file changes or new files added to folders.
+
+#File management rules
+
+- When making file changes or adding new files, always save immediately after each change without waiting for confirmation.
+- At the start of every session, automatically start the development server and open the project in the browser on localhost.
 
 # Design system rules
 
