@@ -492,7 +492,7 @@
               <th style="padding:4px 8px;">Program Name</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="my-members-tbody">
             <tr>
               <td style="padding:4px 8px;"><span class="material-icons" style="font-size:14px;color:var(--teal);">check_circle</span></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>
@@ -5546,6 +5546,80 @@ function openScriptResponseModal() {
     </div>
   </div>
 </div>
+
+
+<script>
+(function () {
+  var STORAGE_KEY = 'gc_demo_members';
+
+  function todayStr() {
+    var d = new Date();
+    return String(d.getMonth()+1).padStart(2,'0') + '/' + String(d.getDate()).padStart(2,'0') + '/' + d.getFullYear();
+  }
+
+  function genId() {
+    return 'MBR-' + new Date().getFullYear() + '-' + String(Math.floor(1000 + Math.random() * 9000));
+  }
+
+  function memberKey(first, last) {
+    return first.toLowerCase() + '-' + last.toLowerCase();
+  }
+
+  function insertRow(first, last, dob, id, isNew) {
+    var tbody = document.getElementById('my-members-tbody');
+    if (!tbody) return;
+    var key = memberKey(first, last);
+    if (tbody.querySelector('[data-demo-key="' + key + '"]')) return;
+    var tr = document.createElement('tr');
+    if (isNew) tr.style.background = '#E8F9F0';
+    tr.setAttribute('data-demo-key', key);
+    tr.innerHTML =
+      '<td style="padding:4px 8px;"><span class="material-icons" style="font-size:14px;color:var(--teal);">check_circle</span></td>' +
+      '<td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>' +
+      '<td style="padding:4px 8px;">' + last + (isNew ? '&nbsp;<span style="background:var(--teal);color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:8px;vertical-align:middle;letter-spacing:0.3px;">NEW</span>' : '') + '</td>' +
+      '<td style="padding:4px 8px;">' + first + '</td>' +
+      '<td style="padding:4px 8px;">' + id + '</td>' +
+      '<td style="padding:4px 8px;">' + (dob || '—') + '</td>' +
+      '<td style="padding:4px 8px;">—</td>' +
+      '<td style="padding:4px 8px;">—</td>' +
+      '<td style="padding:4px 8px;">' + todayStr() + '</td>' +
+      '<td style="padding:4px 8px;">Comprehensive Assessment</td>';
+    tbody.insertBefore(tr, tbody.firstChild);
+  }
+
+  function loadSaved() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      saved.forEach(function (m) { insertRow(m.first, m.last, m.dob, m.id, false); });
+    } catch (e) {}
+  }
+
+  function addNewMember(first, last, dob) {
+    try {
+      var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      var key = memberKey(first, last);
+      var exists = saved.some(function (m) { return memberKey(m.first, m.last) === key; });
+      if (exists) return;
+      var id = genId();
+      saved.push({ first: first, last: last, dob: dob, id: id });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+      insertRow(first, last, dob, id, true);
+    } catch (e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    loadSaved();
+    var params = new URLSearchParams(window.location.search);
+    var first = params.get('first');
+    var last  = params.get('last');
+    var dob   = params.get('dob');
+    if (first && last) {
+      addNewMember(first, last, dob || '—');
+      history.replaceState({}, '', window.location.pathname);
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
