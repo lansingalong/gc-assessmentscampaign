@@ -1973,7 +1973,7 @@
                 </div>
                 <div>
                   <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Created By</div>
-                  <div style="color:var(--text-secondary);">Chris Mallon</div>
+                  <div style="color:var(--text-secondary);">Beatrice Kanya</div>
                 </div>
                 <div>
                   <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Updated On</div>
@@ -3719,7 +3719,7 @@ function openScriptResponseModal() {
     pendingOutstandingActivities.forEach(function(item) {
       var tr = document.createElement('tr');
       tr.dataset.dynamic = 'true';
-      tr.style.background = '#FFFDE7';
+      tr.style.background = '';
       tr.innerHTML = '<td><input type="checkbox" /></td>' +
         '<td>' + item.activityType + '</td>' +
         '<td></td>' +
@@ -3973,7 +3973,7 @@ function openScriptResponseModal() {
     if (outTbody) {
       var otr = document.createElement('tr');
       otr.dataset.dynamic = 'true';
-      otr.style.background = '#FFFDE7';
+      otr.style.background = '';
       otr.innerHTML = '<td><input type="checkbox" /></td>' +
         '<td>' + activityTypeVal + '</td>' +
         '<td></td>' +
@@ -4000,7 +4000,7 @@ function openScriptResponseModal() {
     var genTbody = document.getElementById('generalActivityTbody');
     if (genTbody) {
       var gtr = document.createElement('tr');
-      gtr.style.background = '#FFFDE7';
+      gtr.style.background = '';
       gtr.innerHTML = '<td>N/A</td>' +
         '<td>N/A</td>' +
         '<td>' + dateStr + '</td>' +
@@ -4021,7 +4021,7 @@ function openScriptResponseModal() {
       var alertMemberKey = currentMemberKey;
       var atr = document.createElement('tr');
       atr.dataset.dynamic = 'true';
-      atr.style.background = '#FFFDE7';
+      atr.style.background = '';
       atr.innerHTML = '<td style="padding:4px 8px;">Member completed ' + activityTypeVal + '</td>' +
         '<td style="padding:4px 8px;"><a href="#" class="gc-kv-link alert-member-link" data-member="' + alertMemberKey + '">1</a></td>' +
         '<td style="padding:4px 8px;">Wellframe</td>' +
@@ -4188,7 +4188,7 @@ function openScriptResponseModal() {
         _nr('Behavioral Health Note','Member reports increased anxiety related to CHF diagnosis and fear of hospitalization. PHQ-4 score of 7 (moderate anxiety). Provided brief psychoeducation on CHF self-management to reduce uncertainty. Referred to behavioral health navigator for CBT-based telehealth program. Member expressed interest in Spanish-language mental health support resources.','Beatrice Kanya : Care Manager','02/14/2026 10:08:55 AM')
       ],
       scriptActivity: [
-        _sr('SDOH Screening','02/14/2026 10:00:00 AM','Ana Castillo, RD : All Access Admin','Completed','02/14/2026 10:25:00 AM','Cardiac Rehab','9.25','Assessments','Completed','00:25:00')
+        '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">SDOH Screening</a></td><td>Member Portal</td><td>02/14/2026 10:00:00 AM</td><td>Ana Castillo, RD : All Access Admin</td><td>Completed</td><td>02/14/2026 10:25:00 AM</td><td>N/A</td><td>Cardiac Rehab</td><td>9.25</td><td>Assessments</td><td><a href="#" style="color:var(--link);">Completed</a></td><td>00:25:00</td><td><span class="material-icons" style="font-size:14px;color:var(--teal);">check</span></td><td>' + _SDOC + '</td></tr>'
       ],
       generalActivity: [
         _gr('03/18/2026 09:22 AM','Beatrice Kanya','Telephonic Outreach','Completed'),
