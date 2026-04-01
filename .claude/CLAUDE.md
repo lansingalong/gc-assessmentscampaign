@@ -1,6 +1,7 @@
 # Reference
 
 Always read `guidingcare-design-system.html` before building or modifying any component.
+Always automatically make updates and save changes when there are any file changes or new files added to folders.
 
 # Design system rules
 
