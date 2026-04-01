@@ -434,7 +434,32 @@
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">admin_panel_settings</span></div>Admin&#9662;</div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">build</span></div>Config&#9662;</div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">menu_book</span></div>Know&#9662;</div>
-      <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">manage_accounts</span></div>Manage&#9662;</div>
+      <div class="gc-tool gc-tool-dropdown" id="manageDropdown" role="button" tabindex="0" onclick="var m=this.querySelector('.gc-tool-menu');var r=this.getBoundingClientRect();m.style.top=r.bottom+'px';m.style.right=(window.innerWidth-r.right)+'px';m.classList.toggle('open');event.stopPropagation();" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="gc-tool-icon"><span class="material-icons">manage_accounts</span></div>Manage&#9662;
+        <div class="gc-tool-menu">
+          <div class="gc-tool-menu-title">Manage</div>
+          <div class="gc-tool-menu-body" style="display:flex;grid-template-columns:none;">
+            <div style="flex:1;border-right:1px solid var(--border-light);">
+              <div class="gc-tool-menu-item">Assign Care Member &amp; Mailing</div>
+              <div class="gc-tool-menu-item">Assigned Activity Summary</div>
+              <div class="gc-tool-menu-item">Bulk Referral</div>
+              <div class="gc-tool-menu-item" onclick="openCareActivityLog()">Care Activity Log</div>
+              <div class="gc-tool-menu-item">Full Dashboard</div>
+              <div class="gc-tool-menu-item">Manage Care Member</div>
+              <div class="gc-tool-menu-item">Manage EPSDT Features</div>
+              <div class="gc-tool-menu-item">Manage Leave</div>
+            </div>
+            <div style="flex:1;">
+              <div class="gc-tool-menu-item">Member Merge</div>
+              <div class="gc-tool-menu-item">My Activity Notification Summary</div>
+              <div class="gc-tool-menu-item">Pending Activities</div>
+              <div class="gc-tool-menu-item">Referral Request Summary</div>
+              <div class="gc-tool-menu-item">Worklog Manager</div>
+              <div class="gc-tool-menu-item">Eligibility Reconciliation</div>
+              <div class="gc-tool-menu-item">Authorization Delivery Status</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">settings</span></div>Settings&#9662;</div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">bar_chart</span></div>CareScribe</div>
     </div>
@@ -1838,7 +1863,124 @@
               <div style="padding:7px 12px 4px;font-size:12px;color:var(--teal);cursor:pointer;display:flex;align-items:center;gap:4px;border-bottom:3px solid #E07820;white-space:nowrap;"><span class="material-icons" style="font-size:14px;">table_chart</span> Care Plan Details</div>
             </div>
           </div>
-          <div style="background:var(--white);min-height:300px;"></div>
+          <!-- Intervention Card -->
+          <div style="background:var(--white);padding:0 0 24px;">
+            <div style="border:1px solid var(--border);border-radius:var(--r-sm);margin:16px;overflow:hidden;">
+              <!-- Card toolbar -->
+              <div style="display:flex;align-items:center;gap:14px;padding:8px 14px;border-bottom:1px solid var(--border-light);background:#fafafa;">
+                <label style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--text-primary);cursor:pointer;">
+                  <input type="checkbox" style="accent-color:var(--teal);width:13px;height:13px;" /> Select
+                </label>
+                <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-secondary);">
+                  Eligibility
+                  <span style="display:inline-flex;align-items:center;gap:3px;color:#2e7d32;font-weight:600;">
+                    <span class="material-icons" style="font-size:15px;color:#43a047;">check_circle</span> Active
+                  </span>
+                </span>
+                <span style="display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#E07820;">
+                  <span class="material-icons" style="font-size:16px;color:#E07820;">bookmark</span> Recommended
+                </span>
+                <span style="flex:1;"></span>
+                <span style="font-size:12px;font-weight:600;color:var(--text-primary);">Priority</span>
+                <span style="display:flex;align-items:center;gap:2px;font-size:12px;font-weight:700;color:#c0392b;">
+                  High
+                  <span class="material-icons" style="font-size:15px;color:var(--text-secondary);">arrow_drop_down</span>
+                </span>
+                <label style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--text-primary);cursor:pointer;">
+                  <input type="checkbox" style="accent-color:var(--teal);width:13px;height:13px;" /> Sign Off
+                </label>
+              </div>
+              <!-- Intervention label + text -->
+              <div style="padding:10px 14px 8px;border-bottom:1px solid var(--border-light);">
+                <div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Intervention</div>
+                <div style="font-size:12px;color:var(--text-primary);line-height:1.5;">Case Manager will educate member in how to use pain management tools including medications, and utilizing modalities that help relieve symptoms (relaxation techniques; ice/heat; physical therapy; deep breathing; elevation)</div>
+              </div>
+              <!-- Details grid -->
+              <div style="padding:12px 14px;display:grid;grid-template-columns:repeat(6,1fr);gap:12px 20px;font-size:12px;">
+                <!-- Row 1 -->
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Status</div>
+                  <div style="color:var(--text-secondary);">New</div>
+                </div>
+                <div style="grid-column:span 2;">
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Member Plan</div>
+                  <div style="color:var(--text-secondary);line-height:1.5;">Case Manager will educate member in how to use pain management tools including medications, and utilizing modalities that help relieve symptoms (relaxation techniques; ice/heat; physical therapy; deep breathing; elevation)</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Start Date</div>
+                  <div style="color:var(--text-secondary);">01/28/2026</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Target Date</div>
+                  <div style="color:var(--text-secondary);">06/28/2026</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Sign off Date</div>
+                  <div style="color:var(--text-secondary);">N/A</div>
+                </div>
+                <!-- Row 2 -->
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Opportunity Resolved Date</div>
+                  <div style="color:var(--text-secondary);">N/A</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Add Appointment</div>
+                  <div><a href="#" style="color:var(--link);text-decoration:none;">Add</a></div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Targeted To</div>
+                  <div style="color:var(--text-secondary);">N/A</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Script Name</div>
+                  <div style="color:var(--text-secondary);">Adult LTSS Reassessment</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Roles</div>
+                  <div style="color:var(--text-secondary);">All Access Admin</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Term</div>
+                  <div><a href="#" style="color:var(--link);text-decoration:none;">Long</a></div>
+                </div>
+                <!-- Row 3 -->
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Assigned Owner</div>
+                  <div style="color:var(--text-secondary);">N/A</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Source</div>
+                  <div style="color:var(--text-secondary);">Script</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Created On</div>
+                  <div style="color:var(--text-secondary);">01/28/2026</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Created By</div>
+                  <div style="color:var(--text-secondary);">Chris Mallon</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Updated On</div>
+                  <div style="color:var(--text-secondary);">N/A</div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Updated By</div>
+                  <div style="color:var(--text-secondary);">N/A</div>
+                </div>
+                <!-- Row 4 -->
+                <div style="grid-column:span 6;">
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Guideline Source</div>
+                  <div style="color:var(--text-secondary);">N/A</div>
+                </div>
+                <!-- Row 5 -->
+                <div style="grid-column:span 6;">
+                  <div style="font-weight:700;color:var(--text-primary);margin-bottom:2px;">Payor</div>
+                  <div style="color:var(--text-secondary);">Program Enrollment &gt;&gt; Enrollment</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- SUB-PANEL: Care Plan Barriers -->
@@ -2574,6 +2716,7 @@
                 <thead><tr>
                   <th style="width:28px;"><input type="checkbox" /></th>
                   <th>Script Performed</th>
+                  <th>Digital</th>
                   <th>Script Performed Date</th>
                   <th>Script Performed By</th>
                   <th>Script Status</th>
@@ -2588,10 +2731,10 @@
                   <th>Actions</th>
                 </tr></thead>
                 <tbody id="scriptActivityTbody" onclick="(function(e){var b=e.target.closest('button,a');if(b&&b.textContent.trim()===(window._gcSelectedActivity||'Health Risk Assessment')){e.preventDefault();openScriptResponseModal();}})(event)">
-                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">Adding a script</a></td><td>03/12/2025 06:46:33 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Assessments.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
-                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">Adding a script</a></td><td>03/08/2025 06:11:24 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Cancelled</td><td>03/08/2025 06:19:05 AM</td><td>N/A</td><td>N/A</td><td>0</td><td>Assessments.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
-                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">QQ Individual Budget</a></td><td>03/14/2024 12:24:59 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Follow Up.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
-                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">TX SK SAI Script Form</a></td><td>02/15/2022 10:17:15 AM</td><td>Valliappan Pethaperumal : test ems</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Care Coordination.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">Adding a script</a></td><td></td><td>03/12/2025 06:46:33 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Assessments.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">Adding a script</a></td><td></td><td>03/08/2025 06:11:24 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Cancelled</td><td>03/08/2025 06:19:05 AM</td><td>N/A</td><td>N/A</td><td>0</td><td>Assessments.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">QQ Individual Budget</a></td><td></td><td>03/14/2024 12:24:59 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Follow Up.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">TX SK SAI Script Form</a></td><td></td><td>02/15/2022 10:17:15 AM</td><td>Valliappan Pethaperumal : test ems</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Care Coordination.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
                 </tbody>
               </table>
             </div>
@@ -2844,7 +2987,7 @@
                 <thead><tr>
                   <th style="width:28px;"><input type="checkbox" /></th>
                   <th>Activity Type</th>
-                  <th>MP</th>
+                  <th>Digital</th>
                   <th>Priority</th>
                   <th>Follow up Date</th>
                   <th>Due Date</th>
@@ -3388,33 +3531,43 @@ function openScriptResponseModal() {
     name:'Jackson Thomas', dob:'03/15/1958', ssn:'XXX-XX-4523',
     program:'Diabetes Management', careManager:'Beatrice Kanya'
   };
-  // Hardcoded fallback HRA Q&A
+  // Hardcoded fallback HRA Q&A — matches member-assessmentscampaign question set
   var FALLBACK_QA = [
-    {q:'Do you give permission to discuss your personal health information with the healthcare team?',option:'Yes',sub:'I give permission',score:0},
-    {q:'Do you give permission to share the results of this assessment with your doctor?',option:'Yes',sub:'Please share with my doctor',score:0},
-    {q:'Who is filling out this questionnaire?',option:'Member',sub:'The member is filling this out',score:0},
-    {q:'Is the race listed on your profile correct?',option:'Yes',sub:'It is correct',score:0},
-    {q:'Is the ethnicity listed on your profile correct?',option:'Yes',sub:'It is correct',score:0},
+    // Page 1 — Medical History & Current Health
     {q:'In general, how would you rate your overall health?',option:'Good',sub:'',score:2.5},
-    {q:'Have you visited the Emergency Room in the last 6 months?',option:'No',sub:'',score:0},
-    {q:'Have you been admitted to the hospital in the last 6 months?',option:'No',sub:'',score:0},
-    {q:'Are you currently taking any prescription medications?',option:'Yes',sub:'',score:1.5},
-    {q:'Do you have trouble paying for your medications?',option:'Yes',sub:'It is sometimes difficult',score:3.0},
-    {q:'Do you have a doctor that you see regularly (a Primary Care Provider)?',option:'Yes',sub:'',score:0},
-    {q:'Have you seen your regular doctor in the last 12 months?',option:'Yes',sub:'',score:0},
-    {q:'Do you have any concerns about your eyesight or hearing?',option:'No',sub:'',score:0},
-    {q:'Have you fallen in the past 12 months?',option:'No',sub:'',score:0},
-    {q:'Do you feel safe where you live?',option:'Yes',sub:'I feel safe',score:0},
-    {q:'Over the last 2 weeks, how often have you felt down, depressed, or hopeless?',option:'Several days',sub:'',score:2.5},
-    {q:'Over the last 2 weeks, how often have you had little interest or pleasure in doing things?',option:'Not at all',sub:'',score:0},
-    {q:'Do you use any tobacco products (cigarettes, vaping, chewing tobacco)?',option:'No',sub:'I do not use tobacco',score:0},
-    {q:'How often do you drink alcohol?',option:'Monthly',sub:'Once or twice a month',score:1.5},
-    {q:'Do you need help with everyday activities like bathing, getting dressed, eating, or getting around?',option:'No',sub:'I can manage on my own',score:0},
-    {q:'Can you get to your doctor appointments without difficulty?',option:'Yes',sub:'I have reliable transportation',score:0},
-    {q:'In the past year, have you worried about having enough food to eat?',option:'Yes',sub:'This has been a concern',score:3.5},
-    {q:'Do you have a living will or advance directive that explains your wishes for medical care?',option:'No',sub:'I do not have one',score:0},
-    {q:'Would you like to learn about programs in your community that could help you?',option:'Yes',sub:'I would like more information',score:2.0},
-    {q:'Is there anything else you would like to talk about with your care team?',option:'Yes',sub:'I would like someone to call me about my medication costs',score:5.22}
+    {q:'Compared to one year ago, how would you rate your health in general now?',option:'About the same',sub:'',score:0},
+    {q:'In the past 12 months, have you visited an emergency department?',option:'No',sub:'',score:0},
+    {q:'In the past 12 months, how many times have you been admitted to a hospital overnight or longer?',option:'None',sub:'',score:0},
+    {q:'Do you have a primary care provider (PCP) that you see for routine care?',option:'Yes',sub:'',score:0},
+    {q:'Have you been told by a doctor or health professional that you have any of the following conditions?',option:'Diabetes or pre-diabetes; High blood pressure',sub:'Select all that apply',score:2.0},
+    {q:'How many prescription medications do you currently take on a regular basis?',option:'4–6 medications',sub:'',score:1.5},
+    {q:'How often do you have difficulty remembering to take your medications as prescribed?',option:'Rarely',sub:'Follow-up',score:0.5},
+    {q:'Please list any known allergies (medications, food, latex, or environmental).',option:'Penicillin',sub:'',score:0},
+    {q:'When did you last visit a doctor, nurse, or other health professional for a routine checkup?',option:'11/15/2025',sub:'',score:0},
+    {q:'Is there anything about your health you would like your care team to know before we continue?',option:'No, nothing at this time',sub:'',score:0},
+    // Page 2 — Functional Status & Lifestyle
+    {q:'Are you currently experiencing any pain or discomfort on most days?',option:'Yes',sub:'',score:1.5},
+    {q:'What type of pain are you experiencing?',option:'Dull or aching pain; Joint stiffness or muscle tension',sub:'Sub-question',score:0},
+    {q:'Does this pain limit your ability to perform daily activities such as walking, bathing, or household tasks?',option:'Somewhat',sub:'Sub-question',score:1.0},
+    {q:'In a typical week, how many days do you engage in at least 30 minutes of moderate physical activity?',option:'1–2 days',sub:'',score:1.0},
+    {q:'How would you describe your eating habits?',option:'Mostly healthy with occasional processed foods',sub:'',score:0.5},
+    {q:'On average, how many hours of sleep do you get per night?',option:'7–8 hours',sub:'',score:0},
+    {q:'Do you currently use any tobacco or nicotine products?',option:'Never used',sub:'',score:0},
+    {q:'How often do you have a drink containing alcohol?',option:'Never',sub:'',score:0},
+    {q:'Have you fallen or felt unsteady while walking or standing in the past 12 months?',option:'No falls and no balance concerns',sub:'',score:0},
+    {q:'Do you need help with any of the following activities?',option:'I do not need help with any of these',sub:'Select all that apply',score:0},
+    {q:'Do you feel physically and emotionally safe where you currently live?',option:'Yes',sub:'',score:0},
+    {q:'Is there anything else about your daily life or health habits you would like your care team to know?',option:'N/A',sub:'',score:0},
+    // Page 3 — Behavioral Health & Social Determinants
+    {q:'Have you seen a doctor, therapist, or counselor for a mental or behavioral health concern in the past 12 months?',option:'No, but I feel I could benefit from it',sub:'',score:2.0},
+    {q:'Over the past 2 weeks, how often have you been bothered by feeling down, depressed, or hopeless?',option:'Not at all',sub:'',score:0},
+    {q:'Over the past 2 weeks, how often have you been bothered by feeling nervous, anxious, or on edge?',option:'Not at all',sub:'',score:0},
+    {q:'How often do you feel isolated, lonely, or that you lack companionship?',option:'Hardly ever',sub:'',score:0},
+    {q:'If you needed help during an illness or emergency, do you have someone you could count on?',option:'Yes',sub:'',score:0},
+    {q:'Within the past 12 months, have you ever worried that your food would run out before you had money to buy more?',option:'Never',sub:'',score:0},
+    {q:'In the past 12 months, has a lack of reliable transportation kept you from medical appointments, meetings, work, or getting things needed for daily living?',option:'No',sub:'',score:0},
+    {q:'Which of the following health goals are most important to you right now?',option:'Managing a chronic condition; Being more physically active; Staying independent at home',sub:'Select all that apply',score:0},
+    {q:'Is there anything else you would like your care team to know about your health, your needs, or your goals?',option:'N/A',sub:'',score:0}
   ];
 
   var key = (window._gcGetKey ? window._gcGetKey() : null) || 'jackson-thomas';
@@ -3585,6 +3738,8 @@ function openScriptResponseModal() {
     memberView.style.display = 'none';
     var hraPage = document.getElementById('hraReviewPage');
     if (hraPage) hraPage.style.display = 'none';
+    var calPage = document.getElementById('careActivityLogPage');
+    if (calPage) calPage.style.display = 'none';
     // When user sees the home dashboard (and the alerts), flush pending outstanding activities
     flushPendingOutstanding();
   }
@@ -3594,6 +3749,8 @@ function openScriptResponseModal() {
     memberView.style.display = '';
     var hraPage = document.getElementById('hraReviewPage');
     if (hraPage) hraPage.style.display = 'none';
+    var calPage = document.getElementById('careActivityLogPage');
+    if (calPage) calPage.style.display = 'none';
   }
 
   // Home shortcut toggles between dashboard and member view
@@ -3973,10 +4130,10 @@ function openScriptResponseModal() {
   var _DEL = '<span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span>';
   var _SDOC = '<span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br>' + _DEL;
   function _nr(type,note,by,date){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td>'+note+'</td><td>'+_VIS+'</td><td>N/A</td><td>N/A</td><td>'+by+'</td><td>'+date+'</td><td>N/A</td><td>N/A</td></tr>';}
-  function _sr(script,date,by,status,complete,program,score,actType,outcome,dur){return '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>'+status+'</td><td>'+complete+'</td><td>N/A</td><td>'+program+'</td><td>'+score+'</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+dur+'</td><td></td><td>'+_SDOC+'</td></tr>';}
+  function _sr(script,date,by,status,complete,program,score,actType,outcome,dur){var _outLink=outcome==='Add'?'<a href="#" style="color:var(--link);" onclick="document.getElementById(\'captureOutcomeModal\').classList.add(\'open\');return false;">Add</a>':'<a href="#" style="color:var(--link);">'+outcome+'</a>';return '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">'+script+'</a></td><td></td><td>'+date+'</td><td>'+by+'</td><td>'+status+'</td><td>'+complete+'</td><td>N/A</td><td>'+program+'</td><td>'+score+'</td><td>'+actType+'</td><td>'+_outLink+'</td><td>'+dur+'</td><td></td><td>'+_SDOC+'</td></tr>';}
   function _gr(date,by,type,outcome){return '<tr><td>'+date+'</td><td>'+by+'</td><td>N/A</td><td>N/A</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
   function _gs(sched,by,type){return '<tr><td>N/A</td><td>N/A</td><td>'+sched+'</td><td>'+by+'</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">Scheduled</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
-  function _or(type,priority,followUp,callTime,created){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td></td><td>'+priority+'</td><td>'+followUp+'</td><td>N/A</td><td>'+callTime+'</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">'+created+'</td><td></td><td style="white-space:nowrap;">'+_ACT+'</td></tr>';}
+  function _or(type,priority,followUp,callTime,created){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td></td><td>'+priority+'</td><td>'+followUp+'</td><td>N/A</td><td>'+callTime+'</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">'+created+'</td><td><span class="material-icons" style="font-size:14px;color:var(--teal);">check_circle</span></td><td style="white-space:nowrap;">'+_ACT+'</td></tr>';}
   function _ar(badgeCls,status,desc,source,date){return '<tr><td><input type="checkbox"/></td><td><span class="gc-badge '+badgeCls+'">'+status+'</span></td><td>'+desc+'</td><td>'+source+'</td><td>'+date+'</td></tr>';}
 
   var memberTabData = {
@@ -4626,31 +4783,41 @@ function openScriptResponseModal() {
 
   // ── Member Script Response Modal ──
   var hraQA = [
-    { q:'Do you give permission to discuss your personal health information with the healthcare team?', option:'Yes', sub:'I give permission', score:0 },
-    { q:'Do you give permission to share the results of this assessment with your doctor?', option:'Yes', sub:'Please share with my doctor', score:0 },
-    { q:'Who is filling out this questionnaire?', option:'Member', sub:'The member is filling this out', score:0 },
-    { q:'Is the race listed on your profile correct?', option:'Yes', sub:'It is correct', score:0 },
-    { q:'Is the ethnicity listed on your profile correct?', option:'Yes', sub:'It is correct', score:0 },
+    // Page 1 — Medical History & Current Health
     { q:'In general, how would you rate your overall health?', option:'Good', sub:'', score:2.5 },
-    { q:'Have you visited the Emergency Room in the last 6 months?', option:'No', sub:'', score:0 },
-    { q:'Have you been admitted to the hospital in the last 6 months?', option:'No', sub:'', score:0 },
-    { q:'Are you currently taking any prescription medications?', option:'Yes', sub:'', score:1.5 },
-    { q:'Do you have trouble paying for your medications?', option:'Yes', sub:'It is sometimes difficult', score:3.0 },
-    { q:'Do you have a doctor that you see regularly (a Primary Care Provider)?', option:'Yes', sub:'', score:0 },
-    { q:'Have you seen your regular doctor in the last 12 months?', option:'Yes', sub:'', score:0 },
-    { q:'Do you have any concerns about your eyesight or hearing?', option:'No', sub:'', score:0 },
-    { q:'Have you fallen in the past 12 months?', option:'No', sub:'', score:0 },
-    { q:'Do you feel safe where you live?', option:'Yes', sub:'I feel safe', score:0 },
-    { q:'Over the last 2 weeks, how often have you felt down, depressed, or hopeless?', option:'Several days', sub:'', score:2.5 },
-    { q:'Over the last 2 weeks, how often have you had little interest or pleasure in doing things?', option:'Not at all', sub:'', score:0 },
-    { q:'Do you use any tobacco products (cigarettes, vaping, chewing tobacco)?', option:'No', sub:'I do not use tobacco', score:0 },
-    { q:'How often do you drink alcohol?', option:'Monthly', sub:'Once or twice a month', score:1.5 },
-    { q:'Do you need help with everyday activities like bathing, getting dressed, eating, or getting around?', option:'No', sub:'I can manage on my own', score:0 },
-    { q:'Can you get to your doctor appointments without difficulty?', option:'Yes', sub:'I have reliable transportation', score:0 },
-    { q:'In the past year, have you worried about having enough food to eat?', option:'Yes', sub:'This has been a concern', score:3.5 },
-    { q:'Do you have a living will or advance directive that explains your wishes for medical care?', option:'No', sub:'I do not have one', score:0 },
-    { q:'Would you like to learn about programs in your community that could help you?', option:'Yes', sub:'I would like more information', score:2.0 },
-    { q:'Is there anything else you would like to talk about with your care team?', option:'Yes', sub:'I would like someone to call me about my medication costs', score:5.22 }
+    { q:'Compared to one year ago, how would you rate your health in general now?', option:'About the same', sub:'', score:0 },
+    { q:'In the past 12 months, have you visited an emergency department?', option:'No', sub:'', score:0 },
+    { q:'In the past 12 months, how many times have you been admitted to a hospital overnight or longer?', option:'None', sub:'', score:0 },
+    { q:'Do you have a primary care provider (PCP) that you see for routine care?', option:'Yes', sub:'', score:0 },
+    { q:'Have you been told by a doctor or health professional that you have any of the following conditions? (Select all that apply)', option:'Diabetes or pre-diabetes; High blood pressure', sub:'', score:2.0 },
+    { q:'How many prescription medications do you currently take on a regular basis?', option:'4–6 medications', sub:'', score:1.5 },
+    { q:'How often do you have difficulty remembering to take your medications as prescribed?', option:'Rarely', sub:'Follow-up', score:0.5 },
+    { q:'Please list any known allergies (medications, food, latex, or environmental). If none, write "None."', option:'Penicillin', sub:'', score:0 },
+    { q:'When did you last visit a doctor, nurse, or other health professional for a routine checkup?', option:'11/15/2025', sub:'', score:0 },
+    { q:'Is there anything about your health you would like your care team to know before we continue?', option:'No, nothing at this time', sub:'', score:0 },
+    // Page 2 — Functional Status & Lifestyle
+    { q:'Are you currently experiencing any pain or discomfort on most days?', option:'Yes', sub:'', score:1.5 },
+    { q:'What type of pain are you experiencing? (Select all that apply)', option:'Dull or aching pain; Joint stiffness or muscle tension', sub:'Sub-question', score:0 },
+    { q:'Does this pain limit your ability to perform daily activities such as walking, bathing, or household tasks?', option:'Somewhat', sub:'Sub-question', score:1.0 },
+    { q:'In a typical week, how many days do you engage in at least 30 minutes of moderate physical activity (such as walking, gardening, or light exercise)?', option:'1–2 days', sub:'', score:1.0 },
+    { q:'How would you describe your eating habits?', option:'Mostly healthy with occasional processed foods', sub:'', score:0.5 },
+    { q:'On average, how many hours of sleep do you get per night?', option:'7–8 hours', sub:'', score:0 },
+    { q:'Do you currently use any tobacco or nicotine products (cigarettes, e-cigarettes, chewing tobacco, etc.)?', option:'Never used', sub:'', score:0 },
+    { q:'How often do you have a drink containing alcohol?', option:'Never', sub:'', score:0 },
+    { q:'Have you fallen or felt unsteady while walking or standing in the past 12 months?', option:'No falls and no balance concerns', sub:'', score:0 },
+    { q:'Do you need help with any of the following activities? (Select all that apply)', option:'I do not need help with any of these', sub:'', score:0 },
+    { q:'Do you feel physically and emotionally safe where you currently live?', option:'Yes', sub:'', score:0 },
+    { q:'Is there anything else about your daily life or health habits you would like your care team to know?', option:'N/A', sub:'', score:0 },
+    // Page 3 — Behavioral Health & Social Determinants
+    { q:'Have you seen a doctor, therapist, or counselor for a mental or behavioral health concern in the past 12 months?', option:'No, but I feel I could benefit from it', sub:'', score:2.0 },
+    { q:'Over the past 2 weeks, how often have you been bothered by feeling down, depressed, or hopeless?', option:'Not at all', sub:'', score:0 },
+    { q:'Over the past 2 weeks, how often have you been bothered by feeling nervous, anxious, or on edge?', option:'Not at all', sub:'', score:0 },
+    { q:'How often do you feel isolated, lonely, or that you lack companionship?', option:'Hardly ever', sub:'', score:0 },
+    { q:'If you needed help during an illness or emergency, do you have someone you could count on?', option:'Yes', sub:'', score:0 },
+    { q:'Within the past 12 months, have you ever worried that your food would run out before you had money to buy more?', option:'Never', sub:'', score:0 },
+    { q:'In the past 12 months, has a lack of reliable transportation kept you from medical appointments, meetings, work, or getting things needed for daily living?', option:'No', sub:'', score:0 },
+    { q:'Which of the following health goals are most important to you right now? (Select all that apply)', option:'Managing a chronic condition; Being more physically active; Staying independent at home', sub:'', score:0 },
+    { q:'Is there anything else you would like your care team to know about your health, your needs, or your goals?', option:'N/A', sub:'', score:0 }
   ];
 
   window._gcMemberData = memberData;
@@ -4917,83 +5084,116 @@ function openScriptResponseModal() {
 
       <div class="hra-questions">
 
+        <!-- ── PAGE 1: Medical History & Current Health ── -->
+        <div style="padding:8px 14px 4px;font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--teal-light);margin-bottom:4px;">Page 1 — Medical History &amp; Current Health</div>
+
         <!-- Q1 - expanded with answer -->
         <div class="hra-q open">
-          <div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">1</span><span class="hra-q-text">Do you give permission to discuss your personal health information with the healthcare team?</span></div>
-          <div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q1" checked /> <span>Yes, I give permission</span></div><div class="hra-q-option"><input type="radio" name="q1" /> <span>No, I do not give permission</span></div></div><div class="hra-care-notes">Care Notes</div></div>
+          <div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">1</span><span class="hra-q-text">In general, how would you rate your overall health?</span></div>
+          <div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q1" /> <span>Excellent</span></div><div class="hra-q-option"><input type="radio" name="q1" /> <span>Very Good</span></div><div class="hra-q-option"><input type="radio" name="q1" checked /> <span>Good</span></div><div class="hra-q-option"><input type="radio" name="q1" /> <span>Fair</span></div><div class="hra-q-option"><input type="radio" name="q1" /> <span>Poor</span></div></div><div class="hra-care-notes">Care Notes</div></div>
         </div>
 
         <!-- Q2 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">2</span><span class="hra-q-text">Do you give permission to share the results of this assessment with your doctor?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q2" checked /> <span>Yes, please share with my doctor</span></div><div class="hra-q-option"><input type="radio" name="q2" /> <span>No, do not share</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">2</span><span class="hra-q-text">Compared to one year ago, how would you rate your health in general now?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q2" /> <span>Much better than one year ago</span></div><div class="hra-q-option"><input type="radio" name="q2" /> <span>Somewhat better than one year ago</span></div><div class="hra-q-option"><input type="radio" name="q2" checked /> <span>About the same</span></div><div class="hra-q-option"><input type="radio" name="q2" /> <span>Somewhat worse than one year ago</span></div><div class="hra-q-option"><input type="radio" name="q2" /> <span>Much worse than one year ago</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q3 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered" style="background:#E65100;"><span style="font-size:9px;font-weight:700;">OOI</span></div><span class="hra-q-num">3</span><span class="hra-q-text">Who is filling out this questionnaire?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><span class="hra-q-ogi">OGI</span> <input type="radio" name="q3" checked /> <span>I am filling this out myself</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My caregiver is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My parent is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My legal guardian is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>My grandparent is helping me</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>Someone else is helping me</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">3</span><span class="hra-q-text">In the past 12 months, have you visited an emergency department?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q3" checked /> <span>No</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>Yes, 1 time</span></div><div class="hra-q-option"><input type="radio" name="q3" /> <span>Yes, 2 or more times</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- Q3f follow-up -->
+        <div class="hra-q" style="margin-left:20px;border-left:3px solid var(--teal-light);"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon"></div><span class="hra-q-num" style="font-size:10px;">3f</span><span class="hra-q-text">What was the primary reason for your most recent emergency department visit?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q3f" /> <span>Injury or accident</span></div><div class="hra-q-option"><input type="radio" name="q3f" /> <span>Worsening of a chronic condition</span></div><div class="hra-q-option"><input type="radio" name="q3f" /> <span>Uncontrolled pain</span></div><div class="hra-q-option"><input type="radio" name="q3f" /> <span>Difficulty breathing</span></div><div class="hra-q-option"><input type="radio" name="q3f" /> <span>Chest pain or heart-related concern</span></div><div class="hra-q-option"><input type="radio" name="q3f" /> <span>Other reason</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q4 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">4</span><span class="hra-q-text">Is the race listed on your profile correct?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q4" checked /> <span>Yes, it is correct</span></div><div class="hra-q-option"><input type="radio" name="q4" /> <span>No, it needs to be updated</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">4</span><span class="hra-q-text">In the past 12 months, how many times have you been admitted to a hospital overnight or longer?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q4" checked /> <span>None</span></div><div class="hra-q-option"><input type="radio" name="q4" /> <span>1 time</span></div><div class="hra-q-option"><input type="radio" name="q4" /> <span>2–3 times</span></div><div class="hra-q-option"><input type="radio" name="q4" /> <span>4 or more times</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q5 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">5</span><span class="hra-q-text">Is the ethnicity listed on your profile correct?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q5" checked /> <span>Yes, it is correct</span></div><div class="hra-q-option"><input type="radio" name="q5" /> <span>No, it needs to be updated</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">5</span><span class="hra-q-text">Do you have a primary care provider (PCP) that you see for routine care?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q5" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q5" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q6 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">6</span><span class="hra-q-text">In general, how would you rate your overall health?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q6" /> <span>Excellent</span></div><div class="hra-q-option"><input type="radio" name="q6" /> <span>Very Good</span></div><div class="hra-q-option"><input type="radio" name="q6" checked /> <span>Good</span></div><div class="hra-q-option"><input type="radio" name="q6" /> <span>Fair</span></div><div class="hra-q-option"><input type="radio" name="q6" /> <span>Poor</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">6</span><span class="hra-q-text">Have you been told by a doctor or health professional that you have any of the following conditions? (Select all that apply)</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="checkbox" name="q6" checked /> <span>Diabetes or pre-diabetes</span></div><div class="hra-q-option"><input type="checkbox" name="q6" /> <span>Heart disease or heart failure</span></div><div class="hra-q-option"><input type="checkbox" name="q6" checked /> <span>High blood pressure</span></div><div class="hra-q-option"><input type="checkbox" name="q6" /> <span>Asthma or COPD</span></div><div class="hra-q-option"><input type="checkbox" name="q6" /> <span>Arthritis or chronic joint pain</span></div><div class="hra-q-option"><input type="checkbox" name="q6" /> <span>Depression or anxiety</span></div><div class="hra-q-option"><input type="checkbox" name="q6" /> <span>Chronic kidney disease</span></div><div class="hra-q-option"><input type="checkbox" name="q6" /> <span>Cancer (current or history)</span></div><div class="hra-q-option"><input type="checkbox" name="q6" /> <span>None of the above</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q7 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">7</span><span class="hra-q-text">Have you visited the Emergency Room in the last 6 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q7" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q7" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">7</span><span class="hra-q-text">How many prescription medications do you currently take on a regular basis?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q7" /> <span>None</span></div><div class="hra-q-option"><input type="radio" name="q7" /> <span>1–3 medications</span></div><div class="hra-q-option"><input type="radio" name="q7" checked /> <span>4–6 medications</span></div><div class="hra-q-option"><input type="radio" name="q7" /> <span>7 or more medications</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- Q7f follow-up -->
+        <div class="hra-q" style="margin-left:20px;border-left:3px solid var(--teal-light);"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num" style="font-size:10px;">7f</span><span class="hra-q-text">How often do you have difficulty remembering to take your medications as prescribed?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q7f" /> <span>Never</span></div><div class="hra-q-option"><input type="radio" name="q7f" checked /> <span>Rarely</span></div><div class="hra-q-option"><input type="radio" name="q7f" /> <span>Sometimes</span></div><div class="hra-q-option"><input type="radio" name="q7f" /> <span>Often</span></div><div class="hra-q-option"><input type="radio" name="q7f" /> <span>Almost always</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q8 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">8</span><span class="hra-q-text">Have you been admitted to the hospital in the last 6 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q8" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q8" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">8</span><span class="hra-q-text">Please list any known allergies (medications, food, latex, or environmental). If none, write "None."</span></div><div class="hra-q-body"><div class="hra-q-options"><textarea style="width:100%;border:1px solid #bbb;border-radius:3px;padding:6px;font-family:var(--font);font-size:12px;resize:vertical;" rows="2">Penicillin</textarea></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q9 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">9</span><span class="hra-q-text">Are you currently taking any prescription medications?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q9" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q9" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">9</span><span class="hra-q-text">When did you last visit a doctor, nurse, or other health professional for a routine checkup?</span></div><div class="hra-q-body"><div class="hra-q-options"><input type="date" value="2025-11-15" style="height:30px;border:1px solid #bbb;border-radius:3px;padding:0 8px;font-family:var(--font);font-size:12px;" /></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q10 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">10</span><span class="hra-q-text">Do you have trouble paying for your medications?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q10" checked /> <span>Yes, it is sometimes difficult</span></div><div class="hra-q-option"><input type="radio" name="q10" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">10</span><span class="hra-q-text">Is there anything about your health you would like your care team to know before we continue?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q10" checked /> <span>No, nothing at this time</span></div><div class="hra-q-option"><input type="radio" name="q10" /> <span>Yes, I have something to share with my care team</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- ── PAGE 2: Functional Status & Lifestyle ── -->
+        <div style="padding:8px 14px 4px;font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--teal-light);margin:8px 0 4px;">Page 2 — Functional Status &amp; Lifestyle</div>
 
         <!-- Q11 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">11</span><span class="hra-q-text">Do you have a doctor that you see regularly (a Primary Care Provider)?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q11" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q11" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">11</span><span class="hra-q-text">Are you currently experiencing any pain or discomfort on most days?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q11" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q11" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- Q11a sub-question -->
+        <div class="hra-q" style="margin-left:20px;border-left:3px solid var(--teal-light);"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num" style="font-size:10px;">11a</span><span class="hra-q-text">What type of pain are you experiencing? (Select all that apply)</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="checkbox" checked /> <span>Dull or aching pain</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Sharp or stabbing pain</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Burning or tingling</span></div><div class="hra-q-option"><input type="checkbox" checked /> <span>Joint stiffness or muscle tension</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Throbbing pain</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Other</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- Q11b sub-question -->
+        <div class="hra-q" style="margin-left:20px;border-left:3px solid var(--teal-light);"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num" style="font-size:10px;">11b</span><span class="hra-q-text">Does this pain limit your ability to perform daily activities such as walking, bathing, or household tasks?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q11b" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q11b" checked /> <span>Somewhat</span></div><div class="hra-q-option"><input type="radio" name="q11b" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q12 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">12</span><span class="hra-q-text">Have you seen your regular doctor in the last 12 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q12" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q12" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">12</span><span class="hra-q-text">In a typical week, how many days do you engage in at least 30 minutes of moderate physical activity?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q12" /> <span>0 days</span></div><div class="hra-q-option"><input type="radio" name="q12" checked /> <span>1–2 days</span></div><div class="hra-q-option"><input type="radio" name="q12" /> <span>3–4 days</span></div><div class="hra-q-option"><input type="radio" name="q12" /> <span>5 or more days</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q13 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">13</span><span class="hra-q-text">Do you have any concerns about your eyesight or hearing?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q13" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q13" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">13</span><span class="hra-q-text">How would you describe your eating habits?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q13" /> <span>Balanced diet with fruits, vegetables, and whole grains</span></div><div class="hra-q-option"><input type="radio" name="q13" checked /> <span>Mostly healthy with occasional processed foods</span></div><div class="hra-q-option"><input type="radio" name="q13" /> <span>Average — mix of healthy and unhealthy foods</span></div><div class="hra-q-option"><input type="radio" name="q13" /> <span>Mostly processed, fast food, or skipped meals</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q14 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">14</span><span class="hra-q-text">Have you fallen in the past 12 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q14" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q14" checked /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">14</span><span class="hra-q-text">On average, how many hours of sleep do you get per night?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q14" /> <span>Less than 5 hours</span></div><div class="hra-q-option"><input type="radio" name="q14" /> <span>5–6 hours</span></div><div class="hra-q-option"><input type="radio" name="q14" checked /> <span>7–8 hours</span></div><div class="hra-q-option"><input type="radio" name="q14" /> <span>More than 8 hours</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q15 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">15</span><span class="hra-q-text">Do you feel safe where you live?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q15" checked /> <span>Yes, I feel safe</span></div><div class="hra-q-option"><input type="radio" name="q15" /> <span>No, I have some concerns</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">15</span><span class="hra-q-text">Do you currently use any tobacco or nicotine products (cigarettes, e-cigarettes, chewing tobacco, etc.)?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q15" checked /> <span>Never used</span></div><div class="hra-q-option"><input type="radio" name="q15" /> <span>Former user (quit more than 6 months ago)</span></div><div class="hra-q-option"><input type="radio" name="q15" /> <span>Current user</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q16 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">16</span><span class="hra-q-text">Over the last 2 weeks, how often have you felt down, depressed, or hopeless?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q16" /> <span>Not at all</span></div><div class="hra-q-option"><input type="radio" name="q16" checked /> <span>Several days</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>More than half the days</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>Nearly every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">16</span><span class="hra-q-text">How often do you have a drink containing alcohol?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q16" checked /> <span>Never</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>Monthly or less</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>2–4 times a month</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>2–3 times a week</span></div><div class="hra-q-option"><input type="radio" name="q16" /> <span>4 or more times a week</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q17 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">17</span><span class="hra-q-text">Over the last 2 weeks, how often have you had little interest or pleasure in doing things?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q17" checked /> <span>Not at all</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>Several days</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>More than half the days</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>Nearly every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">17</span><span class="hra-q-text">Have you fallen or felt unsteady while walking or standing in the past 12 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q17" checked /> <span>No falls and no balance concerns</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>No falls, but I sometimes feel unsteady</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>Yes, I fell but was not injured</span></div><div class="hra-q-option"><input type="radio" name="q17" /> <span>Yes, I fell and was injured</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q18 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">18</span><span class="hra-q-text">Do you use any tobacco products (cigarettes, vaping, chewing tobacco)?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q18" /> <span>Yes, I currently use tobacco</span></div><div class="hra-q-option"><input type="radio" name="q18" checked /> <span>No, I do not use tobacco</span></div><div class="hra-q-option"><input type="radio" name="q18" /> <span>I used to, but I quit</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">18</span><span class="hra-q-text">Do you need help with any of the following activities? (Select all that apply)</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="checkbox" /> <span>Bathing, dressing, or personal hygiene</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Preparing meals</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Light housework or chores</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Getting to appointments or errands</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Taking medications correctly</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Managing bills or finances</span></div><div class="hra-q-option"><input type="checkbox" checked /> <span>I do not need help with any of these</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q19 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">19</span><span class="hra-q-text">How often do you drink alcohol?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q19" /> <span>Never</span></div><div class="hra-q-option"><input type="radio" name="q19" checked /> <span>Once or twice a month</span></div><div class="hra-q-option"><input type="radio" name="q19" /> <span>About once a week</span></div><div class="hra-q-option"><input type="radio" name="q19" /> <span>Every day or almost every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">19</span><span class="hra-q-text">Do you feel physically and emotionally safe where you currently live?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q19" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q19" /> <span>No</span></div><div class="hra-q-option"><input type="radio" name="q19" /> <span>I prefer not to answer</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q20 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">20</span><span class="hra-q-text">Do you need help with everyday activities like bathing, getting dressed, eating, or getting around?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q20" /> <span>Yes, I need some help</span></div><div class="hra-q-option"><input type="radio" name="q20" checked /> <span>No, I can manage on my own</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon"></div><span class="hra-q-num">20</span><span class="hra-q-text">Is there anything else about your daily life or health habits you would like your care team to know?</span></div><div class="hra-q-body"><div class="hra-q-options"><textarea style="width:100%;border:1px solid #bbb;border-radius:3px;padding:6px;font-family:var(--font);font-size:12px;resize:vertical;" rows="2" placeholder="Member response..."></textarea></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- ── PAGE 3: Behavioral Health & Social Determinants ── -->
+        <div style="padding:8px 14px 4px;font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--teal-light);margin:8px 0 4px;">Page 3 — Behavioral Health &amp; Social Determinants</div>
 
         <!-- Q21 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">21</span><span class="hra-q-text">Can you get to your doctor appointments without difficulty?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q21" checked /> <span>Yes, I have reliable transportation</span></div><div class="hra-q-option"><input type="radio" name="q21" /> <span>No, getting there can be hard</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">21</span><span class="hra-q-text">Have you seen a doctor, therapist, or counselor for a mental or behavioral health concern in the past 12 months?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q21" /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q21" checked /> <span>No, but I feel I could benefit from it</span></div><div class="hra-q-option"><input type="radio" name="q21" /> <span>No, and I do not feel I need to</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q22 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">22</span><span class="hra-q-text">In the past year, have you worried about having enough food to eat?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q22" checked /> <span>Yes, this has been a concern</span></div><div class="hra-q-option"><input type="radio" name="q22" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">22</span><span class="hra-q-text">Over the past 2 weeks, how often have you been bothered by feeling down, depressed, or hopeless?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q22" checked /> <span>Not at all</span></div><div class="hra-q-option"><input type="radio" name="q22" /> <span>Several days</span></div><div class="hra-q-option"><input type="radio" name="q22" /> <span>More than half the days</span></div><div class="hra-q-option"><input type="radio" name="q22" /> <span>Nearly every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q23 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">23</span><span class="hra-q-text">Do you have a living will or advance directive that explains your wishes for medical care?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q23" /> <span>Yes, I have one</span></div><div class="hra-q-option"><input type="radio" name="q23" checked /> <span>No, I do not have one</span></div><div class="hra-q-option"><input type="radio" name="q23" /> <span>I am not sure</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">23</span><span class="hra-q-text">Over the past 2 weeks, how often have you been bothered by feeling nervous, anxious, or on edge?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q23" checked /> <span>Not at all</span></div><div class="hra-q-option"><input type="radio" name="q23" /> <span>Several days</span></div><div class="hra-q-option"><input type="radio" name="q23" /> <span>More than half the days</span></div><div class="hra-q-option"><input type="radio" name="q23" /> <span>Nearly every day</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q24 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">24</span><span class="hra-q-text">Would you like to learn about programs in your community that could help you, like meal delivery, senior centers, or support groups?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q24" checked /> <span>Yes, I would like more information</span></div><div class="hra-q-option"><input type="radio" name="q24" /> <span>No thank you</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">24</span><span class="hra-q-text">How often do you feel isolated, lonely, or that you lack companionship?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q24" checked /> <span>Hardly ever</span></div><div class="hra-q-option"><input type="radio" name="q24" /> <span>Some of the time</span></div><div class="hra-q-option"><input type="radio" name="q24" /> <span>Often</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Q25 -->
-        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">25</span><span class="hra-q-text">Is there anything else you would like to talk about with your care team?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q25" checked /> <span>Yes, I would like someone to call me about my medication costs</span></div><div class="hra-q-option"><input type="radio" name="q25" /> <span>No, I am all set for now</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">25</span><span class="hra-q-text">If you needed help during an illness or emergency, do you have someone you could count on?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q25" checked /> <span>Yes</span></div><div class="hra-q-option"><input type="radio" name="q25" /> <span>Maybe, but I am not sure</span></div><div class="hra-q-option"><input type="radio" name="q25" /> <span>No</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- Q26 -->
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">26</span><span class="hra-q-text">Within the past 12 months, have you ever worried that your food would run out before you had money to buy more?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q26" checked /> <span>Never</span></div><div class="hra-q-option"><input type="radio" name="q26" /> <span>Sometimes true</span></div><div class="hra-q-option"><input type="radio" name="q26" /> <span>Often true</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- Q27 -->
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">27</span><span class="hra-q-text">In the past 12 months, has a lack of reliable transportation kept you from medical appointments, meetings, work, or getting things needed for daily living?</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="radio" name="q27" checked /> <span>No</span></div><div class="hra-q-option"><input type="radio" name="q27" /> <span>Yes, it has kept me from things I need to do sometimes</span></div><div class="hra-q-option"><input type="radio" name="q27" /> <span>Yes, it is a frequent problem for me</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- Q28 -->
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon answered"></div><span class="hra-q-num">28</span><span class="hra-q-text">Which of the following health goals are most important to you right now? (Select all that apply)</span></div><div class="hra-q-body"><div class="hra-q-options"><div class="hra-q-option"><input type="checkbox" checked /> <span>Managing a chronic condition</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Losing weight or improving nutrition</span></div><div class="hra-q-option"><input type="checkbox" checked /> <span>Being more physically active</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Improving my mental health or reducing stress</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Quitting tobacco</span></div><div class="hra-q-option"><input type="checkbox" /> <span>Reducing or managing pain</span></div><div class="hra-q-option"><input type="checkbox" checked /> <span>Staying independent at home</span></div><div class="hra-q-option"><input type="checkbox" /> <span>No specific goals at this time</span></div></div><div class="hra-care-notes">Care Notes</div></div></div>
+
+        <!-- Q29 -->
+        <div class="hra-q"><div class="hra-q-header" role="button" tabindex="0" onclick="this.parentElement.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.parentElement.classList.toggle('open');}"><div class="hra-q-icon"></div><span class="hra-q-num">29</span><span class="hra-q-text">Is there anything else you would like your care team to know about your health, your needs, or your goals?</span></div><div class="hra-q-body"><div class="hra-q-options"><textarea style="width:100%;border:1px solid #bbb;border-radius:3px;padding:6px;font-family:var(--font);font-size:12px;resize:vertical;" rows="2" placeholder="Member response..."></textarea></div><div class="hra-care-notes">Care Notes</div></div></div>
 
         <!-- Action buttons -->
         <div class="hra-actions">
@@ -5333,17 +5533,6 @@ function openScriptResponseModal() {
 </div>
 
 
-<!-- ══════════════ FOOTER ══════════════ -->
-<div class="gc-footer" id="app-footer">
-  <span>Powered by HealthEdge&reg;. Best results on latest version of Edge, Chrome&trade;, or Mozilla Firefox</span>
-  <div class="gc-footer-right">
-    <span>&copy; 2025 HealthEdge&reg;. All Rights Reserved.</span>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Use</a>
-    <span class="gc-footer-health"><span class="material-icons">check_circle</span> Browser Health Check Passed</span>
-  </div>
-</div>
-
 <!-- ══════════════ MEMBER SCRIPT RESPONSE MODAL ══════════════ -->
 <div class="msri-overlay" id="msriModal" role="dialog" aria-modal="true" aria-labelledby="msriModalTitle">
   <div class="msri-modal">
@@ -5454,7 +5643,7 @@ function openScriptResponseModal() {
     return '<tr>'
       + '<td><input type="checkbox"/></td>'
       + '<td>Comprehensive Assessment Review</td>'
-      + '<td></td>'
+      + '<td>Digital Campaign</td>'
       + '<td>High</td>'
       + '<td>' + fuStr + '</td>'
       + '<td>N/A</td>'
@@ -5470,6 +5659,34 @@ function openScriptResponseModal() {
       + '</tr>';
   }
 
+  function makeAssessmentScriptRow() {
+    var now = new Date();
+    var mo = String(now.getMonth()+1).padStart(2,'0');
+    var dy = String(now.getDate()).padStart(2,'0');
+    var yr = now.getFullYear();
+    var h = String(now.getHours()).padStart(2,'0');
+    var mi = String(now.getMinutes()).padStart(2,'0');
+    var se = String(now.getSeconds()).padStart(2,'0');
+    var dateStr = mo + '/' + dy + '/' + yr + ' ' + h + ':' + mi + ':' + se + ' AM';
+    return '<tr>'
+      + '<td><input type="checkbox"/></td>'
+      + '<td><a href="#" style="color:var(--link);font-size:11px;" onclick="openScriptResponseModal();return false;">Health Risk Assessment</a></td>'
+      + '<td>SMS (Contact Type: Digital Campaign)</td>'
+      + '<td>' + dateStr + '</td>'
+      + '<td>Beatrice Kanya : All Access Admin</td>'
+      + '<td>Pending</td>'
+      + '<td>N/A</td>'
+      + '<td>N/A</td>'
+      + '<td>Health Risk Assessment</td>'
+      + '<td>N/A</td>'
+      + '<td>Digital Campaign</td>'
+      + '<td><a href="#" style="color:var(--link);" onclick="document.getElementById(\'captureOutcomeModal\').classList.add(\'open\');return false;">Add</a></td>'
+      + '<td>N/A</td>'
+      + '<td><span class="material-icons" style="font-size:14px;color:var(--teal);">check_circle</span></td>'
+      + '<td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td>'
+      + '</tr>';
+  }
+
   function applyCompletedActivity(key) {
     if (!window._gcMemberTabData) return;
     var tabs = window._gcMemberTabData[key];
@@ -5479,10 +5696,13 @@ function openScriptResponseModal() {
     });
     if (already) return;
     tabs.outstandingActivities.unshift(makeAssessmentActivity());
-    // If this member's profile is currently open, refresh the table live
+    tabs.scriptActivity.unshift(makeAssessmentScriptRow());
+    // If this member's profile is currently open, refresh the tables live
     if (window._gcGetKey && window._gcGetKey() === key) {
       var tbody = document.getElementById('outstandingTbody');
       if (tbody) tbody.innerHTML = tabs.outstandingActivities.join('');
+      var scriptTbody = document.getElementById('scriptActivityTbody');
+      if (scriptTbody) scriptTbody.innerHTML = tabs.scriptActivity.join('');
     }
   }
 
@@ -5494,7 +5714,7 @@ function openScriptResponseModal() {
       window._gcMemberData[key] = {
         name: fullName, preferred: first, dob: dob, dobLong: dobLong(dob),
         age: calcAge(dob), id: id, careManager: 'Beatrice Kanya',
-        program: 'Comprehensive Assessment', risk: '\u2014',
+        program: 'Health Risk Assessment', risk: '\u2014',
         caregiver: null, careTeam: []
       };
     }
@@ -5590,7 +5810,7 @@ function openScriptResponseModal() {
       { v: '\u2014' },
       { v: '\u2014' },
       { v: todayStr() },
-      { v: 'Comprehensive Assessment' }
+      { v: 'Health Risk Assessment' }
     ].forEach(function(f) {
       var td = document.createElement('td'); td.style.padding = '4px 8px';
       td.textContent = f.v; tr.appendChild(td);
@@ -5599,31 +5819,70 @@ function openScriptResponseModal() {
     tbody.insertBefore(tr, tbody.firstChild);
   }
 
+  function clearDynamicMembers(keepKey) {
+    // Remove dynamic rows from member table
+    var tbody = document.getElementById('my-members-tbody');
+    if (tbody) {
+      Array.prototype.slice.call(tbody.querySelectorAll('[data-demo-key]')).forEach(function (r) {
+        if (!keepKey || r.getAttribute('data-demo-key') !== keepKey) r.remove();
+      });
+    }
+    // Remove dynamic items from member switcher
+    var menu = document.querySelector('.member-switcher-menu');
+    if (menu) {
+      Array.prototype.slice.call(menu.querySelectorAll('.member-switcher-item[data-member]')).forEach(function (item) {
+        var mk = item.getAttribute('data-member');
+        if (mk !== 'jackson-thomas' && mk !== 'maria-rivera' && mk !== keepKey) item.remove();
+      });
+    }
+  }
+
   function loadSaved() {
     try {
       var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      saved.forEach(function (m) { insertRow(m.first, m.last, m.dob, m.id, m.assessmentCompleted); });
+      // Only show the single most recent dynamic member
+      if (saved.length > 0) {
+        var m = saved[saved.length - 1];
+        insertRow(m.first, m.last, m.dob, m.id, m.assessmentCompleted);
+      }
     } catch (e) {}
   }
 
   function addNewMember(first, last, dob, completed) {
     try {
-      var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
       var key = mKey(first, last);
+      var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
       var existing = saved.find(function (m) { return mKey(m.first, m.last) === key; });
-      if (existing) {
-        if (completed && !existing.assessmentCompleted) {
-          existing.assessmentCompleted = true;
-          existing.completedDate = todayStr();
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+      // Remove all dynamic members except the one being added
+      clearDynamicMembers(key);
+
+      // Clean up stale entries from _gcMemberData / _gcMemberTabData
+      saved.forEach(function (m) {
+        var mk = mKey(m.first, m.last);
+        if (mk !== key) {
+          if (window._gcMemberData) delete window._gcMemberData[mk];
+          if (window._gcMemberTabData) delete window._gcMemberTabData[mk];
         }
-        insertRow(first, last, dob, existing.id, existing.assessmentCompleted);
-        return;
+      });
+
+      var id, assessmentCompleted;
+      if (existing) {
+        id = existing.id;
+        assessmentCompleted = existing.assessmentCompleted || !!completed;
+      } else {
+        id = genId();
+        assessmentCompleted = !!completed;
       }
-      var id = genId();
-      saved.push({ first: first, last: last, dob: dob, id: id, assessmentCompleted: !!completed, completedDate: completed ? todayStr() : null });
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
-      insertRow(first, last, dob, id, completed);
+
+      // Store only this member
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([{
+        first: first, last: last, dob: dob, id: id,
+        assessmentCompleted: assessmentCompleted,
+        completedDate: assessmentCompleted ? todayStr() : null
+      }]));
+
+      insertRow(first, last, dob, id, assessmentCompleted);
     } catch (e) {}
   }
 
@@ -5641,6 +5900,326 @@ function openScriptResponseModal() {
   });
 })();
 </script>
+
+<!-- ══════════════ CARE ACTIVITY LOG PAGE ══════════════ -->
+<div id="careActivityLogPage" style="display:none;background:var(--white);font-family:var(--font);">
+
+  <!-- Member banner (same pattern as hraReviewPage) -->
+  <div class="gc-member-banner">
+    <div style="position:relative;display:inline-flex;"><span class="material-icons" style="font-size:24px;color:var(--teal-dark);">notifications</span><span style="position:absolute;top:-4px;right:-6px;min-width:17px;height:17px;background:#C62828;color:white;border-radius:50%;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">0</span></div>
+    <span class="gc-banner-check"><span class="material-icons" style="font-size:20px;color:#2E7D32;">check_circle</span></span>
+    <span id="calBannerName" class="gc-banner-name">Thomas Jackson</span>
+    <span class="gc-banner-dob" id="calBannerDOB">DOB 01/15/1965</span>
+    <span class="gc-banner-dob" id="calBannerAge">61 yr(s)</span>
+    <span class="gc-banner-expand"><span class="material-icons" style="font-size:18px;">open_in_full</span></span>
+  </div>
+
+  <!-- Expand All -->
+  <div style="padding:8px 20px;">
+    <a href="#" onclick="calExpandAll(event)" style="color:var(--teal);font-size:12px;text-decoration:none;">&#8599; Expand All</a>
+  </div>
+
+  <!-- Accordion wrapper -->
+  <div style="padding:0 16px 24px;display:flex;flex-direction:column;gap:6px;">
+
+    <!-- Today's Care Activity Log — expanded by default -->
+    <div class="cal-section" id="calSection0">
+      <div class="cal-section-hdr" onclick="calToggle(0)">
+        <span class="cal-arrow material-icons">arrow_drop_down</span>
+        Today's Care Activity Log
+      </div>
+      <div class="cal-section-body">
+        <!-- Filter bar -->
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border);">
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text-label);margin-bottom:3px;">Module</div>
+            <select style="height:30px;border:1px solid #bbb;border-radius:3px;font-size:12px;font-family:var(--font);padding:0 6px;background:white;"><option>CM</option><option>UM</option><option>QM</option></select>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text-label);margin-bottom:3px;">Care Staff</div>
+            <input type="text" value="Beatrice Kanya : All Access Admin" style="height:30px;border:1px solid #bbb;border-radius:3px;font-size:12px;font-family:var(--font);padding:0 8px;width:190px;" />
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text-label);margin-bottom:3px;">New ID</div>
+            <input type="text" style="height:30px;border:1px solid #bbb;border-radius:3px;font-size:12px;font-family:var(--font);padding:0 8px;width:110px;" />
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text-label);margin-bottom:3px;">Member Name</div>
+            <input type="text" style="height:30px;border:1px solid #bbb;border-radius:3px;font-size:12px;font-family:var(--font);padding:0 8px;width:140px;" />
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text-label);margin-bottom:3px;">From Date <span style="font-weight:400;color:var(--text-muted);">MM/DD/YYYY</span></div>
+            <div style="display:flex;align-items:center;border:1px solid #bbb;border-radius:3px;background:white;height:30px;padding:0 6px;gap:4px;">
+              <input type="text" placeholder="MM/DD/YYYY" style="border:none;outline:none;font-size:12px;font-family:var(--font);width:90px;" />
+              <span class="material-icons" style="font-size:16px;color:var(--text-muted);">calendar_today</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text-label);margin-bottom:3px;">To Date <span style="font-weight:400;color:var(--text-muted);">MM/DD/YYYY</span></div>
+            <div style="display:flex;align-items:center;border:1px solid #bbb;border-radius:3px;background:white;height:30px;padding:0 6px;gap:4px;">
+              <input type="text" placeholder="MM/DD/YYYY" style="border:none;outline:none;font-size:12px;font-family:var(--font);width:90px;" />
+              <span class="material-icons" style="font-size:16px;color:var(--text-muted);">calendar_today</span>
+            </div>
+          </div>
+          <button style="height:34px;padding:0 20px;background:var(--teal-dark);color:white;border:none;border-radius:3px;font-size:13px;font-weight:600;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:6px;">
+            <span class="material-icons" style="font-size:16px;">search</span> Search
+          </button>
+          <button style="background:none;border:none;font-size:13px;color:var(--link);cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;">
+            <span style="font-size:16px;line-height:1;">&times;</span> Clear
+          </button>
+        </div>
+
+        <!-- Action toolbar -->
+        <div style="display:flex;align-items:center;gap:16px;padding:8px 16px;border-bottom:1px solid var(--border);">
+          <button class="cal-tool-btn"><span class="material-icons" style="font-size:14px;">event_repeat</span> Reschedule</button>
+          <button class="cal-tool-btn"><span class="material-icons" style="font-size:14px;">visibility</span> View</button>
+          <button class="cal-tool-btn"><span class="material-icons" style="font-size:14px;">edit</span> Edit</button>
+          <button class="cal-tool-btn"><span class="material-icons" style="font-size:14px;">delete</span> Delete</button>
+        </div>
+
+        <!-- Table -->
+        <div style="overflow-x:auto;">
+          <table class="gc-table" style="font-size:11px;min-width:1200px;">
+            <thead><tr>
+              <th style="width:24px;"><input type="checkbox" /></th>
+              <th>Eligibility</th>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>New ID</th>
+              <th>Activity Type</th>
+              <th>MP</th>
+              <th>Follow up Date &amp; Time</th>
+              <th>Due Date</th>
+              <th>Assigned By</th>
+              <th>Reassigned By</th>
+              <th>Provider Name</th>
+              <th>Priority</th>
+              <th>Payor</th>
+              <th>Program Name</th>
+              <th>Script/Type</th>
+              <th>Perform Activity</th>
+            </tr></thead>
+            <tbody id="calTbody">
+              <tr style="background:#FFF8E1;">
+                <td><input type="checkbox" /></td>
+                <td><span style="display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;color:#2e7d32;white-space:nowrap;"><span class="material-icons" style="font-size:14px;color:#43a047;">check_circle</span>Active</span></td>
+                <td><span class="material-icons" style="font-size:13px;color:var(--teal);vertical-align:middle;">info</span> <a href="#" id="calRowLastName" style="color:var(--link);">—</a></td>
+                <td id="calRowFirstName">—</td>
+                <td id="calRowId">—</td>
+                <td>Assessment- HRA</td>
+                <td></td>
+                <td id="calRowDate" style="color:#c62828;white-space:nowrap;">—</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td><td>N/A</td><td>High</td><td>N/A</td><td>N/A</td>
+                <td>Health Risk Assessment</td>
+                <td><span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;">thumb_up</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td><span style="display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;color:#2e7d32;white-space:nowrap;"><span class="material-icons" style="font-size:14px;color:#43a047;">check_circle</span>Active</span></td>
+                <td><span class="material-icons" style="font-size:13px;color:var(--teal);vertical-align:middle;">info</span> <a href="#" style="color:var(--link);">Rivera</a></td>
+                <td>Maria</td>
+                <td>GC00002</td>
+                <td>Comprehensive Assessment Review</td>
+                <td></td>
+                <td style="color:#c62828;white-space:nowrap;">04/01/2026 09:00</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td><td>N/A</td><td>High</td><td>N/A</td><td>N/A</td>
+                <td>Digital Campaign</td>
+                <td><span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;">thumb_up</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td><span style="display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;color:#2e7d32;white-space:nowrap;"><span class="material-icons" style="font-size:14px;color:#43a047;">check_circle</span>Active</span></td>
+                <td><span class="material-icons" style="font-size:13px;color:var(--teal);vertical-align:middle;">info</span> <a href="#" style="color:var(--link);">Jackson</a></td>
+                <td>Thomas</td>
+                <td>GC00001</td>
+                <td>Follow Up</td>
+                <td></td>
+                <td style="color:#c62828;white-space:nowrap;">03/27/2026 07:59</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td><td>N/A</td><td>High</td><td>N/A</td><td>N/A</td>
+                <td>N/A</td>
+                <td><span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;">thumb_up</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td><span style="display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;color:#2e7d32;white-space:nowrap;"><span class="material-icons" style="font-size:14px;color:#43a047;">check_circle</span>Active</span></td>
+                <td><span class="material-icons" style="font-size:13px;color:var(--teal);vertical-align:middle;">info</span> <a href="#" style="color:var(--link);">Rivera</a></td>
+                <td>Maria</td>
+                <td>GC00002</td>
+                <td>Assessments - Initial Outreach</td>
+                <td></td>
+                <td style="color:#c62828;white-space:nowrap;">03/20/2026 08:30</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td><td>N/A</td><td>Medium</td><td>N/A</td><td>N/A</td>
+                <td>N/A</td>
+                <td><span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;">thumb_up</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td><span style="display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;color:#2e7d32;white-space:nowrap;"><span class="material-icons" style="font-size:14px;color:#43a047;">check_circle</span>Active</span></td>
+                <td><span class="material-icons" style="font-size:13px;color:var(--teal);vertical-align:middle;">info</span> <a href="#" style="color:var(--link);">Jackson</a></td>
+                <td>Thomas</td>
+                <td>GC00001</td>
+                <td>CHF Weight Monitoring Check-In</td>
+                <td></td>
+                <td style="color:#c62828;white-space:nowrap;">03/25/2026 09:00</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td><td>N/A</td><td>High</td><td>N/A</td><td>N/A</td>
+                <td>N/A</td>
+                <td><span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;">thumb_up</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;font-size:11px;color:var(--text-secondary);border-top:1px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <button class="cal-page-btn" title="First"><span class="material-icons" style="font-size:14px;">first_page</span></button>
+            <button class="cal-page-btn" title="Prev"><span class="material-icons" style="font-size:14px;">chevron_left</span></button>
+            <span style="width:24px;height:24px;background:var(--teal-dark);color:white;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">1</span>
+            <button class="cal-page-btn" title="Next"><span class="material-icons" style="font-size:14px;">chevron_right</span></button>
+            <button class="cal-page-btn" title="Last"><span class="material-icons" style="font-size:14px;">last_page</span></button>
+            <select style="height:24px;border:1px solid #bbb;border-radius:3px;font-size:11px;font-family:var(--font);padding:0 4px;"><option>10</option><option>25</option><option>50</option></select>
+            <span>items per page</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            1 - 5 of 5 items
+            <span class="material-icons" style="font-size:16px;cursor:pointer;">refresh</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsed accordion sections -->
+    <div class="cal-section cal-collapsed" id="calSection1">
+      <div class="cal-section-hdr" onclick="calToggle(1)">
+        <span class="cal-arrow material-icons">arrow_right</span>
+        Open Authorizations
+      </div>
+      <div class="cal-section-body" style="display:none;padding:16px;color:var(--text-muted);font-size:12px;">No records found.</div>
+    </div>
+
+    <div class="cal-section cal-collapsed" id="calSection2">
+      <div class="cal-section-hdr" onclick="calToggle(2)">
+        <span class="cal-arrow material-icons">arrow_right</span>
+        Open Complaints
+      </div>
+      <div class="cal-section-body" style="display:none;padding:16px;color:var(--text-muted);font-size:12px;">No records found.</div>
+    </div>
+
+    <div class="cal-section cal-collapsed" id="calSection3">
+      <div class="cal-section-hdr" onclick="calToggle(3)">
+        <span class="cal-arrow material-icons">arrow_right</span>
+        Requests Received
+      </div>
+      <div class="cal-section-body" style="display:none;padding:16px;color:var(--text-muted);font-size:12px;">No records found.</div>
+    </div>
+
+    <div class="cal-section cal-collapsed" id="calSection4">
+      <div class="cal-section-hdr" onclick="calToggle(4)">
+        <span class="cal-arrow material-icons">arrow_right</span>
+        Requests Rejected
+      </div>
+      <div class="cal-section-body" style="display:none;padding:16px;color:var(--text-muted);font-size:12px;">No records found.</div>
+    </div>
+
+    <div class="cal-section cal-collapsed" id="calSection5">
+      <div class="cal-section-hdr" onclick="calToggle(5)">
+        <span class="cal-arrow material-icons">arrow_right</span>
+        Activities Performed by Other Care Staff
+      </div>
+      <div class="cal-section-body" style="display:none;padding:16px;color:var(--text-muted);font-size:12px;">No records found.</div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .cal-section { background:white; border:1px solid var(--border); border-radius:3px; overflow:hidden; }
+  .cal-section-hdr { display:flex; align-items:center; gap:6px; padding:10px 14px; background:#e8f0f4; font-size:13px; font-weight:700; color:var(--text-primary); cursor:pointer; user-select:none; }
+  .cal-section-hdr:hover { background:#dde8ef; }
+  .cal-arrow { font-size:20px; color:var(--text-secondary); transition:transform 0.15s; }
+  .cal-tool-btn { background:none; border:1px solid var(--border); border-radius:3px; padding:4px 10px; font-size:12px; font-family:var(--font); color:var(--text-primary); cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+  .cal-tool-btn:hover { background:var(--surface-light); color:var(--teal); }
+  .cal-page-btn { background:none; border:1px solid var(--border); border-radius:3px; padding:2px 4px; cursor:pointer; display:inline-flex; align-items:center; color:var(--text-secondary); }
+  .cal-page-btn:hover { background:var(--surface-light); }
+</style>
+
+<script>
+  function openCareActivityLog() {
+    document.querySelectorAll('.gc-tool-menu').forEach(function(m){ m.classList.remove('open'); });
+    var key = window._gcGetKey ? window._gcGetKey() : 'jackson-thomas';
+    var md = window._gcMemberData || {};
+    var m = md[key];
+    if (m) {
+      var el = document.getElementById('calBannerName');
+      if (el) el.textContent = m.name;
+      var dob = document.getElementById('calBannerDOB');
+      if (dob) dob.textContent = 'DOB ' + m.dob;
+      var age = document.getElementById('calBannerAge');
+      if (age) age.textContent = m.age + ' yr(s)';
+
+      // Populate assessment completion row
+      var nameParts = m.name.split(' ');
+      var lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : m.name;
+      var firstName = nameParts[0];
+      var now = new Date();
+      var dateStr = String(now.getMonth()+1).padStart(2,'0') + '/' + String(now.getDate()).padStart(2,'0') + '/' + now.getFullYear()
+                  + ' ' + String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+      var ln = document.getElementById('calRowLastName'); if (ln) ln.textContent = lastName;
+      var fn = document.getElementById('calRowFirstName'); if (fn) fn.textContent = firstName;
+      var id = document.getElementById('calRowId'); if (id) id.textContent = m.id || '—';
+      var dt = document.getElementById('calRowDate'); if (dt) dt.textContent = dateStr;
+    }
+    document.getElementById('home-dashboard').style.display = 'none';
+    document.getElementById('member-view').style.display = 'none';
+    var hra = document.getElementById('hraReviewPage');
+    if (hra) hra.style.display = 'none';
+    document.getElementById('careActivityLogPage').style.display = 'block';
+  }
+  function closeCareActivityLog() {
+    document.getElementById('careActivityLogPage').style.display = 'none';
+    document.getElementById('member-view').style.display = '';
+  }
+  function calToggle(idx) {
+    var sec = document.getElementById('calSection' + idx);
+    var body = sec.querySelector('.cal-section-body');
+    var arrow = sec.querySelector('.cal-arrow');
+    var isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : 'block';
+    arrow.textContent = isOpen ? 'arrow_right' : 'arrow_drop_down';
+  }
+  function calExpandAll(e) {
+    e.preventDefault();
+    for (var i = 0; i <= 5; i++) {
+      var sec = document.getElementById('calSection' + i);
+      if (!sec) continue;
+      var body = sec.querySelector('.cal-section-body');
+      var arrow = sec.querySelector('.cal-arrow');
+      body.style.display = 'block';
+      arrow.textContent = 'arrow_drop_down';
+    }
+  }
+</script>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<div class="gc-footer" id="app-footer">
+  <span>Powered by HealthEdge&reg;. Best results on latest version of Edge, Chrome&trade;, or Mozilla Firefox</span>
+  <div class="gc-footer-right">
+    <span>&copy; 2025 HealthEdge&reg;. All Rights Reserved.</span>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <span class="gc-footer-health"><span class="material-icons">check_circle</span> Browser Health Check Passed</span>
+  </div>
+</div>
 
 </body>
 </html>
