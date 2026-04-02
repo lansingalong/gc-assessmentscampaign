@@ -1894,7 +1894,7 @@
             </div>
           </div>
           <!-- Intervention Card -->
-          <div style="background:var(--white);padding:0 0 24px;">
+          <div id="interventionCard" style="background:var(--white);padding:0 0 24px;">
             <div style="border:1px solid var(--border);border-radius:var(--r-sm);margin:16px;overflow:hidden;">
               <!-- Card toolbar -->
               <div style="display:flex;align-items:center;gap:14px;padding:8px 14px;border-bottom:1px solid var(--border-light);background:#fafafa;">
@@ -4450,6 +4450,10 @@ function openScriptResponseModal() {
       // Populate full profile
       populateProfile(key);
 
+      // Hide intervention card for Jane Doe until assessment is completed
+      var intCard = document.getElementById('interventionCard');
+      if (intCard) intCard.style.display = (key === 'jane-doe') ? 'none' : '';
+
       // Close dropdown
       document.querySelector('.member-switcher-menu.open')?.classList.remove('open');
 
@@ -4478,6 +4482,9 @@ function openScriptResponseModal() {
     ];
     var item = document.querySelector('.member-switcher-item[data-member="' + key + '"]');
     if (item) item.click();
+    // Show intervention card now that assessment is complete
+    var intCard = document.getElementById('interventionCard');
+    if (intCard) intCard.style.display = '';
   };
 
   // ═══ Live calendar ═══
