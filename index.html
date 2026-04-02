@@ -3813,6 +3813,9 @@ function openScriptResponseModal() {
             i.appendChild(cs);
           }
         });
+        // Hide intervention card for Jane Doe until assessment is completed
+        var intCard = document.getElementById('interventionCard');
+        if (intCard) intCard.style.display = (key === 'jane-doe') ? 'none' : '';
       }
       showMemberView();
     });
