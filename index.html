@@ -391,6 +391,9 @@
         <span id="currentMemberName">Jackson Thomas</span> &#9662;
         <div class="member-switcher-menu">
           <div class="member-switcher-menu-title">Switch Member</div>
+          <div class="member-switcher-item" data-member="jane-doe" data-name="Jane Doe" data-dob="01/01/1985" data-age="41" data-id="MBR-2024-1542">
+            <div>Jane Doe <span class="msw-meta">DOB 01/01/1985 · MBR-2024-1542</span></div>
+          </div>
           <div class="member-switcher-item active" data-member="jackson-thomas" data-name="Jackson Thomas" data-dob="03/15/1958" data-age="67" data-id="MBR-2024-0847">
             <div>Jackson Thomas <span class="msw-meta">DOB 03/15/1958 · MBR-2024-0847</span></div>
             <span class="material-icons" style="font-size:14px;color:var(--teal);">check</span>
@@ -400,9 +403,6 @@
           </div>
           <div class="member-switcher-item" data-member="sean-ohare" data-name="Sean O'Hare" data-dob="06/04/1971" data-age="54" data-id="MBR-2024-1389">
             <div>Sean O'Hare <span class="msw-meta">DOB 06/04/1971 · MBR-2024-1389</span></div>
-          </div>
-          <div class="member-switcher-item" data-member="emily-parker" data-name="Emily Parker" data-dob="11/30/1968" data-age="57" data-id="MBR-2024-1542">
-            <div>Emily Parker <span class="msw-meta">DOB 11/30/1968 · MBR-2024-1542</span></div>
           </div>
         </div>
       </div>
@@ -518,6 +518,18 @@
             <tr>
               <td style="padding:4px 8px;"><span class="material-icons" style="font-size:14px;color:var(--teal);">check_circle</span></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>
+              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link member-link" data-member="jane-doe">Doe</a></td>
+              <td style="padding:4px 8px;">Jane</td>
+              <td style="padding:4px 8px;">MBR-2024-1542</td>
+              <td style="padding:4px 8px;">01/01/1985</td>
+              <td style="padding:4px 8px;">High</td>
+              <td style="padding:4px 8px;">04/09/2026</td>
+              <td style="padding:4px 8px;">01/15/2025</td>
+              <td style="padding:4px 8px;">Health Risk Assessment</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;"><span class="material-icons" style="font-size:14px;color:var(--teal);">check_circle</span></td>
+              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link member-link" data-member="jackson-thomas">Thomas</a></td>
               <td style="padding:4px 8px;">Jackson</td>
               <td style="padding:4px 8px;">MBR-2024-0847</td>
@@ -549,18 +561,6 @@
               <td style="padding:4px 8px;">High</td>
               <td style="padding:4px 8px;">04/10/2026</td>
               <td style="padding:4px 8px;">02/01/2025</td>
-              <td style="padding:4px 8px;">Diabetes Management</td>
-            </tr>
-            <tr>
-              <td style="padding:4px 8px;"><span class="material-icons" style="font-size:14px;color:var(--teal);">check_circle</span></td>
-              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>
-              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link member-link" data-member="emily-parker">Parker</a></td>
-              <td style="padding:4px 8px;">Emily</td>
-              <td style="padding:4px 8px;">MBR-2024-1542</td>
-              <td style="padding:4px 8px;">11/30/1968</td>
-              <td style="padding:4px 8px;">High</td>
-              <td style="padding:4px 8px;">04/09/2026</td>
-              <td style="padding:4px 8px;">01/15/2025</td>
               <td style="padding:4px 8px;">Diabetes Management</td>
             </tr>
           </tbody>
@@ -4149,7 +4149,7 @@ function openScriptResponseModal() {
   var memberData = {
     'jackson-thomas': { name:'Jackson Thomas', preferred:'Jack', dob:'03/15/1958', dobLong:'March 15, 1958', age:'67', id:'MBR-2024-0847', ssn:'XXX-XX-4523', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Phone', serviceInterruption:'None', address:'1247 Glacier View Drive', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0142', cell:'(907) 555-0198', altPhone:'(907) 555-0203', fax:'Not Available', prefCallTime:'Mornings (8am–12pm)', email:'jackson.thomas@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Sarah Chen', plan:'Alaska Premier Health', lob:'Medicare Advantage', primaryInsPolicy:'APH-847-2024-JT', secondaryIns:'Medicare Part B', secondaryInsPolicy:'1EG4-TE5-MK72', primaryCondition:'Type 2 Diabetes Mellitus', behavioralCondition:'Major Depressive Disorder', expectedRisk:'High (2.4)', sensitiveDx:'No', doctorAppt:'04/15/2026', doctorApptReason:'Quarterly Diabetes Check', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Middle Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone B', careManager:'Beatrice Kanya', risk:'2.4', program:'Diabetes Management', digital:'', caregiver:{first:'Maria',last:'Thomas',relation:'Wife',type:'Primary Caregiver',start:'01/15/2020'}, careTeam:[{name:'Dr. Sarah Chen',role:'PCP',phone:'(907) 555-1001'},{name:'Jennifer Reyes, RN',role:'Care Manager',phone:'(907) 555-1002'},{name:'Dr. Michael Park',role:'Cardiologist',phone:'(907) 555-1003'}] },
     'maria-rivera': { name:'Maria Rivera', preferred:'Maria', dob:'08/22/1975', dobLong:'August 22, 1975', age:'50', id:'MBR-2024-1203', ssn:'XXX-XX-7891', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Phone – Spanish Preferred', serviceInterruption:'None', address:'842 Cordova Street', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0287', cell:'(907) 555-0344', altPhone:'(907) 555-0391', fax:'Not Available', prefCallTime:'Afternoons (12pm–5pm)', email:'maria.rivera@email.com', altEmail:'Not Available', lang:'Spanish', writtenLang:'Spanish', spokenLang:'Spanish', commImpairment:'None', pcp:'Dr. James Park', plan:'Alaska Premier Health', lob:'Medicaid', primaryInsPolicy:'APH-1203-2024-MR', secondaryIns:'Alaska Medicaid', secondaryInsPolicy:'MCD-AK-445821', primaryCondition:'Congestive Heart Failure (CHF)', behavioralCondition:'Generalized Anxiety Disorder', expectedRisk:'High (1.8)', sensitiveDx:'No', doctorAppt:'04/22/2026', doctorApptReason:'Cardiology Follow-Up', epsdt:'No', portalAccess:'Active', race:'Hispanic or Latino', preferredRace:'Hispanic or Latino', ethnicity:'Hispanic', preferredEthnicity:'Hispanic', residenceStatus:'Independent', incomeStatus:'Low Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone A', careManager:'Beatrice Kanya', risk:'1.8', program:'Cardiac Rehab', digital:'', caregiver:{first:'Carlos',last:'Rivera',relation:'Husband',type:'Primary Caregiver',start:'03/10/2022'}, careTeam:[{name:'Dr. James Park',role:'PCP',phone:'(907) 555-2001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-2002'},{name:'Dr. Amy Tran',role:'Cardiologist',phone:'(907) 555-2003'}] },
-    'emily-parker': { name:'Emily Parker', preferred:'Emily', dob:'11/30/1968', dobLong:'November 30, 1968', age:'57', id:'MBR-2024-1542', ssn:'XXX-XX-6614', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Phone', serviceInterruption:'None', address:'5820 Ridgecrest Drive', city:'Anchorage', state:'AK', zip:'99507', county:'Anchorage County', country:'United States', phone:'(907) 555-0733', cell:'(907) 555-0784', altPhone:'Not Available', fax:'Not Available', prefCallTime:'Mornings (8am–12pm)', email:'emily.parker@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Karen Walsh', plan:'Alaska Premier Health', lob:'Medicare Advantage', primaryInsPolicy:'APH-1542-2024-EP', secondaryIns:'Medicare Part B', secondaryInsPolicy:'3GJ6-VG7-PM94', primaryCondition:'Type 2 Diabetes Mellitus', behavioralCondition:'None', expectedRisk:'High (1.9)', sensitiveDx:'No', doctorAppt:'04/09/2026', doctorApptReason:'Diabetes Annual Wellness Visit', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Middle Income', maritalStatus:'Divorced', veteranStatus:'Non-Veteran', evacuationZone:'Zone C', careManager:'Beatrice Kanya', risk:'1.9', program:'Diabetes Management', digital:'Wellframe', caregiver:{first:'N/A',last:'',relation:'None',type:'None',start:''}, careTeam:[{name:'Dr. Karen Walsh',role:'PCP',phone:'(907) 555-4001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-4002'},{name:'Dr. James Liu',role:'Endocrinologist',phone:'(907) 555-4003'}] },
+    'jane-doe': { name:'Jane Doe', preferred:'Jane', dob:'01/01/1985', dobLong:'January 1, 1985', age:'41', id:'MBR-2024-1542', ssn:'XXX-XX-6614', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Phone', serviceInterruption:'None', address:'5820 Ridgecrest Drive', city:'Anchorage', state:'AK', zip:'99507', county:'Anchorage County', country:'United States', phone:'(907) 555-0733', cell:'(907) 555-0784', altPhone:'Not Available', fax:'Not Available', prefCallTime:'Mornings (8am–12pm)', email:'jane.doe@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Karen Walsh', plan:'Alaska Premier Health', lob:'Medicare Advantage', primaryInsPolicy:'APH-1542-2024-EP', secondaryIns:'Medicare Part B', secondaryInsPolicy:'3GJ6-VG7-PM94', primaryCondition:'Type 2 Diabetes Mellitus', behavioralCondition:'None', expectedRisk:'High (1.9)', sensitiveDx:'No', doctorAppt:'04/09/2026', doctorApptReason:'Diabetes Annual Wellness Visit', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Middle Income', maritalStatus:'Divorced', veteranStatus:'Non-Veteran', evacuationZone:'Zone C', careManager:'Beatrice Kanya', risk:'1.9', program:'Health Risk Assessment', digital:'', caregiver:{first:'N/A',last:'',relation:'None',type:'None',start:''}, careTeam:[{name:'Dr. Karen Walsh',role:'PCP',phone:'(907) 555-4001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-4002'},{name:'Dr. James Liu',role:'Endocrinologist',phone:'(907) 555-4003'}] },
     'sean-ohare': { name:"Sean O'Hare", preferred:'Sean', dob:'06/04/1971', dobLong:'June 4, 1971', age:'54', id:'MBR-2024-1389', ssn:'XXX-XX-3317', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Phone', serviceInterruption:'None', address:'3201 Birchwood Loop', city:'Anchorage', state:'AK', zip:'99504', county:'Anchorage County', country:'United States', phone:'(907) 555-0461', cell:'(907) 555-0512', altPhone:'Not Available', fax:'Not Available', prefCallTime:'Evenings (5pm–8pm)', email:'sean.ohare@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Linda Nguyen', plan:'Alaska Premier Health', lob:'Medicare Advantage', primaryInsPolicy:'APH-1389-2024-SO', secondaryIns:'Medicare Part B', secondaryInsPolicy:'2FH5-UF6-NL83', primaryCondition:'Type 2 Diabetes Mellitus', behavioralCondition:'None', expectedRisk:'High (2.1)', sensitiveDx:'No', doctorAppt:'04/10/2026', doctorApptReason:'Diabetes Management Follow-Up', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Middle Income', maritalStatus:'Single', veteranStatus:'Veteran', evacuationZone:'Zone C', careManager:'Beatrice Kanya', risk:'2.1', program:'Diabetes Management', digital:'Wellframe', caregiver:{first:'N/A',last:'',relation:'None',type:'None',start:''}, careTeam:[{name:'Dr. Linda Nguyen',role:'PCP',phone:'(907) 555-3001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-3002'},{name:'Dr. Paul Reyes',role:'Endocrinologist',phone:'(907) 555-3003'}] },
   };
 
@@ -4247,18 +4247,18 @@ function openScriptResponseModal() {
         _ar('gc-badge-teal','Active','Care Gap — Annual Diabetes Eye Exam overdue','No retinal exam on record for 2025. HEDIS measure: Comprehensive Diabetes Care. Outreach required to schedule ophthalmology appointment.','03/01/2026')
       ]
     },
-    'emily-parker': {
+    'jane-doe': {
       notes: [
         _nr('Clinical Note','Member presented for annual wellness visit. A1C at 7.8%, within target range. Member reports good medication adherence and has been using Wellframe app daily for tracking. Reinforced dietary goals and encouraged continued physical activity. Follow-up scheduled for 07/2026.','Beatrice Kanya : Care Manager','03/15/2026 09:45:00 AM')
       ],
-      scriptActivity: [],
+      scriptActivity: [
+        '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">Health Risk Assessment</a></td><td>Wellframe (Campaign)</td><td>04/02/2026 11:56:28</td><td>Beatrice Kanya : All Access Admin</td><td>Completed</td><td>04/02/2026 12:20:00</td><td>N/A</td><td>Health Risk Assessment</td><td>0</td><td>Assessments</td><td><a href="#" style="color:var(--link);">Completed</a></td><td>00:24:00</td><td><span class="material-icons" style="font-size:14px;color:var(--teal);">check</span></td><td>' + _SDOC + '</td></tr>'
+      ],
       generalActivity: [
         _gr('03/15/2026 09:45 AM','Beatrice Kanya','Telephonic Outreach','Completed'),
         _gs('04/09/2026','Beatrice Kanya','Annual Wellness Visit Follow-Up')
       ],
-      outstandingActivities: [
-        '<tr><td><input type="checkbox"/></td><td>Health Risk Assessment</td><td>Wellframe (Campaign)</td><td>High</td><td>04/09/2026</td><td>N/A</td><td>08:00</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Member</td><td>N/A</td><td style="font-size:10px;">04/02/2026 11:56:28</td><td><span class="material-icons" style="font-size:14px;color:var(--teal);">check</span></td><td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:var(--teal-dark);cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>'
-      ],
+      outstandingActivities: [],
       memberAlerts: [
         _ar('gc-badge-teal','Active','Care Gap — HRA Not Completed','Health Risk Assessment has not been completed for the current plan year. Outreach initiated via Wellframe campaign.','04/02/2026')
       ]
@@ -5905,7 +5905,7 @@ function openScriptResponseModal() {
     if (menu) {
       Array.prototype.slice.call(menu.querySelectorAll('.member-switcher-item[data-member]')).forEach(function (item) {
         var mk = item.getAttribute('data-member');
-        if (mk !== 'jackson-thomas' && mk !== 'maria-rivera' && mk !== 'sean-ohare' && mk !== 'emily-parker' && mk !== keepKey) item.remove();
+        if (mk !== 'jackson-thomas' && mk !== 'maria-rivera' && mk !== 'sean-ohare' && mk !== 'jane-doe' && mk !== keepKey) item.remove();
       });
     }
   }
