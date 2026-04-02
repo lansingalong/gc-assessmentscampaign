@@ -4469,6 +4469,20 @@ function openScriptResponseModal() {
   showDashboard();
   populateTabs('jackson-thomas');
 
+  // ── localStorage signal from member app: HRA completed ──
+  (function() {
+    var hraCompleted = localStorage.getItem('hra-completed');
+    if (hraCompleted === 'jane-doe') {
+      localStorage.removeItem('hra-completed');
+      memberTabData['jane-doe'].outstandingActivities = [];
+      memberTabData['jane-doe'].scriptActivity = [
+        '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">Health Risk Assessment</a></td><td>Wellframe (Campaign)</td><td>04/02/2026 11:56:28</td><td>Beatrice Kanya : All Access Admin</td><td>Completed</td><td>04/02/2026 12:20:00</td><td>N/A</td><td>Health Risk Assessment</td><td>0</td><td>Assessments</td><td><a href="#" style="color:var(--link);">Completed</a></td><td>00:24:00</td><td><span class="material-icons" style="font-size:14px;color:var(--teal);">check</span></td><td>' + _SDOC + '</td></tr>'
+      ];
+      var jdItem = document.querySelector('.member-switcher-item[data-member="jane-doe"]');
+      if (jdItem) jdItem.click();
+    }
+  })();
+
   // ═══ Live calendar ═══
   function initCalendar() {
     var now = new Date();
@@ -5961,16 +5975,6 @@ function openScriptResponseModal() {
 
   document.addEventListener('DOMContentLoaded', function () {
     loadSaved();
-    var hraCompleted = localStorage.getItem('hra-completed');
-    if (hraCompleted === 'jane-doe') {
-      localStorage.removeItem('hra-completed');
-      memberTabData['jane-doe'].outstandingActivities = [];
-      memberTabData['jane-doe'].scriptActivity = [
-        '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">Health Risk Assessment</a></td><td>Wellframe (Campaign)</td><td>04/02/2026 11:56:28</td><td>Beatrice Kanya : All Access Admin</td><td>Completed</td><td>04/02/2026 12:20:00</td><td>N/A</td><td>Health Risk Assessment</td><td>0</td><td>Assessments</td><td><a href="#" style="color:var(--link);">Completed</a></td><td>00:24:00</td><td><span class="material-icons" style="font-size:14px;color:var(--teal);">check</span></td><td>' + _SDOC + '</td></tr>'
-      ];
-      var jdItem = document.querySelector('.member-switcher-item[data-member="jane-doe"]');
-      if (jdItem) jdItem.click();
-    }
   });
 })();
 </script>
