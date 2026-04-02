@@ -522,8 +522,8 @@
               <td style="padding:4px 8px;">Jane</td>
               <td style="padding:4px 8px;">MBR-2024-1542</td>
               <td style="padding:4px 8px;">01/01/1985</td>
-              <td style="padding:4px 8px;"></td>
-              <td style="padding:4px 8px;"></td>
+              <td id="janeDoeRisk" style="padding:4px 8px;"></td>
+              <td id="janeDoeNextContact" style="padding:4px 8px;"></td>
               <td style="padding:4px 8px;">01/15/2025</td>
               <td style="padding:4px 8px;">Health Risk Assessment</td>
             </tr>
@@ -4485,6 +4485,11 @@ function openScriptResponseModal() {
     // Show intervention card now that assessment is complete
     var intCard = document.getElementById('interventionCard');
     if (intCard) intCard.style.display = '';
+    // Populate Risk and Next Contact for Jane Doe on home page
+    var riskCell = document.getElementById('janeDoeRisk');
+    if (riskCell) riskCell.textContent = 'High';
+    var nextCell = document.getElementById('janeDoeNextContact');
+    if (nextCell) nextCell.textContent = '04/09/2026';
   };
 
   // ═══ Live calendar ═══
